@@ -1,51 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <title>WotW Live Map</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="topbar">
-    <div>
-      <div class="eyebrow">WAY OF THE WICKED</div>
-      <h1 id="scene-title">Live tactical map</h1>
-    </div>
-    <div class="controls">
-      <span id="connection" class="connection">connecting</span>
-      <button id="grid-toggle" type="button">Grid</button>
-      <button id="coords-toggle" type="button">Coords</button>
-      <button id="fullscreen-toggle" type="button">Fullscreen</button>
-    </div>
-  </header>
-
-  <main>
-    <section id="map-shell" class="map-shell" aria-live="polite">
-      <div id="empty-state" class="empty-state">
-        <strong>No active tactical map.</strong>
-        <span>Cartographer will wake this page when a player-safe map is published.</span>
-      </div>
-      <div id="stage" class="stage" hidden>
-        <img id="base-map" alt="Current tactical map">
-        <svg id="overlay" xmlns="http://www.w3.org/2000/svg" aria-label="Tactical token overlay"></svg>
-      </div>
-    </section>
-
-    <aside class="status-panel">
-      <div>
-        <span class="label">Updated</span>
-        <span id="updated-at">never</span>
-      </div>
-      <div>
-        <span class="label">Revision</span>
-        <code id="revision">-</code>
-      </div>
-      <div id="token-detail" class="token-detail">Click a token for details.</div>
-    </aside>
-  </main>
-
-  <script src="app.js" defer></script>
-</body>
-</html>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>WotW Live Map</title><link rel="stylesheet" href="styles.css?v=2"></head><body>
+<header><div><span class="eyebrow">WAY OF THE WICKED · TACTICAL TABLE</span><h1 id="title">Live-Karte</h1></div><nav><span id="connection">Verbinden …</span><button id="demo">Demo</button><button id="grid" aria-pressed="true">Raster</button><button id="coords" aria-pressed="true">Koordinaten</button><button id="fit">Einpassen</button><button id="minus" aria-label="Verkleinern">−</button><button id="plus" aria-label="Vergrößern">+</button><button id="full">Vollbild</button></nav></header>
+<main><section id="viewport"><div id="empty"><strong>Keine aktive Begegnung</strong><p>Der GM veröffentlicht hier den sichtbaren Kartenstand.</p><button id="empty-demo">Demokarte ansehen</button></div><div id="sizer" hidden><div id="stage"><img id="base" alt="Kartenhintergrund" hidden><svg id="canvas" xmlns="http://www.w3.org/2000/svg" aria-label="Taktische Karte"></svg></div></div></section>
+<aside><span class="eyebrow" id="mode">LIVE</span><h2>Begegnung</h2><p id="meta">Warte auf Kartenstand.</p><div id="roster"></div><div id="detail">Token anklicken für Details.</div><p class="hint">Blau: Party · Grün: Verbündete · Rot: Gegner · Gold: neutral · Violett: unbekannt.<br>Gestrichelt: verborgen · Orange: kampfunfähig · Kreuz: tot.</p><details><summary>Kartenstand lokal testen</summary><p class="hint">Vollständiges Karten-JSON einfügen. Die Vorschau verändert keine Live-Daten.</p><textarea id="json" spellcheck="false" aria-label="Karten-JSON"></textarea><button id="preview">Vorschau öffnen</button><button id="live">Zur Live-Karte</button><p id="error" role="status"></p></details></aside></main>
+<script type="module" src="app.js?v=2"></script></body></html>

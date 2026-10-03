@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';import {readFileSync,existsSync} from 'node:fs';import {normalize,square,ICONS,MARKERS}from './model.mjs';
+const demo=JSON.parse(readFileSync(new URL('./demo.json',import.meta.url)));const d=normalize(demo);assert.equal(d.tokens.length,7);assert.equal(d.tokens.find(t=>t.id==='ogre-1').size,2);assert.equal(d.grid.cols,18);assert.equal(d.map.markers.length,7);
+for(const icon of ICONS)assert(existsSync(new URL('./assets/tokens/'+icon+'.svg',import.meta.url)));for(const icon of MARKERS)assert(existsSync(new URL('./assets/markers/'+icon+'.svg',import.meta.url)));
+const bad=structuredClone(demo);bad.tokens[0].square='Z99';assert.throws(()=>normalize(bad));bad.tokens[0].square='D7';bad.tokens[1].id='styke';assert.throws(()=>normalize(bad));
+assert.throws(()=>square('R12',18,12,2));assert.deepEqual(square('AA1',30,12),{x:26,y:0,square:'AA1'});
+const hidden=structuredClone(demo);hidden.tokens.push({id:'secret',square:'A1',visible:false});hidden.map.markers.push({type:'chest',x:1,y:1,visible:false});assert.equal(normalize(hidden).tokens.length,7);assert.equal(normalize(hidden).map.markers.length,7);
+const legacy=normalize({schema_version:1,active:true,revision:'v1',map:{width_px:640,height_px:480,asset:'maps/test/base.png',grid:{columns:10,rows:8,cell_px:{width:64,height:60},origin_px:{x:0,y:0}}},tokens:[{id:'styke',square:'B2',size:1,label:'S',faction:'party'}]});assert.equal(legacy.tokens[0].x,1);assert.equal(legacy.map.asset,'maps/test/base.png');assert.equal(legacy.grid.ch,60);
+assert.equal(normalize({schema_version:1,active:false,revision:'idle',map:null,tokens:[]}).active,false);
+console.log('PASS: demo, complete asset library, validation, large footprints, coordinates, defensive visibility filtering, legacy raster contract, idle state.');
