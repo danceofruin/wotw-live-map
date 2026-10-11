@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-calliaste-06mar",
   "title": "Horn von Abaddon - unterer Zugang",
-  "revision": "horn-calliaste-06mar-01",
-  "generated_at": "2026-10-11T22:07:00Z",
+  "revision": "horn-calliaste-06mar-02",
+  "generated_at": "2026-10-11T22:08:00Z",
   "grid": {"cols": 18, "rows": 9, "feet": 5},
   "map": {
     "terrain": [
@@ -27,12 +27,12 @@
     {"id":"styke","name":"Styke","label":"S","square":"N6","icon":"styke","faction":"party","statuses":["Ashen Path","12 temp HP"],"hp":"48/48 +12 temp"},
     {"id":"vesper","name":"Vesper","label":"V","square":"O5","icon":"vesper","faction":"party","statuses":["Ashen Path"],"hp":"38/38"},
     {"id":"valeria","name":"Valeria","label":"VA","square":"N4","icon":"valeria","faction":"party","statuses":["Ashen Path"],"hp":"46/46"},
-    {"id":"lillend","name":"Lillend","label":"L","square":"D4","icon":"mage","faction":"hostile","size":2,"statuses":[]},
-    {"id":"fey-1","name":"Feenelf 1","label":"1","square":"B2","icon":"soldier","faction":"hostile","statuses":[]},
-    {"id":"fey-2","name":"Feenelf 2","label":"2","square":"C3","icon":"soldier","faction":"hostile","statuses":[]},
-    {"id":"fey-3","name":"Feenelf 3","label":"3","square":"B7","icon":"soldier","faction":"hostile","statuses":[]},
-    {"id":"fey-4","name":"Feenelf 4","label":"4","square":"C8","icon":"soldier","faction":"hostile","statuses":[]},
-    {"id":"fey-5","name":"Feenelf 5","label":"5","square":"F2","icon":"soldier","faction":"hostile","statuses":[]},
-    {"id":"fey-6","name":"Feenelf 6","label":"6","square":"F8","icon":"soldier","faction":"hostile","statuses":[]}
+    {"id":"lillend","name":"Lillend","label":"L","square":"D4","icon":"mage","faction":"hostile","size":2,"statuses":["Euphoric Cloud"]},
+    {"id":"fey-1","name":"Feenelf 1","label":"1","square":"B2","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud"]},
+    {"id":"fey-2","name":"Feenelf 2","label":"2","square":"C3","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud"]},
+    {"id":"fey-3","name":"Feenelf 3","label":"3","square":"B7","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud"]},
+    {"id":"fey-4","name":"Feenelf 4","label":"4","square":"C8","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud","fascinated"]},
+    {"id":"fey-5","name":"Feenelf 5","label":"5","square":"F2","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud","fascinated"]},
+    {"id":"fey-6","name":"Feenelf 6","label":"6","square":"F8","icon":"soldier","faction":"hostile","statuses":["Euphoric Cloud","fascinated"]}
   ]
 }
