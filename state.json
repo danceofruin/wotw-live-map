@@ -1,11 +1,102 @@
 {
   "schema_version": 2,
-  "active": false,
-  "scene_id": null,
-  "title": "WotW Live Map",
-  "revision": "horn-calliaste-06mar-01-end",
-  "generated_at": "2026-10-11T22:09:00Z",
-  "grid": null,
-  "map": null,
-  "tokens": []
+  "active": true,
+  "scene_id": "horn-maw-halla-10mar",
+  "title": "Der Schlund von Dagon",
+  "revision": "horn-maw-halla-10mar-r1-01",
+  "generated_at": "2026-10-12T21:35:00Z",
+  "grid": {
+    "cols": 14,
+    "rows": 10,
+    "feet": 5
+  },
+  "map": {
+    "terrain": [
+      {
+        "type": "floor",
+        "x": 0,
+        "y": 0,
+        "w": 14,
+        "h": 10
+      }
+    ],
+    "walls": [],
+    "markers": []
+  },
+  "tokens": [
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "H6",
+      "icon": "styke",
+      "faction": "party",
+      "hp": "48/48 (+12 temp)"
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "label": "V",
+      "square": "C5",
+      "icon": "vesper",
+      "faction": "party"
+    },
+    {
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "F7",
+      "icon": "valeria",
+      "faction": "party"
+    },
+    {
+      "id": "halla",
+      "name": "Halla Amon",
+      "label": "HA",
+      "square": "G5",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "nauseated"
+      ]
+    },
+    {
+      "id": "marta",
+      "name": "Sister Marta",
+      "label": "M",
+      "square": "H5",
+      "icon": "soldier",
+      "faction": "hostile"
+    },
+    {
+      "id": "yorgun",
+      "name": "Yorgun",
+      "label": "Y",
+      "square": "F5",
+      "icon": "soldier",
+      "faction": "hostile"
+    },
+    {
+      "id": "james",
+      "name": "James O'Toole",
+      "label": "J",
+      "square": "G6",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "nauseated"
+      ]
+    },
+    {
+      "id": "bianca",
+      "name": "Bianca DeVallya",
+      "label": "B",
+      "square": "F6",
+      "icon": "mage",
+      "faction": "hostile",
+      "statuses": [
+        "nauseated"
+      ]
+    }
+  ]
 }
