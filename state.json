@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-maw-halla-10mar",
   "title": "Der Schlund von Dagon",
-  "revision": "horn-maw-halla-10mar-r1-01",
-  "generated_at": "2026-10-12T21:35:00Z",
+  "revision": "horn-maw-halla-10mar-r1-02",
+  "generated_at": "2026-10-12T21:36:00Z",
   "grid": {
     "cols": 14,
     "rows": 10,
@@ -31,7 +31,7 @@
       "square": "H6",
       "icon": "styke",
       "faction": "party",
-      "hp": "48/48 (+12 temp)"
+      "hp": "48/48 (+11 temp)"
     },
     {
       "id": "vesper",
@@ -57,7 +57,8 @@
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
-        "nauseated"
+        "nauseated",
+        "sickened"
       ]
     },
     {
@@ -66,7 +67,11 @@
       "label": "M",
       "square": "H5",
       "icon": "soldier",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "sickened",
+        "down"
+      ]
     },
     {
       "id": "yorgun",
@@ -74,7 +79,10 @@
       "label": "Y",
       "square": "F5",
       "icon": "soldier",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "sickened"
+      ]
     },
     {
       "id": "james",
@@ -84,7 +92,8 @@
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
-        "nauseated"
+        "nauseated",
+        "sickened"
       ]
     },
     {
@@ -95,7 +104,8 @@
       "icon": "mage",
       "faction": "hostile",
       "statuses": [
-        "nauseated"
+        "nauseated",
+        "sickened"
       ]
     }
   ]
