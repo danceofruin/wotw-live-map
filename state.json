@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-maw-halla-10mar",
   "title": "Der Schlund von Dagon",
-  "revision": "horn-maw-halla-10mar-r2-01",
-  "generated_at": "2026-10-12T21:38:00Z",
+  "revision": "horn-maw-halla-10mar-r2-02",
+  "generated_at": "2026-10-12T21:40:00Z",
   "grid": {
     "cols": 14,
     "rows": 10,
@@ -28,10 +28,10 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "H6",
+      "square": "C6",
       "icon": "styke",
       "faction": "party",
-      "hp": "48/48 (+11 temp)"
+      "hp": "48/48 (+4 temp)"
     },
     {
       "id": "vesper",
@@ -82,8 +82,10 @@
       "faction": "hostile",
       "statuses": [
         "nauseated",
-        "sickened"
-      ]
+        "sickened",
+        "down"
+      ],
+      "hp": "49/59, 54 nonlethal"
     },
     {
       "id": "james",
@@ -94,8 +96,10 @@
       "faction": "hostile",
       "statuses": [
         "nauseated",
-        "sickened"
-      ]
+        "sickened",
+        "down"
+      ],
+      "hp": "32/52, 38 nonlethal"
     },
     {
       "id": "bianca",
