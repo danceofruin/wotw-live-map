@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-maw-halla-10mar",
   "title": "Der Schlund von Dagon",
-  "revision": "horn-maw-halla-10mar-r2-02",
-  "generated_at": "2026-10-12T21:40:00Z",
+  "revision": "horn-maw-halla-10mar-r2-03",
+  "generated_at": "2026-10-12T21:42:00Z",
   "grid": {
     "cols": 14,
     "rows": 10,
@@ -45,7 +45,7 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "D7",
+      "square": "F5",
       "icon": "valeria",
       "faction": "party"
     },
@@ -59,7 +59,8 @@
       "statuses": [
         "nauseated",
         "sickened"
-      ]
+      ],
+      "hp": "25/45, 6 nonlethal"
     },
     {
       "id": "marta",
