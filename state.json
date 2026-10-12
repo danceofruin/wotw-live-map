@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-maw-halla-10mar",
   "title": "Der Schlund von Dagon",
-  "revision": "horn-maw-halla-10mar-r1-02",
-  "generated_at": "2026-10-12T21:36:00Z",
+  "revision": "horn-maw-halla-10mar-r2-01",
+  "generated_at": "2026-10-12T21:38:00Z",
   "grid": {
     "cols": 14,
     "rows": 10,
@@ -45,7 +45,7 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "F7",
+      "square": "D7",
       "icon": "valeria",
       "faction": "party"
     },
@@ -77,10 +77,11 @@
       "id": "yorgun",
       "name": "Yorgun",
       "label": "Y",
-      "square": "F5",
+      "square": "D5",
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
+        "nauseated",
         "sickened"
       ]
     },
@@ -88,7 +89,7 @@
       "id": "james",
       "name": "James O'Toole",
       "label": "J",
-      "square": "G6",
+      "square": "C7",
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
@@ -105,7 +106,8 @@
       "faction": "hostile",
       "statuses": [
         "nauseated",
-        "sickened"
+        "sickened",
+        "down"
       ]
     }
   ]
