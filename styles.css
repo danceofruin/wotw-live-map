@@ -2,3 +2,6 @@
 
 
 #history-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 18px;border-bottom:1px solid #34373e;background:#101319}#history-select{min-width:200px;max-width:440px;flex:1;border:1px solid #4a4d54;border-radius:6px;background:#20242b;padding:7px}#history-status{font-size:12px;color:#aab3c1;flex:1;min-width:200px}button:disabled,select:disabled{opacity:.45;cursor:default}button:disabled:hover{background:#20242b;border-color:#4a4d54}#meta{white-space:pre-line}@media(max-width:850px){#history-nav{padding:10px 14px}#history-select{max-width:none}#history-status{flex-basis:100%}}
+
+
+#atlas-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 18px;background:#11181a;border-bottom:1px solid #34373e}#atlas-nav select{border:1px solid #4a4d54;border-radius:6px;background:#20242b;padding:7px}#atlas-note{font-size:12px;color:#aab3c1;flex:1}main{height:calc(100vh - 195px)}@media(max-width:850px){main{height:auto}#atlas-note{flex-basis:100%}}

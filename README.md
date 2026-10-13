@@ -63,3 +63,10 @@ Every byte in this repository is PUBLIC. Only accepted player-visible geometry a
 - `assets/tokens/`, `assets/markers/`: reusable SVG graphics.
 - `maps/`: optional player-safe background images.
 
+
+
+## Horn-Atlas
+
+**Horn-Atlas** opens prepared empty base maps. Select environment, lower caverns, Levels1–3 or Sanctum; **Aktuell** preserves current structural state (2-1 closed,3-1 passable), while **Ausbauplan** shows proposed doors/closures/table placement and the corrected bath drain. This is a local read-only viewing mode: it pauses live polling and does not write or replace `state.json`. **Zur Live-Karte** returns to the real encounter. The environment is contextual preparation, not a surveyed clearing or proof of forest line of sight.
+
+For encounter crops, retain global frame metadata: `grid.offset_x`/`offset_y` are nonnegative integer field offsets. Published tokens still carry local `square`; the website derives and displays their global squares. A framing change cannot move an actor. An omitted offset means zero for existing schema1/2 maps. Maximum display240x240 is used by the full environment; supported limit400 per axis. Terrain additionally supports `forest`; `map.labels` contains only player-safe `{x,y,text}` labels; `map.lines` contains nonopaque display lines `{from,to,kind}` with `service` (blue dashed) or `low_wall` (muted solid). These lines are not automatic rules/LOS adjudication. `table` is an additional marker icon. Empty templates under `atlas/` contain no private campaign/source text, hidden actors, future event data or authoritative current patrols. Map history remains the history of actual `state.json` updates.

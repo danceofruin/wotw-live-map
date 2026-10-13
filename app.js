@@ -16,14 +16,16 @@ function coords(g,x,y){return [g.ox+x*g.cw,g.oy+y*g.ch];}
 function layout(state){
  const g=state.grid,{terrain,walls,markers}=state.map;
  for(const id of ['terrain','grid-layer','walls','coords-layer'])group(id).replaceChildren();
- const fills={floor:'#484741',water:'#29465d',grass:'#344b3d',rubble:'#645d51',void:'#11151a',road:'#75694f'};
+ const fills={forest:'#263e2f',floor:'#484741',water:'#29465d',grass:'#344b3d',rubble:'#645d51',void:'#11151a',road:'#75694f'};
  for(const a of terrain){const [x,y]=coords(g,a.x,a.y);group('terrain').append(svg('rect',{x,y,width:a.w*g.cw,height:a.h*g.ch,fill:fills[a.type]}));}
  for(let c=0;c<=g.cols;c++){const x=g.ox+c*g.cw;group('grid-layer').append(svg('line',{x1:x,y1:g.oy,x2:x,y2:g.oy+g.rows*g.ch,class:'gridline'}));}
  for(let r=0;r<=g.rows;r++){const y=g.oy+r*g.ch;group('grid-layer').append(svg('line',{x1:g.ox,y1:y,x2:g.ox+g.cols*g.cw,y2:y,class:'gridline'}));}
  for(const wall of walls){const [x1,y1]=coords(g,...wall.from),[x2,y2]=coords(g,...wall.to);group('walls').append(svg('line',{x1,y1,x2,y2,class:'wall'}));}
  for(const m of markers){const [x,y]=coords(g,m.x,m.y),w=m.w*g.cw,h=m.h*g.ch;const el=svg('image',{href:`assets/markers/${m.type}.svg`,x,y,width:w,height:h,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1});group('walls').append(el);}
- for(let c=0;c<g.cols;c++){const el=svg('text',{x:g.ox+(c+.5)*g.cw,y:g.oy-12,class:'coord'});el.textContent=letters(c);group('coords-layer').append(el);}
- for(let r=0;r<g.rows;r++){const el=svg('text',{x:g.ox-16,y:g.oy+(r+.5)*g.ch+4,class:'coord'});el.textContent=r+1;group('coords-layer').append(el);}
+ for(let c=0;c<g.cols;c++){const el=svg('text',{x:g.ox+(c+.5)*g.cw,y:g.oy-12,class:'coord'});el.textContent=letters(c+(g.offset_x||0));group('coords-layer').append(el);}
+ for(let r=0;r<g.rows;r++){const el=svg('text',{x:g.ox-16,y:g.oy+(r+.5)*g.ch+4,class:'coord'});el.textContent=r+1+(g.offset_y||0);group('coords-layer').append(el);}
+ for(const label of state.map.labels||[]){const [x,y]=coords(g,label.x,label.y),el=svg('text',{x,y,fill:'#ddd9cb','font-size':Math.min(40,Math.max(20,g.cols*.65)),'text-anchor':'middle','paint-order':'stroke',stroke:'#222','stroke-width':3});label.text.split(' / ').forEach((part,i)=>{const span=svg('tspan',{x,dy:i?42:0});span.textContent=part;el.append(span);});group('walls').append(el);}
+ for(const line of state.map.lines||[]){const [x1,y1]=coords(g,...line.from),[x2,y2]=coords(g,...line.to);group('walls').append(svg('line',{x1,y1,x2,y2,stroke:line.kind==='low_wall'?'#ada792':'#65b8db','stroke-width':4,'stroke-dasharray':line.kind==='low_wall'?'':'10 7'}));}
  visibility();
 }
 function visibility(){group('grid-layer').style.display=showGrid&&!current?.grid?.baked?'':'none';group('coords-layer').style.display=showCoords?'':'none';}
@@ -31,7 +33,7 @@ function detail(id){
  selected=id;const t=current?.tokens.find(t=>t.id===id);$('detail').replaceChildren();
  if(!t){$('detail').textContent='Token anklicken für Details.';return;}
  const title=document.createElement('strong');title.textContent=t.name;
- $('detail').append(title,document.createTextNode(`${t.square} · ${t.size}×${t.size} Felder`),document.createElement('br'),document.createTextNode(t.statuses.length?t.statuses.join(', '):'Kein Status'));
+ $('detail').append(title,document.createTextNode(`${t.display_square} · ${t.size}×${t.size} Felder`),document.createElement('br'),document.createTextNode(t.statuses.length?t.statuses.join(', '):'Kein Status'));
  if(t.hp)$('detail').append(document.createElement('br'),document.createTextNode('HP '+t.hp));
  if(t.elevation_ft)$('detail').append(document.createElement('br'),document.createTextNode('Höhe '+t.elevation_ft+' ft'));
 }
@@ -42,7 +44,7 @@ function tokens(state){
   let node=nodes.get(t.id);if(!node){node=svg('g',{class:'token',tabindex:0,role:'button'});node.addEventListener('click',()=>detail(t.id));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();detail(t.id);}});group('tokens').append(node);nodes.set(t.id,node);}
   const statuses=t.statuses,r=Math.min(state.grid.cw,state.grid.ch)*t.size*.42;
   node.setAttribute('class','token'+(statuses.some(s=>['hidden','invisible','stealth'].includes(s))?' hidden-token':'')+(statuses.includes('dead')?' dead':''));
-  node.setAttribute('aria-label',t.name+' '+t.square);
+  node.setAttribute('aria-label',t.name+' '+t.display_square);
   node.style.transform=`translate(${state.grid.ox+(t.x+t.size/2)*state.grid.cw}px,${state.grid.oy+(t.y+t.size/2)*state.grid.ch}px)`;
   const signature=JSON.stringify([t.label,t.icon,t.faction,t.size,statuses,state.grid.cw,state.grid.ch]);
   if(node.dataset.signature!==signature){
@@ -52,16 +54,16 @@ function tokens(state){
    if(statuses.includes('dead'))node.append(svg('path',{d:`M ${-r*.6} ${-r*.6} L ${r*.6} ${r*.6} M ${r*.6} ${-r*.6} L ${-r*.6} ${r*.6}`,class:'cross'}));
    else if(statuses.length){node.append(svg('circle',{cx:r*.7,cy:-r*.7,r:9,fill:statuses.includes('down')?'#d88b38':'#6a587e'}));const b=svg('text',{x:r*.7,y:-r*.7+4,class:'badge'});b.textContent=statuses.includes('down')?'!':'•';node.append(b);}
   }
-  const row=document.createElement('button');row.className='roster-token';const icon=document.createElement('img');icon.src=`assets/tokens/${t.icon}.svg`;icon.alt='';const name=document.createElement('span');name.textContent=t.name;const pos=document.createElement('small');pos.textContent=t.square;row.append(icon,name,pos);row.onclick=()=>detail(t.id);$('roster').append(row);
+  const row=document.createElement('button');row.className='roster-token';const icon=document.createElement('img');icon.src=`assets/tokens/${t.icon}.svg`;icon.alt='';const name=document.createElement('span');name.textContent=t.name;const pos=document.createElement('small');pos.textContent=t.display_square;row.append(icon,name,pos);row.onclick=()=>detail(t.id);$('roster').append(row);
  }
  detail(selected);
 }
 function render(raw){
  $('history-live').disabled=mode==='live';
  const next=normalize(raw),newScene=sceneId!==next.scene_id;current=next;sceneId=next.scene_id;
- $('title').textContent=next.title;$('mode').textContent=mode==='live'?'LIVE':mode==='history'?'VERLAUF · GESPEICHERTER STAND':mode==='demo'?'DEMO · KEIN KAMPAGNENSTAND':'LOKALE VORSCHAU';
+ $('title').textContent=next.title;$('mode').textContent=mode==='live'?'LIVE':mode==='history'?'VERLAUF · GESPEICHERTER STAND':mode==='atlas'?'ATLAS · LEERE BASISKARTE':mode==='demo'?'DEMO · KEIN KAMPAGNENSTAND':'LOKALE VORSCHAU';
  $('empty').hidden=next.active;$('sizer').hidden=!next.active;
- $('meta').textContent=next.active?`${next.grid.cols} × ${next.grid.rows} · ${next.grid.feet} ft / Feld\nStand: ${next.generated_at?new Date(next.generated_at).toLocaleString():'—'}`:'Keine aktive Begegnung.';
+ $('meta').textContent=next.active?`${next.grid.cols} × ${next.grid.rows} · ${next.grid.feet} ft / Feld${next.grid.offset_x||next.grid.offset_y?' · globaler Ausschnitt':''}\nStand: ${next.generated_at?new Date(next.generated_at).toLocaleString():'—'}`:'Keine aktive Begegnung.';
  if(!next.active){$('roster').replaceChildren();$('detail').textContent='Token anklicken für Details.';return;}
  if(newScene){nodes.clear();group('tokens').replaceChildren();selected='';layoutKey='';}
  $('canvas').setAttribute('viewBox',`0 0 ${next.map.width} ${next.map.height}`);
@@ -132,6 +134,23 @@ $('history-more').onclick=async()=>{
  catch(e){if(requestGeneration===generation)$('history-status').textContent=e.message;}
  finally{if(requestGeneration===generation){historyBusy=false;historyControls();}}
 };
+
+let atlasCatalogue=null;
+async function openAtlas(){
+ const requestGeneration=++generation;mode='atlas';historyBusy=false;historyControls();clearTimeout(timer);connection('Atlas laden …');
+ try{
+  if(!atlasCatalogue){const r=await fetch(RAW+'atlas/index.json?t='+Date.now());if(!r.ok)throw Error('Atlas nicht verfügbar');atlasCatalogue=await r.json();
+   $('atlas-select').replaceChildren();for(const a of atlasCatalogue.maps){const o=document.createElement('option');o.value=a.id;o.textContent=a.title;$('atlas-select').append(o);}
+  }
+  const id=$('atlas-select').value||atlasCatalogue.maps[0].id,variant=$('atlas-variant').value;
+  const r=await fetch(RAW+'atlas/'+id+'.'+variant+'.json?t='+Date.now());if(!r.ok)throw Error('Karte nicht verfügbar');const raw=await r.json();
+  if(mode!=='atlas'||generation!==requestGeneration)return;render(raw);$('demo').textContent='Live';$('error').textContent='';
+  connection(variant==='planned'?'Atlas · Ausbauplan':'Atlas · Basiskarte');
+  const entry=atlasCatalogue.maps.find(a=>a.id===id);$('atlas-note').textContent=entry?.note||'Leere Basiskarte; aktuelle Wachen und Figuren setzt der GM.';
+ }catch(e){if(mode==='atlas'&&generation===requestGeneration){connection('Atlas nicht verfügbar',true);$('error').textContent=e.message;}}
+}
+$('atlas-open').onclick=openAtlas;$('atlas-select').onchange=()=>{if(atlasCatalogue)openAtlas();};$('atlas-variant').onchange=()=>{if(atlasCatalogue)openAtlas();};
+
 $('demo').onclick=()=>mode==='live'?demo():live();$('empty-demo').onclick=demo;$('live').onclick=live;
 $('preview').onclick=()=>{try{const raw=JSON.parse($('json').value);normalize(raw);mode='preview';historyBusy=false;historyControls();generation++;clearTimeout(timer);render(raw);connection('Lokale Vorschau');$('demo').textContent='Live';$('error').textContent='';}catch(e){$('error').textContent=e.message;}};
 $('grid').onclick=()=>{showGrid=!showGrid;$('grid').setAttribute('aria-pressed',showGrid);visibility();};$('coords').onclick=()=>{showCoords=!showCoords;$('coords').setAttribute('aria-pressed',showCoords);visibility();};
@@ -141,4 +160,5 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeou
 let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(fit,80);}).observe($('viewport'));
 historyControls();
 if(new URLSearchParams(location.search).has('demo'))demo();else poll();
+
 

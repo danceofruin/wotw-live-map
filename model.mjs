@@ -1,5 +1,5 @@
 export const ICONS = ['styke','vesper','valeria','ogre','soldier','boggard','undead','mage','beast','unknown'];
-export const MARKERS = ['crate','tree','rock','fire','door','stairs','pillar','chest'];
+export const MARKERS = ['crate','tree','rock','fire','door','stairs','pillar','chest','table'];
 export const COLORS = {party:'#487fc4',ally:'#4b9b73',hostile:'#c95559',neutral:'#c99d52',unknown:'#956fc1'};
 export function letters(n) { let s=''; for(n++;n>0;n=Math.floor((n-1)/26))s=String.fromCharCode(65+(n-1)%26)+s; return s; }
 export function square(value,cols,rows,size=1) {
@@ -24,7 +24,8 @@ export function normalize(raw) {
  if(!raw.active)return common;
  const legacy=raw.schema_version===1,g=legacy?raw.map?.grid:raw.grid;
  if(!g)throw Error('Raster fehlt.');
- const cols=integer(legacy?g.columns:g.cols,1,100,'Spalten'),rows=integer(g.rows,1,100,'Zeilen');
+ const cols=integer(legacy?g.columns:g.cols,1,400,'Spalten'),rows=integer(g.rows,1,400,'Zeilen');
+ const offset_x=integer(g.offset_x??0,0,100000,'Globaler Ursprung X'),offset_y=integer(g.offset_y??0,0,100000,'Globaler Ursprung Y');
  const cw=finite(legacy?g.cell_px?.width:64,1,1024,'Feldbreite'),ch=finite(legacy?g.cell_px?.height:64,1,1024,'Feldhöhe');
  const ox=finite(legacy?g.origin_px?.x:32,0,10000,'Ursprung X'),oy=finite(legacy?g.origin_px?.y:32,0,10000,'Ursprung Y');
  const width=finite(legacy?raw.map?.width_px:cols*cw+64,1,120000,'Breite'),height=finite(legacy?raw.map?.height_px:rows*ch+64,1,120000,'Höhe');
@@ -33,10 +34,10 @@ export function normalize(raw) {
  const ids=new Set(),tokens=(raw.tokens||[]).filter(t=>t.visible!==false).map(t=>{
   if(!t||typeof t.id!=='string'||!t.id||ids.has(t.id))throw Error('Token-ID fehlt oder doppelt.');ids.add(t.id);
   const size=integer(t.size??1,1,20,'Tokengröße'),p=square(t.square,cols,rows,size);
-  return {...p,id:t.id,name:text(t.name,t.id),label:text(t.label,t.id).slice(0,12),size,icon:ICONS.includes(t.icon)?t.icon:ICONS.includes(t.id)?t.id:'unknown',faction:COLORS[t.faction]?t.faction:'unknown',statuses:Array.isArray(t.statuses)?t.statuses.filter(s=>typeof s==='string').slice(0,12):[],hp:text(t.hp),elevation_ft:finite(t.elevation_ft??0,-10000,10000,'Höhe')};
+  return {...p,display_square:letters(p.x+offset_x)+(p.y+offset_y+1),id:t.id,name:text(t.name,t.id),label:text(t.label,t.id).slice(0,12),size,icon:ICONS.includes(t.icon)?t.icon:ICONS.includes(t.id)?t.id:'unknown',faction:COLORS[t.faction]?t.faction:'unknown',statuses:Array.isArray(t.statuses)?t.statuses.filter(s=>typeof s==='string').slice(0,12):[],hp:text(t.hp),elevation_ft:finite(t.elevation_ft??0,-10000,10000,'Höhe')};
  });
  const areas=(map.terrain||[]).filter(a=>a.visible!==false).map(a=>{
-  if(!['floor','water','grass','rubble','void','road'].includes(a.type))throw Error('Unbekanntes Gelände.');
+  if(!['floor','water','grass','forest','rubble','void','road'].includes(a.type))throw Error('Unbekanntes Gelände.');
   const x=finite(a.x,0,cols,'Gelände X'),y=finite(a.y,0,rows,'Gelände Y'),w=finite(a.w,.1,cols-x,'Geländebreite'),h=finite(a.h,.1,rows-y,'Geländehöhe');return {type:a.type,x,y,w,h};
  });
  const walls=(map.walls||[]).filter(a=>a.visible!==false).map(a=>{
@@ -46,6 +47,9 @@ export function normalize(raw) {
   if(!MARKERS.includes(a.type))throw Error('Unbekannter Marker.');
   const x=finite(a.x,0,cols,'Marker X'),y=finite(a.y,0,rows,'Marker Y');return {type:a.type,x,y,w:finite(a.w??1,.1,cols-x,'Markerbreite'),h:finite(a.h??1,.1,rows-y,'Markerhöhe'),rotation:finite(a.rotation??0,-360,360,'Drehung'),open:a.open===true};
  });
- if(areas.length+walls.length+markers.length>2000)throw Error('Zu viele Geländeobjekte.');
- return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers}};
+ const lines=(map.lines||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Linienpunkt fehlt');return [finite(p[0],0,cols,'Linie X'),finite(p[1],0,rows,'Linie Y')];};return {from:point(a.from),to:point(a.to),kind:a.kind==='low_wall'?'low_wall':'service',label:text(a.label)};});
+ const labels=(map.labels||[]).map(a=>({x:finite(a.x,0,cols,'Text X'),y:finite(a.y,0,rows,'Text Y'),text:text(a.text)}));
+ if(areas.length+walls.length+markers.length+lines.length+labels.length>4000)throw Error('Zu viele Geländeobjekte.');
+ return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,offset_x,offset_y,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers,lines,labels}};
 }
+
