@@ -82,6 +82,7 @@ async function poll(){
 async function demo(){mode='demo';historyBusy=false;historyControls();const requestGeneration=++generation;clearTimeout(timer);try{const r=await fetch('demo.json');if(!r.ok)throw Error('Demo konnte nicht geladen werden.');const raw=await r.json();if(mode!=='demo'||generation!==requestGeneration)return;render(raw);connection('Demo · lokal');$('demo').textContent='Live';}catch(e){if(mode==='demo'&&generation===requestGeneration)$('error').textContent=e.message;}}
 function live(){mode='live';historyBusy=false;historyControls();generation++;current=null;clearTimeout(timer);$('demo').textContent='Demo';connection('Verbinden …');poll();}
 function historyControls(){
+ if(mode!=='history'){$('history-select').value='';$('history-status').textContent='Älter öffnet den letzten gespeicherten Kampfstand.';}
  $('history-older').disabled=historyBusy||(mode==='history'&&historyIndex>=0&&!history.hasOlder(historyIndex));
  $('history-newer').disabled=historyBusy||mode!=='history'||historyIndex<0||!history.hasNewer(historyIndex);
  $('history-select').disabled=historyBusy||!history.entries.length;
