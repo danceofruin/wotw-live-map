@@ -1,12 +1,14 @@
 import {normalize,letters,COLORS} from './model.mjs';
+import {MapHistory,snapshotAsset} from './history.mjs';
 const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const svg=(tag,attrs={})=>{const el=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el;};
 let current=null,mode='live',zoom=1,showGrid=true,showCoords=true,timer,busy=false,layoutKey='',sceneId='',selected='',generation=0;
-const nodes=new Map();
+const nodes=new Map(),history=new MapHistory((...args)=>fetch(...args));
+let historyIndex=-1,historyEntry=null,historyBusy=false;
 for(const id of ['terrain','grid-layer','walls','coords-layer','tokens'])$('canvas').append(svg('g',{id}));
 const group=id=>$('canvas').querySelector('#'+id);
-const asset=path=>path.startsWith('https://')?path:RAW+path;
+const asset=path=>mode==='history'&&historyEntry?snapshotAsset(path,historyEntry.sha):path.startsWith('https://')?path:RAW+path;
 function connection(message,error=false){$('connection').textContent=message;$('connection').classList.toggle('error',error);}
 function scale(){if(!current?.active)return;$('stage').style.width=current.map.width+'px';$('stage').style.height=current.map.height+'px';$('stage').style.transform=`scale(${zoom})`;$('sizer').style.width=current.map.width*zoom+'px';$('sizer').style.height=current.map.height*zoom+'px';}
 function fit(){if(!current?.active)return;zoom=Math.max(.05,Math.min(1,($('viewport').clientWidth-26)/current.map.width,($('viewport').clientHeight-26)/current.map.height));scale();}
@@ -55,8 +57,9 @@ function tokens(state){
  detail(selected);
 }
 function render(raw){
+ $('history-live').disabled=mode==='live';
  const next=normalize(raw),newScene=sceneId!==next.scene_id;current=next;sceneId=next.scene_id;
- $('title').textContent=next.title;$('mode').textContent=mode==='live'?'LIVE':mode==='demo'?'DEMO · KEIN KAMPAGNENSTAND':'LOKALE VORSCHAU';
+ $('title').textContent=next.title;$('mode').textContent=mode==='live'?'LIVE':mode==='history'?'VERLAUF · GESPEICHERTER STAND':mode==='demo'?'DEMO · KEIN KAMPAGNENSTAND':'LOKALE VORSCHAU';
  $('empty').hidden=next.active;$('sizer').hidden=!next.active;
  $('meta').textContent=next.active?`${next.grid.cols} × ${next.grid.rows} · ${next.grid.feet} ft / Feld\nStand: ${next.generated_at?new Date(next.generated_at).toLocaleString():'—'}`:'Keine aktive Begegnung.';
  if(!next.active){$('roster').replaceChildren();$('detail').textContent='Token anklicken für Details.';return;}
@@ -76,13 +79,65 @@ async function poll(){
  }catch(e){if(mode==='live'&&requestGeneration===generation){connection('Verbindung unterbrochen',true);$('error').textContent=e.message;}}
  finally{busy=false;if(mode==='live'&&!document.hidden)timer=setTimeout(poll,2000);}
 }
-async function demo(){mode='demo';generation++;clearTimeout(timer);try{const r=await fetch('demo.json');if(!r.ok)throw Error('Demo konnte nicht geladen werden.');render(await r.json());connection('Demo · lokal');$('demo').textContent='Live';}catch(e){$('error').textContent=e.message;}}
-function live(){mode='live';generation++;current=null;clearTimeout(timer);$('demo').textContent='Demo';connection('Verbinden …');poll();}
+async function demo(){mode='demo';historyBusy=false;historyControls();const requestGeneration=++generation;clearTimeout(timer);try{const r=await fetch('demo.json');if(!r.ok)throw Error('Demo konnte nicht geladen werden.');const raw=await r.json();if(mode!=='demo'||generation!==requestGeneration)return;render(raw);connection('Demo · lokal');$('demo').textContent='Live';}catch(e){if(mode==='demo'&&generation===requestGeneration)$('error').textContent=e.message;}}
+function live(){mode='live';historyBusy=false;historyControls();generation++;current=null;clearTimeout(timer);$('demo').textContent='Demo';connection('Verbinden …');poll();}
+function historyControls(){
+ $('history-older').disabled=historyBusy||(mode==='history'&&historyIndex>=0&&!history.hasOlder(historyIndex));
+ $('history-newer').disabled=historyBusy||mode!=='history'||historyIndex<0||!history.hasNewer(historyIndex);
+ $('history-select').disabled=historyBusy||!history.entries.length;
+ $('history-more').disabled=historyBusy||history.done;
+ $('history-live').disabled=mode==='live';
+}
+function historyOptions(){
+ $('history-select').replaceChildren();
+ const prompt=document.createElement('option');prompt.value='';prompt.textContent='Kartenstand auswählen';$('history-select').append(prompt);
+ for(const {entry,index} of history.visible()){
+  const opt=document.createElement('option');opt.value=String(index);
+  const cached=history.cache.get(entry.sha);
+  const date=entry.date?new Date(entry.date).toLocaleString():'';
+  opt.textContent=`${date} · ${cached?.title||entry.message}`;
+  $('history-select').append(opt);
+ }
+ $('history-select').value=mode==='history'?String(historyIndex):'';
+ historyControls();
+}
+async function showHistory(index,direction=1){
+ const requestGeneration=++generation;
+ if(mode!=='history'){historyIndex=-1;historyEntry=null;}
+ mode='history';clearTimeout(timer);historyBusy=true;historyControls();
+ connection('Kartenstand laden …');$('history-status').textContent='Verlauf wird geladen …';
+ try{
+  const found=await history.load(index,direction);
+  if(mode!=='history'||generation!==requestGeneration)return;
+  if(!found){
+   $('history-status').textContent=historyIndex<0?'Noch keine gespeicherten Kampfkarten.':direction<0?'Neuester gespeicherter Kartenstand.':'Ältester gespeicherter Kartenstand.';
+   if(historyIndex<0)live();else connection('Verlauf · gespeichert');
+   return;
+  }
+  normalize(found.raw);historyIndex=found.index;historyEntry=found.entry;
+  render(found.raw);$('demo').textContent='Live';$('error').textContent='';
+  $('history-status').textContent=new Date(found.entry.date).toLocaleString()+' · '+found.entry.message;
+  connection('Verlauf · gespeichert');
+ }catch(e){if(mode==='history'&&generation===requestGeneration){connection('Verlauf nicht verfügbar',true);$('history-status').textContent=e.message;}}
+ finally{if(generation===requestGeneration){historyBusy=false;historyOptions();}}
+}
+$('history-older').onclick=()=>showHistory(mode==='history'?Math.max(0,historyIndex+1):0,1);
+$('history-newer').onclick=()=>showHistory(historyIndex-1,-1);
+$('history-select').onchange=()=>{const value=$('history-select').value;if(value!=='')showHistory(Number(value),1);};
+$('history-live').onclick=live;
+$('history-more').onclick=async()=>{
+ const requestGeneration=generation;historyBusy=true;historyControls();
+ try{await history.more();if(requestGeneration===generation)historyOptions();}
+ catch(e){if(requestGeneration===generation)$('history-status').textContent=e.message;}
+ finally{if(requestGeneration===generation){historyBusy=false;historyControls();}}
+};
 $('demo').onclick=()=>mode==='live'?demo():live();$('empty-demo').onclick=demo;$('live').onclick=live;
-$('preview').onclick=()=>{try{const raw=JSON.parse($('json').value);normalize(raw);mode='preview';generation++;clearTimeout(timer);render(raw);connection('Lokale Vorschau');$('demo').textContent='Live';$('error').textContent='';}catch(e){$('error').textContent=e.message;}};
+$('preview').onclick=()=>{try{const raw=JSON.parse($('json').value);normalize(raw);mode='preview';historyBusy=false;historyControls();generation++;clearTimeout(timer);render(raw);connection('Lokale Vorschau');$('demo').textContent='Live';$('error').textContent='';}catch(e){$('error').textContent=e.message;}};
 $('grid').onclick=()=>{showGrid=!showGrid;$('grid').setAttribute('aria-pressed',showGrid);visibility();};$('coords').onclick=()=>{showCoords=!showCoords;$('coords').setAttribute('aria-pressed',showCoords);visibility();};
 $('fit').onclick=fit;$('minus').onclick=()=>{zoom=Math.max(.05,zoom/1.25);scale();};$('plus').onclick=()=>{zoom=Math.min(4,zoom*1.25);scale();};
 $('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{connection('Vollbild nicht verfügbar',true);}};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(timer);else if(mode==='live')poll();});
 let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(fit,80);}).observe($('viewport'));
+historyControls();
 if(new URLSearchParams(location.search).has('demo'))demo();else poll();
+

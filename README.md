@@ -8,6 +8,12 @@ The page reads public `state.json` every two seconds while visible. Token moveme
 
 Open the page or the HUD's Live-Karte button. Click **Demo** to test the standalone training room without changing live campaign state. Raster, coordinates, zoom and fullscreen are local controls. Click tokens for details. The JSON preview is local and never writes to GitHub. The live view is read-only: the GM owns accepted movement.
 
+## Kartenverlauf
+
+**Älter** opens the latest saved active map, then steps backward through published snapshots. **Neuer** steps toward the latest saved map. Use the selector to jump directly, **Weitere Stände laden** to load another history page, and **Zur Live-Karte** to resume live polling. History mode pauses polling, so a live update cannot replace the map being inspected. Idle/end-of-encounter snapshots are skipped. Dates in the selector identify publication time, not campaign calendar time.
+
+The client reads the public GitHub commit history of `state.json` and fetches each snapshot at its immutable commit SHA. Repository-relative background assets use the same commit. No extra archive writes or private campaign retrieval are needed. This is the history of published updates, not an action-by-action replay. The public GitHub API's unauthenticated request limit can temporarily prevent loading the history list; live polling remains available.
+
 ## GM update contract — schema 2
 
 Fetch current public `state.json`, then write a complete player-safe replacement only after adjudication. Use the GitHub contents update with the fetched file SHA to avoid concurrent overwrite. Preserve all fields that did not change. Change `revision` every time the public state changes and use an ISO UTC `generated_at`. No visible change means no commit. Encounter end: `active:false`, `map:null`, `tokens:[]`, new revision.
@@ -56,3 +62,4 @@ Every byte in this repository is PUBLIC. Only accepted player-visible geometry a
 - `demo.json`: explicitly non-canonical standalone example.
 - `assets/tokens/`, `assets/markers/`: reusable SVG graphics.
 - `maps/`: optional player-safe background images.
+
