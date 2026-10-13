@@ -143,7 +143,7 @@ async function openAtlas(){
    $('atlas-select').replaceChildren();for(const a of atlasCatalogue.maps){const o=document.createElement('option');o.value=a.id;o.textContent=a.title;$('atlas-select').append(o);}
   }
   const id=$('atlas-select').value||atlasCatalogue.maps[0].id,variant=$('atlas-variant').value;
-  const r=await fetch(RAW+'atlas/'+id+'.'+variant+'.json?t='+Date.now());if(!r.ok)throw Error('Karte nicht verfügbar');const raw=await r.json();
+  const r=await fetch(RAW+(atlasCatalogue.asset_root||'atlas/prepared-v1/')+id+'.'+variant+'.json');if(!r.ok)throw Error('Karte nicht verfügbar');const raw=await r.json();
   if(mode!=='atlas'||generation!==requestGeneration)return;render(raw);$('demo').textContent='Live';$('error').textContent='';
   connection(variant==='planned'?'Atlas · Ausbauplan':'Atlas · Basiskarte');
   const entry=atlasCatalogue.maps.find(a=>a.id===id);$('atlas-note').textContent=entry?.note||'Leere Basiskarte; aktuelle Wachen und Figuren setzt der GM.';
