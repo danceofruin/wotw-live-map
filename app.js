@@ -1,4 +1,4 @@
-import {normalize,letters,COLORS} from './model.mjs';
+import {normalize,letters,COLORS} from './model.mjs?v=5';
 import {MapHistory,snapshotAsset} from './history.mjs';
 const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
@@ -21,7 +21,7 @@ function layout(state){
  for(let c=0;c<=g.cols;c++){const x=g.ox+c*g.cw;group('grid-layer').append(svg('line',{x1:x,y1:g.oy,x2:x,y2:g.oy+g.rows*g.ch,class:'gridline'}));}
  for(let r=0;r<=g.rows;r++){const y=g.oy+r*g.ch;group('grid-layer').append(svg('line',{x1:g.ox,y1:y,x2:g.ox+g.cols*g.cw,y2:y,class:'gridline'}));}
  for(const wall of walls){const [x1,y1]=coords(g,...wall.from),[x2,y2]=coords(g,...wall.to);group('walls').append(svg('line',{x1,y1,x2,y2,class:'wall'}));}
- for(const m of markers){const [x,y]=coords(g,m.x,m.y),w=m.w*g.cw,h=m.h*g.ch;const el=svg('image',{href:`assets/markers/${m.type}.svg`,x,y,width:w,height:h,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1});group('walls').append(el);}
+ for(const m of markers){const [x,y]=coords(g,m.x,m.y),w=m.w*g.cw,h=m.h*g.ch;const el=m.type==='door'?svg('rect',{x,y,width:w,height:h,fill:'#b57449',stroke:'#d1ad83','stroke-width':1,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1}):svg('image',{href:`assets/markers/${m.type}.svg`,x,y,width:w,height:h,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1});group('walls').append(el);}
  for(let c=0;c<g.cols;c++){const el=svg('text',{x:g.ox+(c+.5)*g.cw,y:g.oy-12,class:'coord'});el.textContent=letters(c+(g.offset_x||0));group('coords-layer').append(el);}
  for(let r=0;r<g.rows;r++){const el=svg('text',{x:g.ox-16,y:g.oy+(r+.5)*g.ch+4,class:'coord'});el.textContent=r+1+(g.offset_y||0);group('coords-layer').append(el);}
  for(const label of state.map.labels||[]){const [x,y]=coords(g,label.x,label.y),el=svg('text',{x,y,fill:'#ddd9cb','font-size':Math.min(40,Math.max(20,g.cols*.65)),'text-anchor':'middle','paint-order':'stroke',stroke:'#222','stroke-width':3});label.text.split(' / ').forEach((part,i)=>{const span=svg('tspan',{x,dy:i?42:0});span.textContent=part;el.append(span);});group('walls').append(el);}
