@@ -73,4 +73,9 @@ For encounter crops, retain global frame metadata: `grid.offset_x`/`offset_y` ar
 
 The deployed client uses immutable-named `app-atlas-v3.js` / `model-atlas-v3.mjs` copies of the app/model sources, preventing stale model code from breaking new atlas fields. Future client changes must regenerate and version these paired deployment files.
 
-Atlas display snapshots use immutable `atlas/prepared-v1/` paths selected by the catalogue `asset_root`; this avoids serving older geometry/labels during raw-file cache turnover. Increment that asset directory for a future prepared base revision.
+Atlas display snapshots use immutable `atlas/prepared-v2/` paths selected by the catalogue `asset_root`; this avoids serving older geometry/labels during raw-file cache turnover. Increment that asset directory for a future prepared base revision.
+
+
+
+### Geometry repair · 2026-10-14
+Floor surfaces use clipped polygons, preserving diagonal edges without row-sampling gaps. Doors are explicit endpoint segments in `map.doors`, aligned to cut wall openings; ordinary single doors are 5 ft wide. Open arches remain unobstructed. The bedroom opens north to the courtyard, the bath anteroom uses its diagonal doorway, and the six cells have physical partitions. The already discovered library access and conditional pocket-vault portal are visible; a portal does not imply ordinary traversable adjacency. Current and planned construction remain separate.

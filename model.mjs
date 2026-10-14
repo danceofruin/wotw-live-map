@@ -38,18 +38,21 @@ export function normalize(raw) {
  });
  const areas=(map.terrain||[]).filter(a=>a.visible!==false).map(a=>{
   if(!['floor','water','grass','forest','rubble','void','road'].includes(a.type))throw Error('Unbekanntes Gelände.');
+  if(Array.isArray(a.points)){if(a.points.length<3||a.points.length>1000)throw Error('Ungültiges Bodenpolygon');return {type:a.type,points:a.points.map(p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Polygonpunkt fehlt');return [finite(p[0],0,cols,'Boden X'),finite(p[1],0,rows,'Boden Y')];})};}
   const x=finite(a.x,0,cols,'Gelände X'),y=finite(a.y,0,rows,'Gelände Y'),w=finite(a.w,.1,cols-x,'Geländebreite'),h=finite(a.h,.1,rows-y,'Geländehöhe');return {type:a.type,x,y,w,h};
  });
  const walls=(map.walls||[]).filter(a=>a.visible!==false).map(a=>{
   const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Wandpunkt fehlt.');return [finite(p[0],0,cols,'Wand X'),finite(p[1],0,rows,'Wand Y')];};return {from:point(a.from),to:point(a.to)};
  });
+ const doors=(map.doors||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Türpunkt fehlt');return [finite(p[0],0,cols,'Tür X'),finite(p[1],0,rows,'Tür Y')];};return {id:text(a.id),from:point(a.from),to:point(a.to),open:a.open===true,kind:a.kind==='portal'?'portal':'door',material:['wood','iron','steel','stone'].includes(a.material)?a.material:'wood'};});
  const markers=(map.markers||[]).filter(a=>a.visible!==false).map(a=>{
   if(!MARKERS.includes(a.type))throw Error('Unbekannter Marker.');
   const x=finite(a.x,0,cols,'Marker X'),y=finite(a.y,0,rows,'Marker Y');return {type:a.type,x,y,w:finite(a.w??1,.1,cols-x,'Markerbreite'),h:finite(a.h??1,.1,rows-y,'Markerhöhe'),rotation:finite(a.rotation??0,-360,360,'Drehung'),open:a.open===true};
  });
  const lines=(map.lines||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Linienpunkt fehlt');return [finite(p[0],0,cols,'Linie X'),finite(p[1],0,rows,'Linie Y')];};return {from:point(a.from),to:point(a.to),kind:a.kind==='low_wall'?'low_wall':'service',label:text(a.label)};});
  const labels=(map.labels||[]).map(a=>({x:finite(a.x,0,cols,'Text X'),y:finite(a.y,0,rows,'Text Y'),w:finite(a.w??Math.min(4,cols),.1,cols,'Textbreite'),text:text(a.text)}));
- if(areas.length+walls.length+markers.length+lines.length+labels.length>4000)throw Error('Zu viele Geländeobjekte.');
- return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,offset_x,offset_y,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers,lines,labels}};
+ if(areas.length+walls.length+markers.length+doors.length+lines.length+labels.length>4000)throw Error('Zu viele Geländeobjekte.');
+ return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,offset_x,offset_y,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers,doors,lines,labels}};
 }
+
 
