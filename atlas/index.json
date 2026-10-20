@@ -15,7 +15,7 @@
     {
       "id": "horn-level-1",
       "title": "Horn · Ebene 1",
-      "note": "Atlas-Grundriss mit beiden fertiggestellten Fallgattern. Hochgezogene Gatter in der leeren Basiskarte; die Begegnung setzt ihren tatsächlichen Zustand."
+      "note": "Eingang: zwei positionsfeste Fallgatter, akustischer Alarm als Symbol, je sechs Schießscharten, Bedienhebel und Einrichtung. Props sind schematisch; kein festgelegter Alarmradius oder Deckungswert."
     },
     {
       "id": "horn-level-2",
@@ -33,6 +33,6 @@
       "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
     }
   ],
-  "asset_root": "atlas/prepared-v3/",
-  "geometry_revision": 3
+  "asset_root": "atlas/prepared-v4/",
+  "geometry_revision": 4
 }
