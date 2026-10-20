@@ -1,5 +1,5 @@
 export const ICONS = ['styke','vesper','valeria','ogre','soldier','boggard','undead','mage','beast','unknown'];
-export const MARKERS = ['crate','tree','rock','fire','door','stairs','pillar','chest','table'];
+export const MARKERS = ['crate','tree','rock','fire','door','stairs','pillar','chest','table','bed','barrel','shelf','rack','lever','anvil','alarm'];
 export const COLORS = {party:'#487fc4',ally:'#4b9b73',hostile:'#c95559',neutral:'#c99d52',unknown:'#956fc1'};
 export function letters(n) { let s=''; for(n++;n>0;n=Math.floor((n-1)/26))s=String.fromCharCode(65+(n-1)%26)+s; return s; }
 export function square(value,cols,rows,size=1) {
@@ -50,9 +50,9 @@ export function normalize(raw) {
   return {id:text(a.id),from:point(a.from),to:point(a.to),state,open:['open','raised','destroyed'].includes(state),kind,material:['wood','iron','steel','stone'].includes(a.material)?a.material:'wood'};});
  const markers=(map.markers||[]).filter(a=>a.visible!==false).map(a=>{
   if(!MARKERS.includes(a.type))throw Error('Unbekannter Marker.');
-  const x=finite(a.x,0,cols,'Marker X'),y=finite(a.y,0,rows,'Marker Y');return {type:a.type,x,y,w:finite(a.w??1,.1,cols-x,'Markerbreite'),h:finite(a.h??1,.1,rows-y,'Markerhöhe'),rotation:finite(a.rotation??0,-360,360,'Drehung'),open:a.open===true};
+  const x=finite(a.x,0,cols,'Marker X'),y=finite(a.y,0,rows,'Marker Y');return {type:a.type,x,y,w:finite(a.w??1,.1,cols-x,'Markerbreite'),h:finite(a.h??1,.1,rows-y,'Markerhöhe'),rotation:finite(a.rotation??0,-360,360,'Drehung'),open:a.open===true,label:text(a.label)};
  });
- const lines=(map.lines||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Linienpunkt fehlt');return [finite(p[0],0,cols,'Linie X'),finite(p[1],0,rows,'Linie Y')];};return {from:point(a.from),to:point(a.to),kind:a.kind==='low_wall'?'low_wall':'service',label:text(a.label)};});
+ const lines=(map.lines||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Linienpunkt fehlt');return [finite(p[0],0,cols,'Linie X'),finite(p[1],0,rows,'Linie Y')];};return {from:point(a.from),to:point(a.to),kind:['low_wall','arrow_slit'].includes(a.kind)?a.kind:'service',label:text(a.label)};});
  const labels=(map.labels||[]).map(a=>({x:finite(a.x,0,cols,'Text X'),y:finite(a.y,0,rows,'Text Y'),w:finite(a.w??Math.min(4,cols),.1,cols,'Textbreite'),text:text(a.text)}));
  if(areas.length+walls.length+markers.length+doors.length+lines.length+labels.length>4000)throw Error('Zu viele Geländeobjekte.');
  return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,offset_x,offset_y,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers,doors,lines,labels}};

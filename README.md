@@ -87,3 +87,7 @@ The v5 app/model pair loads `atlas/prepared-v3/`. Registered Horn combat geometr
 Schema2 `map.doors` accepts `kind:"portcullis"`, stable `id`, fixed `from`/`to`, metal `material` and `state:"raised"|"lowered"|"destroyed"|"under_construction"`. State controls appearance, not endpoints, corridor shape or terrain. A lowered gate draws a thin rail with bars; raised/destroyed/unfinished gates have distinct broken-line styles and tooltip. Existing doors/portals and legacy `open` remain compatible. Geometry alone does not adjudicate movement, cover or LOS.
 
 `?atlas=horn-level-1&view=entry` opens the empty registered entry preview. The atlas view selector offers the full floor or entrance crop; neither changes the active live encounter. The empty current floor has built gates raised; the private accepted-scene fixture checks both lowered without resuming combat.
+
+### Atlas-Eingang und Props (Client v6, prepared-v4)
+
+Level1's entry/Left Eye has two position-locked gates, a symbolic audible Alarm icon (no asserted trigger radius), twelve arrow slits, schematic guard-side levers and furnishings. Gates/walls/doors and live `state.json` are unchanged. **Einrichtung** and **Raumnamen** toggle fixtures and labels separately. Icons are decorative/approximate, not new loot, obstacles, cover or trap boundaries. New types: bed, barrel, shelf, rack, lever, anvil, alarm. Versioned client/model are `app-atlas-v6.js` / `model-atlas-v6.mjs`; immutable previews use `atlas/prepared-v4/` after catalogue activation.
