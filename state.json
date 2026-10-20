@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-left-eye-7apr",
   "title": "Horn · Ebene 1 · Alarm am Linken Auge",
-  "revision": "horn-left-eye-7apr-vexor-outside-r3",
-  "generated_at": "2026-10-20T08:55:00Z",
+  "revision": "horn-left-eye-7apr-r1-first-vanish",
+  "generated_at": "2026-10-20T09:02:00Z",
   "atlas": {
     "id": "horn-level-1",
     "revision": "2026-10-14.2",
@@ -2253,17 +2253,6 @@
       "square": "N24",
       "icon": "soldier",
       "faction": "ally"
-    },
-    {
-      "id": "intruder-1",
-      "name": "Unsichtbarer Eindringling",
-      "label": "?",
-      "square": "O25",
-      "icon": "unknown",
-      "faction": "hostile",
-      "statuses": [
-        "invisible"
-      ]
     },
     {
       "id": "intruder-2",
