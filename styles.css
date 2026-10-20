@@ -11,3 +11,6 @@
 .lighting-cell{pointer-events:none}.light-fixture{cursor:help}.light-fixture:hover{filter:drop-shadow(0 0 4px #edb36c)}
 
 .prop-broken image{opacity:.33;filter:grayscale(1)}
+
+
+#roll-panel{margin:18px 0}#roll-panel summary{font-size:14px;font-weight:600}#roll-count{display:inline-block;margin-left:6px;padding:1px 7px;background:#303a46;border-radius:10px;font-size:11px}#roll-list{list-style:none;padding:0;margin:12px 0;max-height:50vh;overflow:auto}.roll-entry{padding:11px 9px;margin:8px 0;background:#10141a;border:1px solid #343e4b;border-radius:7px;overflow-wrap:anywhere}.roll-entry strong{font-size:13px}.roll-purpose{font-size:12px;color:#b9c3d0;margin:4px 0 7px}.roll-entry code{display:block;color:#efdfb5;font-size:12px;white-space:normal}.roll-source,.roll-id,.roll-trace{display:block;margin-top:6px;font-size:11px;color:#abb8c6}.roll-entry a{display:inline-block;margin-top:7px;color:#9dc4f1;font-size:12px}.roll-trace{line-height:1.5;color:#a2a9b4}

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import * as model from './model.mjs';import {MapHistory,snapshotAsset} from './history.mjs';
 const registry=new Map();class El{constructor(tag='div'){this.tag=tag;this.attrs={};this.style={};this.dataset={};this.children=[];this.textContent='';this.hidden=false;this.clientWidth=1100;this.clientHeight=800;this.classList={toggle(){}};this.listeners={};}setAttribute(k,v){this.attrs[k]=String(v);if(k==='id')registry.set(v,this);}append(...els){for(const e of els){this.children.push(e);if(e&&typeof e==='object')e.parent=this;}}replaceChildren(...els){this.children=[];this.append(...els);}querySelector(sel){return registry.get(sel.slice(1));}remove(){this.parent.children=this.parent.children.filter(e=>e!==this);}removeAttribute(k){delete this.attrs[k];}addEventListener(k,fn){this.listeners[k]=fn;}set src(v){this.attrs.src=v;}get src(){return this.attrs.src;}}
-for(const id of ['canvas','stage','sizer','viewport','title','mode','empty','meta','base','roster','detail','connection','error','demo','empty-demo','live','preview','json','grid','coords','props','names','lighting','fit','minus','plus','full','history-older','history-newer','history-select','history-more','history-live','history-status','atlas-open','atlas-select','atlas-variant','atlas-view','atlas-note'])registry.set(id,new El());
+for(const id of ['canvas','stage','sizer','viewport','title','mode','empty','meta','base','roster','detail','connection','error','demo','empty-demo','live','preview','json','grid','coords','props','names','lighting','fit','minus','plus','full','history-older','history-newer','history-select','history-more','history-live','history-status','atlas-open','atlas-select','atlas-variant','atlas-view','atlas-note','roll-count','roll-empty','roll-list'])registry.set(id,new El());
 const commits=[{sha:'a'.repeat(40),commit:{message:'End encounter',author:{date:'2026-10-13T12:00:00Z'}}},{sha:'b'.repeat(40),commit:{message:'Round 2',author:{date:'2026-10-13T11:00:00Z'}}},{sha:'c'.repeat(40),commit:{message:'Start',author:{date:'2026-10-13T10:00:00Z'}}}];
 let delayedHistory=null;
 const demo=JSON.parse(fs.readFileSync(new URL('./demo.json',import.meta.url))),idle={schema_version:1,active:false,revision:'idle'};
@@ -42,8 +42,8 @@ assert.deepEqual(registry.get('terrain').children.map(n=>JSON.stringify(n.attrs)
 const brokenProp=structuredClone(entry);brokenProp.map.markers[0].state='broken';brokenProp.revision+='-broken';ctx.testing.render(brokenProp);
 assert(registry.get('props-layer').children.some(n=>n.attrs?.class?.includes('prop-broken')),'broken prop is visibly distinct');
 ctx.testing.render(entry);
-assert.equal(fs.readFileSync(new URL('./app-atlas-v8.js',import.meta.url),'utf8'),fs.readFileSync(new URL('./app.js',import.meta.url),'utf8').replace('./model.mjs?v=9','./model-atlas-v8.mjs'));
-assert.equal(fs.readFileSync(new URL('./model-atlas-v8.mjs',import.meta.url),'utf8'),fs.readFileSync(new URL('./model.mjs',import.meta.url),'utf8'));
+assert.equal(fs.readFileSync(new URL('./app-atlas-v9.js',import.meta.url),'utf8'),fs.readFileSync(new URL('./app.js',import.meta.url),'utf8').replace('./model.mjs?v=10','./model-atlas-v9.mjs'));
+assert.equal(fs.readFileSync(new URL('./model-atlas-v9.mjs',import.meta.url),'utf8'),fs.readFileSync(new URL('./model.mjs',import.meta.url),'utf8'));
 for(const name of fs.readdirSync(new URL('./atlas/prepared-v5/',import.meta.url)))model.normalize(JSON.parse(fs.readFileSync(new URL('./atlas/prepared-v5/'+name,import.meta.url))));
 if(process.env.MAP_RENDER_SVG){
  for(const d of entry.map.doors)if(d.kind==='portcullis')d.state='lowered';entry.revision+='-lowered';ctx.testing.render(entry);
@@ -60,3 +60,13 @@ assert(atlasRequests.some(url=>url.endsWith('atlas/prepared-v5/horn-level-1.curr
 assert.equal(ctx.testing.get().grid.cols,30);assert.equal(registry.get('atlas-view').value,'entry');
 assert.equal(registry.get('mode').textContent,'ATLAS · AUSGESTATTETER GRUNDRISS');
 console.log('PASS: two thin barred gates; raised/lowered render; unchanged floor geometry; all prepared snapshots; deployed source/model parity; atlas entry preview routing.');
+
+
+const rollEntry={id:'test-scene:r1-a1:attack',visibility:'public',actor:'Styke',purpose:'Test attack <script>',dice:'1d20',values:[13],modifier:12,total:25,source:'rng',created_at:'2026-10-20T11:10:00Z',receipt:{commit:'a'.repeat(40),path:'current/rolls/test-scene/r1-a1.json',sha256:'b'.repeat(64),trace_available:false}};
+const withRolls={...structuredClone(demo),scene_id:'test-scene',revision:'roll-test',roll_log:{schema_version:1,scene_id:'test-scene',entries:[rollEntry]}};
+ctx.testing.render(withRolls);assert.equal(registry.get('roll-count').textContent,'1');assert.equal(registry.get('roll-empty').hidden,true);
+let row=registry.get('roll-list').children[0];assert.equal(row.children[1].textContent,'Test attack <script>');assert.equal(row.children[2].textContent,'1d20: [13] + 12 = 25');assert.equal(row.children[3].textContent,'Python laut Beleg');assert(row.children[5].href.includes('/'+'a'.repeat(40)+'/'));assert(row.children[6].href.endsWith('.execution.json'));
+const firstTerrain=registry.get('terrain').children[0];withRolls.roll_log.entries.push({...rollEntry,id:'test-scene:r1-a1:save',source:'player'});withRolls.revision+='-2';ctx.testing.render(withRolls);assert.equal(registry.get('roll-count').textContent,'2');assert.equal(registry.get('terrain').children[0],firstTerrain);assert.equal(registry.get('roll-list').children[0].children[3].textContent,'Spielerwurf');
+ctx.testing.render({schema_version:2,active:false,revision:'finished',scene_id:withRolls.scene_id,roll_log:withRolls.roll_log});assert.equal(registry.get('roll-list').children.length,2);
+ctx.testing.render({...demo,scene_id:'other-scene',revision:'other'});assert.equal(registry.get('roll-list').children.length,0);assert.equal(registry.get('roll-empty').hidden,false);
+console.log('PASS: visible roll panel, escaped text, pinned receipt and execution links, newest first, log-only update preserves map terrain, completed-scene log, scene reset');

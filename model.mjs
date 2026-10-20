@@ -1,3 +1,4 @@
+import {normalizeRollLog} from './roll-log-v1.mjs';
 export const ICONS = ['styke','vesper','valeria','ogre','soldier','boggard','undead','mage','beast','unknown'];
 export const MARKERS = ['crate','tree','rock','fire','door','stairs','pillar','chest','table','bed','barrel','shelf','rack','lever','anvil','alarm','bench','stool','counter','stove','sacks','slab','woodpile','fountain','torch','lantern'];
 export const COLORS = {party:'#487fc4',ally:'#4b9b73',hostile:'#c95559',neutral:'#c99d52',unknown:'#956fc1'};
@@ -21,6 +22,7 @@ export function normalize(raw) {
  if(typeof raw.active!=='boolean')throw Error('active muss true/false sein.');
  if(typeof raw.revision!=='string'&&typeof raw.revision!=='number')throw Error('revision fehlt.');
  const common={active:raw.active,revision:String(raw.revision),scene_id:text(raw.scene_id),title:text(raw.title,'WotW Live Map'),generated_at:text(raw.generated_at),tokens:[]};
+ common.roll_log=normalizeRollLog(raw.roll_log,common.scene_id);
  if(!raw.active)return common;
  const legacy=raw.schema_version===1,g=legacy?raw.map?.grid:raw.grid;
  if(!g)throw Error('Raster fehlt.');
@@ -68,5 +70,6 @@ export function normalize(raw) {
  if(areas.length+walls.length+markers.length+doors.length+lines.length+labels.length+lights.length>4000)throw Error('Zu viele Geländeobjekte.');
  return {...common,tokens,grid:{cols,rows,cw,ch,ox,oy,offset_x,offset_y,feet:finite(legacy?(g.feet_per_cell??5):(g.feet??5),1,100,'Maßstab'),baked:legacy&&g.baked_in_base===true},map:{width,height,asset:safeAsset(map.asset),asset_revision:text(map.asset_revision),terrain:areas,walls,markers,doors,lines,labels,lights,lighting}};
 }
+
 
 

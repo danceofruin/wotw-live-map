@@ -1,4 +1,4 @@
-import {normalize,letters,COLORS} from './model.mjs?v=9';
+import {normalize,letters,COLORS} from './model.mjs?v=10';
 import {MapHistory,snapshotAsset} from './history.mjs';
 const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
@@ -74,9 +74,27 @@ function tokens(state){
  }
  detail(selected);
 }
+function renderRolls(log){
+ const entries=log.entries;
+ $('roll-count').textContent=String(entries.length);
+ $('roll-empty').hidden=entries.length>0;
+ $('roll-list').replaceChildren();
+ for(const e of [...entries].reverse()){
+  const item=document.createElement('li');item.className='roll-entry';item.dataset.rollId=e.id;
+  const heading=document.createElement('strong');heading.textContent=e.actor;
+  const purpose=document.createElement('p');purpose.className='roll-purpose';purpose.textContent=e.purpose;
+  const result=document.createElement('code');result.textContent=`${e.dice}: [${e.values.join(', ')}]${e.modifier?' '+(e.modifier>0?'+':'−')+' '+Math.abs(e.modifier):''} = ${e.total}`;
+  const source=document.createElement('span');source.className='roll-source';source.textContent={rng:'Python laut Beleg',player:'Spielerwurf',legacy_unverified:'Altbestand · ungeprüft'}[e.source];
+  const id=document.createElement('small');id.className='roll-id';id.textContent=e.id;
+  const proof=document.createElement('a');proof.href=e.receipt.href;proof.target='_blank';proof.rel='noopener noreferrer';proof.textContent='Gespeicherten Beleg öffnen';
+  const trace=document.createElement('small');trace.className='roll-trace';trace.textContent=e.trace_available?'Tool-Referenz im Beleg; Originalaufruf im Chat prüfen.':'Kein unabhängig prüfbarer Tool-Aufruf verknüpft.';
+  const execution=document.createElement('a');execution.href=e.receipt.href.replace(/\.json$/,'.execution.json');execution.target='_blank';execution.rel='noopener noreferrer';execution.textContent='Ausführungsbeleg öffnen';
+  item.append(heading,purpose,result,source,id,proof,execution,trace);$('roll-list').append(item);
+ }
+}
 function render(raw){
  $('history-live').disabled=mode==='live';
- const next=normalize(raw),newScene=sceneId!==next.scene_id;current=next;sceneId=next.scene_id;
+ const next=normalize(raw),newScene=sceneId!==next.scene_id;current=next;sceneId=next.scene_id;renderRolls(next.roll_log);
  $('title').textContent=next.title;$('mode').textContent=mode==='live'?'LIVE':mode==='history'?'VERLAUF · GESPEICHERTER STAND':mode==='atlas'?'ATLAS · AUSGESTATTETER GRUNDRISS':mode==='demo'?'DEMO · KEIN KAMPAGNENSTAND':'LOKALE VORSCHAU';
  $('empty').hidden=next.active;$('sizer').hidden=!next.active;
  $('meta').textContent=next.active?`${next.grid.cols} × ${next.grid.rows} · ${next.grid.feet} ft / Feld${next.grid.offset_x||next.grid.offset_y?' · globaler Ausschnitt':''}\nStand: ${next.generated_at?new Date(next.generated_at).toLocaleString():'—'}`:'Keine aktive Begegnung.';
@@ -181,6 +199,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeou
 let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(fit,80);}).observe($('viewport'));
 historyControls();
 const query=new URLSearchParams(location.search);if(query.has('atlas'))openAtlas(query.get('atlas'),query.get('view'));else if(query.has('demo'))demo();else poll();
+
 
 
 
