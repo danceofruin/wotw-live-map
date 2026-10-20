@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-left-eye-7apr",
   "title": "Horn · Ebene 1 · Alarm am Linken Auge",
-  "revision": "horn-left-eye-7apr-r2",
-  "generated_at": "2026-10-20T10:05:00Z",
+  "revision": "horn-left-eye-7apr-r2-vesper-ashen-path",
+  "generated_at": "2026-10-20T10:07:00Z",
   "atlas": {
     "id": "horn-level-1",
     "revision": "2026-10-14.2",
@@ -2218,15 +2218,21 @@
       "label": "S",
       "square": "O23",
       "icon": "styke",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Ashen Path"
+      ]
     },
     {
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "P21",
+      "square": "O22",
       "icon": "vesper",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Ashen Path"
+      ]
     },
     {
       "id": "valeria",
@@ -2234,7 +2240,10 @@
       "label": "VA",
       "square": "N21",
       "icon": "valeria",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Ashen Path"
+      ]
     },
     {
       "id": "glut",
