@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-left-eye-7apr",
   "title": "Horn · Ebene 1 · Alarm am Linken Auge",
-  "revision": "horn-left-eye-7apr-atlas-r1",
-  "generated_at": "2026-10-20T08:25:00Z",
+  "revision": "horn-left-eye-7apr-trapfix-r2",
+  "generated_at": "2026-10-20T08:30:00Z",
   "atlas": {
     "id": "horn-level-1",
     "revision": "2026-10-14.2",
@@ -1989,11 +1989,11 @@
       {
         "from": [
           14,
-          26
+          28
         ],
         "to": [
           16,
-          26
+          28
         ],
         "id": "left-eye-portcullis-outer",
         "material": "iron",
@@ -2187,15 +2187,21 @@
       },
       {
         "x": 15,
-        "y": 26.4,
+        "y": 28.4,
         "w": 4,
-        "text": "Gitter I"
+        "text": "Äußeres Gitter"
       },
       {
         "x": 15,
         "y": 22.4,
         "w": 4,
-        "text": "Gitter II"
+        "text": "Inneres Gitter"
+      },
+      {
+        "x": 15,
+        "y": 25,
+        "w": 4,
+        "text": "Alarm"
       }
     ]
   },
@@ -2204,7 +2210,7 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "O20",
+      "square": "O21",
       "icon": "styke",
       "faction": "party"
     },
@@ -2212,7 +2218,7 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "P20",
+      "square": "P21",
       "icon": "vesper",
       "faction": "party"
     },
@@ -2220,17 +2226,9 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "Q20",
+      "square": "N21",
       "icon": "valeria",
       "faction": "party"
-    },
-    {
-      "id": "vexor",
-      "name": "Vexor",
-      "label": "VX",
-      "square": "O22",
-      "icon": "unknown",
-      "faction": "ally"
     },
     {
       "id": "glut",
@@ -2241,12 +2239,42 @@
       "faction": "ally"
     },
     {
+      "id": "vexor",
+      "name": "Vexor",
+      "label": "VX",
+      "square": "O27",
+      "icon": "unknown",
+      "faction": "ally"
+    },
+    {
       "id": "entry-guard",
       "name": "Eingangswache",
       "label": "W",
       "square": "N24",
       "icon": "soldier",
       "faction": "ally"
+    },
+    {
+      "id": "intruder-1",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
+      "square": "O25",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": [
+        "invisible"
+      ]
+    },
+    {
+      "id": "intruder-2",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
+      "square": "P25",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": [
+        "invisible"
+      ]
     }
   ]
 }
