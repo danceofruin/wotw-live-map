@@ -6,9 +6,14 @@ assert.throws(()=>square('R12',18,12,2));assert.deepEqual(square('AA1',30,12),{x
 const hidden=structuredClone(demo);hidden.tokens.push({id:'secret',square:'A1',visible:false});hidden.map.markers.push({type:'chest',x:1,y:1,visible:false});assert.equal(normalize(hidden).tokens.length,7);assert.equal(normalize(hidden).map.markers.length,7);
 const legacy=normalize({schema_version:1,active:true,revision:'v1',map:{width_px:640,height_px:480,asset:'maps/test/base.png',grid:{columns:10,rows:8,cell_px:{width:64,height:60},origin_px:{x:0,y:0}}},tokens:[{id:'styke',square:'B2',size:1,label:'S',faction:'party'}]});assert.equal(legacy.tokens[0].x,1);assert.equal(legacy.map.asset,'maps/test/base.png');assert.equal(legacy.grid.ch,60);
 assert.equal(normalize({schema_version:1,active:false,revision:'idle',map:null,tokens:[]}).active,false);
-const entry=JSON.parse(readFileSync(new URL('./atlas/prepared-v4/horn-level-1.current.entry.json',import.meta.url)));
+const entry=JSON.parse(readFileSync(new URL('./atlas/prepared-v5/horn-level-1.current.entry.json',import.meta.url)));
 const prepared=normalize(entry);assert.equal(prepared.map.lines.filter(a=>a.kind==='arrow_slit').length,12);
 assert.equal(prepared.map.markers.filter(a=>a.type==='alarm').length,1);
 assert.equal(prepared.map.doors.filter(a=>a.kind==='portcullis').length,2);
+assert(prepared.map.markers.length>=30);
+assert.equal(prepared.map.lighting.rows.length,18);
+assert(prepared.map.lighting.rows.every(s=>s.length===30&&/^[012]+$/.test(s)));
+assert(prepared.map.lights.some(l=>l.state==='lit'));
+const badLight=structuredClone(entry);badLight.map.lighting.rows[0]='BROKEN';assert.throws(()=>normalize(badLight),/Lichtfelder/);
 assert(prepared.map.markers.some(a=>a.type==='alarm'&&a.label.includes('keine festgelegte Zaubergrenze')));
 console.log('PASS: demo, complete asset library, validation, large footprints, coordinates, defensive visibility filtering, legacy raster contract, idle state.');
