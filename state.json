@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-left-eye-7apr",
   "title": "Horn · Ebene 1 · Alarm am Linken Auge",
-  "revision": "horn-left-eye-7apr-r3-styke-retreat",
-  "generated_at": "2026-10-20T10:10:00Z",
+  "revision": "horn-left-eye-7apr-reroll-init",
+  "generated_at": "2026-10-20T10:12:00Z",
   "atlas": {
     "id": "horn-level-1",
     "revision": "2026-10-14.2",
@@ -2202,12 +2202,6 @@
         "y": 25,
         "w": 4,
         "text": "Alarm"
-      },
-      {
-        "x": 15,
-        "y": 25,
-        "w": 6,
-        "text": "Nebel / Stinking Cloud"
       }
     ]
   },
@@ -2218,21 +2212,18 @@
       "label": "S",
       "square": "O21",
       "icon": "styke",
-      "faction": "party",
-      "statuses": [
-        "Ashen Path"
-      ]
+      "faction": "party"
     },
     {
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "O22",
+      "square": "P21",
       "icon": "vesper",
       "faction": "party",
       "statuses": [
-        "Ashen Path",
-        "Spoils of War"
+        "Witness to Glory: 12 temp HP",
+        "Silence wird gewirkt"
       ]
     },
     {
@@ -2241,10 +2232,7 @@
       "label": "VA",
       "square": "N21",
       "icon": "valeria",
-      "faction": "party",
-      "statuses": [
-        "Ashen Path"
-      ]
+      "faction": "party"
     },
     {
       "id": "glut",
@@ -2263,14 +2251,25 @@
       "faction": "ally"
     },
     {
+      "id": "intruder-1",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
+      "square": "O25",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": [
+        "invisible"
+      ]
+    },
+    {
       "id": "intruder-2",
-      "name": "Fremdartiger Hund",
-      "label": "H",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
       "square": "P25",
       "icon": "unknown",
       "faction": "hostile",
       "statuses": [
-        "dead"
+        "invisible"
       ]
     }
   ]
