@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-left-eye-7apr",
   "title": "Horn · Ebene 1 · Alarm am Linken Auge",
-  "revision": "horn-left-eye-7apr-r1-fog",
-  "generated_at": "2026-10-20T10:03:00Z",
+  "revision": "horn-left-eye-7apr-r1-corrected",
+  "generated_at": "2026-10-20T10:03:30Z",
   "atlas": {
     "id": "horn-level-1",
     "revision": "2026-10-14.2",
@@ -2202,12 +2202,6 @@
         "y": 25,
         "w": 4,
         "text": "Alarm"
-      },
-      {
-        "x": 15,
-        "y": 25,
-        "w": 5,
-        "text": "Dichter Nebel im Fanggang"
       }
     ]
   },
@@ -2251,6 +2245,26 @@
       "square": "O29",
       "icon": "unknown",
       "faction": "ally"
+    },
+    {
+      "id": "intruder-1",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
+      "square": "O25",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": [
+        "invisible"
+      ]
+    },
+    {
+      "id": "intruder-2",
+      "name": "Unsichtbarer Eindringling",
+      "label": "?",
+      "square": "P25",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": []
     }
   ]
 }
