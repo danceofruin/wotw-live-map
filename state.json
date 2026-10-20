@@ -2,9 +2,9 @@
   "schema_version": 2,
   "active": false,
   "scene_id": null,
-  "title": "Keine aktive Kampfkarte",
-  "revision": "horn-left-eye-7apr-end-reroll",
-  "generated_at": "2026-10-20T11:05:00Z",
+  "title": "WotW Live Map",
+  "revision": "horn-left-eye-7apr-end",
+  "generated_at": "2026-10-20T11:11:00Z",
   "map": null,
   "tokens": []
 }
