@@ -15,7 +15,7 @@
     {
       "id": "horn-level-1",
       "title": "Horn · Ebene 1",
-      "note": "Eingang: zwei positionsfeste Fallgatter, akustischer Alarm als Symbol, je sechs Schießscharten, Bedienhebel und Einrichtung. Props sind schematisch; kein festgelegter Alarmradius oder Deckungswert."
+      "note": "Ebene 1 ausgestattet: 91 Grundmöbel/Props (Aktuell mit Jurak-Tafel), 33 Fackel-/Lampenpositionen, Mauer/Halbdeckung, beide Fallgatter und Raumlicht mit Türabschattung. Lichtprofil in der Vorschau: Arbeitstag. Tatsächliche Szenenbeleuchtung setzt der GM."
     },
     {
       "id": "horn-level-2",
@@ -33,6 +33,6 @@
       "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
     }
   ],
-  "asset_root": "atlas/prepared-v4/",
-  "geometry_revision": 4
+  "asset_root": "atlas/prepared-v5/",
+  "geometry_revision": 5
 }
