@@ -91,3 +91,11 @@ Schema2 `map.doors` accepts `kind:"portcullis"`, stable `id`, fixed `from`/`to`,
 ### Atlas-Eingang und Props (Client v6, prepared-v4)
 
 Level1's entry/Left Eye has two position-locked gates, a symbolic audible Alarm icon (no asserted trigger radius), twelve arrow slits, schematic guard-side levers and furnishings. Gates/walls/doors and live `state.json` are unchanged. **Einrichtung** and **Raumnamen** toggle fixtures and labels separately. Icons are decorative/approximate, not new loot, obstacles, cover or trap boundaries. New types: bed, barrel, shelf, rack, lever, anvil, alarm. Versioned client/model are `app-atlas-v6.js` / `model-atlas-v6.mjs`; immutable previews use `atlas/prepared-v4/` after catalogue activation.
+
+### Horn Level-One lighting and furnishing (client v7, prepared-v5)
+
+The complete Level-One Atlas contains 91 source-map base props plus the Jurak dining table in the current variant, 33 labelled torch/lantern sources, and the source-confirmed fountain, original entry half-wall and corrected existing door 1-13 ↔ 1-27. Movable props have stable `id`, `state`, `tactical` and `cover_candidate` fields; `possible` never grants automatic PF1e cover or blocked movement. All individual state updates (doors, lights, furnishings) require accepted GM scene `feature_states` and a fresh private `exportScene`; browser toggles change display only.
+
+`map.lights` carries light positions, source type, current state and bright/dim radii. `map.lighting.rows` is a complete local square grid encoded as digit strings: `0` dark, `1` dim, `2` normal. Wall and closed opaque door occlusion is baked by the private exporter for the selected `workday`, `night_watch` or `blackout` scene profile. For Horn L1, the scene exporter requires an explicit profile, so the runner cannot accidentally assume the display-only default. Rays through narrow arrow slits, height, exceptional conditions and PF1e sight/cover remain GM judgments. Atlas browsing is purely a preview and does not declare an in-world torch permanently burning.
+
+Use **Beleuchtung** to show/hide the prepared light shading independently of **Einrichtung** and **Raumnamen**. Prepared-v5 snapshots are immutable, older folders remain, and the live `state.json` is not altered by atlas work.
