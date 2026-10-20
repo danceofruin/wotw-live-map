@@ -71,11 +71,19 @@ Every byte in this repository is PUBLIC. Only accepted player-visible geometry a
 
 For encounter crops, retain global frame metadata: `grid.offset_x`/`offset_y` are nonnegative integer field offsets. Published tokens still carry local `square`; the website derives and displays their global squares. A framing change cannot move an actor. An omitted offset means zero for existing schema1/2 maps. Maximum display240x240 is used by the full environment; supported limit400 per axis. Terrain additionally supports `forest`; `map.labels` contains only player-safe `{x,y,text}` labels; `map.lines` contains nonopaque display lines `{from,to,kind}` with `service` (blue dashed) or `low_wall` (muted solid). These lines are not automatic rules/LOS adjudication. `table` is an additional marker icon. Empty templates under `atlas/` contain no private campaign/source text, hidden actors, future event data or authoritative current patrols. Map history remains the history of actual `state.json` updates.
 
-The deployed client uses immutable-named `app-atlas-v3.js` / `model-atlas-v3.mjs` copies of the app/model sources, preventing stale model code from breaking new atlas fields. Future client changes must regenerate and version these paired deployment files.
+The deployed client uses immutable-named `app-atlas-v5.js` / `model-atlas-v5.mjs` copies of the app/model sources, preventing stale model code from breaking new atlas fields. Future client changes must regenerate and version these paired deployment files.
 
-Atlas display snapshots use immutable `atlas/prepared-v2/` paths selected by the catalogue `asset_root`; this avoids serving older geometry/labels during raw-file cache turnover. Increment that asset directory for a future prepared base revision.
+Atlas display snapshots use immutable `atlas/prepared-v3/` paths selected by the catalogue `asset_root`; this avoids serving older geometry/labels during raw-file cache turnover. Increment that asset directory for a future prepared base revision.
 
 
 
 ### Geometry repair · 2026-10-14
 Floor surfaces use clipped polygons, preserving diagonal edges without row-sampling gaps. Doors are explicit endpoint segments in `map.doors`, aligned to cut wall openings; ordinary single doors are 5 ft wide. Open arches remain unobstructed. The bedroom opens north to the courtyard, the bath anteroom uses its diagonal doorway, and the six cells have physical partitions. The already discovered library access and conditional pocket-vault portal are visible; a portal does not imply ordinary traversable adjacency. Current and planned construction remain separate.
+
+## Prepared geometry and portcullises (client v5)
+
+The v5 app/model pair loads `atlas/prepared-v3/`. Registered Horn combat geometry comes from the private atlas export, with current construction reconciled once and global offsets preserved. The public payload contains only known geometry/actors, never private sources or construction rationale. Public `state.json` is preserved byte-for-byte during this client/atlas migration, including any newer accepted live scene.
+
+Schema2 `map.doors` accepts `kind:"portcullis"`, stable `id`, fixed `from`/`to`, metal `material` and `state:"raised"|"lowered"|"destroyed"|"under_construction"`. State controls appearance, not endpoints, corridor shape or terrain. A lowered gate draws a thin rail with bars; raised/destroyed/unfinished gates have distinct broken-line styles and tooltip. Existing doors/portals and legacy `open` remain compatible. Geometry alone does not adjudicate movement, cover or LOS.
+
+`?atlas=horn-level-1&view=entry` opens the empty registered entry preview. The atlas view selector offers the full floor or entrance crop; neither changes the active live encounter. The empty current floor has built gates raised; the private accepted-scene fixture checks both lowered without resuming combat.

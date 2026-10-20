@@ -44,7 +44,10 @@ export function normalize(raw) {
  const walls=(map.walls||[]).filter(a=>a.visible!==false).map(a=>{
   const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Wandpunkt fehlt.');return [finite(p[0],0,cols,'Wand X'),finite(p[1],0,rows,'Wand Y')];};return {from:point(a.from),to:point(a.to)};
  });
- const doors=(map.doors||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Türpunkt fehlt');return [finite(p[0],0,cols,'Tür X'),finite(p[1],0,rows,'Tür Y')];};return {id:text(a.id),from:point(a.from),to:point(a.to),open:a.open===true,kind:a.kind==='portal'?'portal':'door',material:['wood','iron','steel','stone'].includes(a.material)?a.material:'wood'};});
+ const doors=(map.doors||[]).map(a=>{const point=p=>{if(!Array.isArray(p)||p.length!==2)throw Error('Türpunkt fehlt');return [finite(p[0],0,cols,'Tür X'),finite(p[1],0,rows,'Tür Y')];};const kind=['portal','portcullis'].includes(a.kind)?a.kind:'door';
+  const state=a.state??(kind==='portcullis'?(a.open?'raised':'lowered'):(a.open?'open':'closed'));
+  if(!(kind==='portcullis'?['raised','lowered','destroyed','under_construction']:['open','closed','destroyed']).includes(state))throw Error('Ungültiger Tür-/Gatterzustand');
+  return {id:text(a.id),from:point(a.from),to:point(a.to),state,open:['open','raised','destroyed'].includes(state),kind,material:['wood','iron','steel','stone'].includes(a.material)?a.material:'wood'};});
  const markers=(map.markers||[]).filter(a=>a.visible!==false).map(a=>{
   if(!MARKERS.includes(a.type))throw Error('Unbekannter Marker.');
   const x=finite(a.x,0,cols,'Marker X'),y=finite(a.y,0,rows,'Marker Y');return {type:a.type,x,y,w:finite(a.w??1,.1,cols-x,'Markerbreite'),h:finite(a.h??1,.1,rows-y,'Markerhöhe'),rotation:finite(a.rotation??0,-360,360,'Drehung'),open:a.open===true};

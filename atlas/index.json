@@ -1,1 +1,38 @@
-{"schema_version":1,"title":"Horn-Kartenatlas","maps":[{"id":"horn-caverns","title":"Horn · Untere Höhlen","note":"Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."},{"id":"horn-environs","title":"Horn · Umfeld","note":"Umfeld ist eine vorbereitete Näherung; genaue Rodungsgrenze und Sichtlinien bestimmt die Szene."},{"id":"horn-level-1","title":"Horn · Ebene 1","note":"Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."},{"id":"horn-level-2","title":"Horn · Ebene 2","note":"Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."},{"id":"horn-level-3","title":"Horn · Ebene 3","note":"Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."},{"id":"horn-sanctum","title":"Horn · Sanctum","note":"Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."}],"asset_root":"atlas/prepared-v2/","geometry_revision":2}
+{
+  "schema_version": 1,
+  "title": "Horn-Kartenatlas",
+  "maps": [
+    {
+      "id": "horn-caverns",
+      "title": "Horn · Untere Höhlen",
+      "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
+    },
+    {
+      "id": "horn-environs",
+      "title": "Horn · Umfeld",
+      "note": "Umfeld ist eine vorbereitete Näherung; genaue Rodungsgrenze und Sichtlinien bestimmt die Szene."
+    },
+    {
+      "id": "horn-level-1",
+      "title": "Horn · Ebene 1",
+      "note": "Atlas-Grundriss mit beiden fertiggestellten Fallgattern. Hochgezogene Gatter in der leeren Basiskarte; die Begegnung setzt ihren tatsächlichen Zustand."
+    },
+    {
+      "id": "horn-level-2",
+      "title": "Horn · Ebene 2",
+      "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
+    },
+    {
+      "id": "horn-level-3",
+      "title": "Horn · Ebene 3",
+      "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
+    },
+    {
+      "id": "horn-sanctum",
+      "title": "Horn · Sanctum",
+      "note": "Leere Basiskarte. Ausbauplan zeigt vorgesehene Änderungen, keine abgeschlossenen Arbeiten."
+    }
+  ],
+  "asset_root": "atlas/prepared-v3/",
+  "geometry_revision": 3
+}

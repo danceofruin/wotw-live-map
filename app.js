@@ -1,4 +1,4 @@
-import {normalize,letters,COLORS} from './model.mjs?v=6';
+import {normalize,letters,COLORS} from './model.mjs?v=7';
 import {MapHistory,snapshotAsset} from './history.mjs';
 const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
@@ -21,7 +21,20 @@ function layout(state){
  for(let c=0;c<=g.cols;c++){const x=g.ox+c*g.cw;group('grid-layer').append(svg('line',{x1:x,y1:g.oy,x2:x,y2:g.oy+g.rows*g.ch,class:'gridline'}));}
  for(let r=0;r<=g.rows;r++){const y=g.oy+r*g.ch;group('grid-layer').append(svg('line',{x1:g.ox,y1:y,x2:g.ox+g.cols*g.cw,y2:y,class:'gridline'}));}
  for(const wall of walls){const [x1,y1]=coords(g,...wall.from),[x2,y2]=coords(g,...wall.to);group('walls').append(svg('line',{x1,y1,x2,y2,class:'wall'}));}
- for(const d of state.map.doors||[]){const [x1,y1]=coords(g,...d.from),[x2,y2]=coords(g,...d.to);group('walls').append(svg('line',{x1,y1,x2,y2,stroke:d.kind==='portal'?'#b995dc':d.material==='wood'?'#c38a57':'#b6c3cd','stroke-width':g.cw*.18,'stroke-linecap':'butt',opacity:d.open?.35:1,'stroke-dasharray':d.open?'8 6':''}));}
+ for(const d of state.map.doors||[]){
+  const [x1,y1]=coords(g,...d.from),[x2,y2]=coords(g,...d.to);
+  if(d.kind==='portcullis'){
+   const gate=svg('g',{'data-feature-id':d.id,'data-state':d.state,'aria-label':`Fallgatter: ${d.state}`,opacity:d.state==='raised'?.45:d.state==='destroyed'?.3:1});
+   const title=svg('title');title.textContent=`Fallgatter · ${{raised:'hochgezogen',lowered:'heruntergelassen',destroyed:'zerstört',under_construction:'im Bau'}[d.state]}`;gate.append(title);
+   const dx=x2-x1,dy=y2-y1,length=Math.hypot(dx,dy),nx=-dy/length,ny=dx/length;
+   gate.append(svg('line',{x1,y1,x2,y2,stroke:'#c6d5e0','stroke-width':g.cw*.06,'stroke-dasharray':d.state==='raised'?'6 5':d.state==='under_construction'?'3 7':d.state==='destroyed'?'2 12':''}));
+   if(d.state==='lowered')for(let i=1,n=Math.ceil(length/(g.cw*.22));i<n;i++){
+    const x=x1+dx*i/n,y=y1+dy*i/n,r=g.cw*.11;
+    gate.append(svg('line',{x1:x-nx*r,y1:y-ny*r,x2:x+nx*r,y2:y+ny*r,stroke:'#c6d5e0','stroke-width':g.cw*.045}));
+   }
+   group('walls').append(gate);
+  }else group('walls').append(svg('line',{x1,y1,x2,y2,stroke:d.kind==='portal'?'#b995dc':d.material==='wood'?'#c38a57':'#b6c3cd','stroke-width':g.cw*.18,'stroke-linecap':'butt',opacity:d.open?.35:1,'stroke-dasharray':d.open?'8 6':''}));
+ }
  for(const m of markers){const [x,y]=coords(g,m.x,m.y),w=m.w*g.cw,h=m.h*g.ch;const el=m.type==='door'?svg('rect',{x,y,width:w,height:h,fill:'#b57449',stroke:'#d1ad83','stroke-width':1,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1}):svg('image',{href:`assets/markers/${m.type}.svg`,x,y,width:w,height:h,transform:`rotate(${m.rotation},${x+w/2},${y+h/2})`,opacity:m.open?.4:1});group('walls').append(el);}
  for(let c=0;c<g.cols;c++){const el=svg('text',{x:g.ox+(c+.5)*g.cw,y:g.oy-12,class:'coord'});el.textContent=letters(c+(g.offset_x||0));group('coords-layer').append(el);}
  for(let r=0;r<g.rows;r++){const el=svg('text',{x:g.ox-16,y:g.oy+(r+.5)*g.ch+4,class:'coord'});el.textContent=r+1+(g.offset_y||0);group('coords-layer').append(el);}
@@ -137,20 +150,23 @@ $('history-more').onclick=async()=>{
 };
 
 let atlasCatalogue=null;
-async function openAtlas(){
+async function openAtlas(preferredId,preferredView){
  const requestGeneration=++generation;mode='atlas';historyBusy=false;historyControls();clearTimeout(timer);connection('Atlas laden …');
  try{
   if(!atlasCatalogue){const r=await fetch(RAW+'atlas/index.json?t='+Date.now());if(!r.ok)throw Error('Atlas nicht verfügbar');atlasCatalogue=await r.json();
    $('atlas-select').replaceChildren();for(const a of atlasCatalogue.maps){const o=document.createElement('option');o.value=a.id;o.textContent=a.title;$('atlas-select').append(o);}
   }
+  if(typeof preferredId==='string'&&atlasCatalogue.maps.some(a=>a.id===preferredId))$('atlas-select').value=preferredId;
   const id=$('atlas-select').value||atlasCatalogue.maps[0].id,variant=$('atlas-variant').value;
-  const r=await fetch(RAW+(atlasCatalogue.geometry_revision>=2?atlasCatalogue.asset_root:'atlas/prepared-v2/')+id+'.'+variant+'.json');if(!r.ok)throw Error('Karte nicht verfügbar');const raw=await r.json();
+  const entryView=id==='horn-level-1'&&$('atlas-view').value==='entry'||id==='horn-level-1'&&preferredView==='entry';
+  $('atlas-view').disabled=id!=='horn-level-1';if(entryView)$('atlas-view').value='entry';
+  const r=await fetch(RAW+(atlasCatalogue.geometry_revision>=2?atlasCatalogue.asset_root:'atlas/prepared-v2/')+id+'.'+variant+(entryView?'.entry':'')+'.json');if(!r.ok)throw Error('Karte nicht verfügbar');const raw=await r.json();
   if(mode!=='atlas'||generation!==requestGeneration)return;render(raw);$('demo').textContent='Live';$('error').textContent='';
   connection(variant==='planned'?'Atlas · Ausbauplan':'Atlas · Basiskarte');
   const entry=atlasCatalogue.maps.find(a=>a.id===id);$('atlas-note').textContent=entry?.note||'Leere Basiskarte; aktuelle Wachen und Figuren setzt der GM.';
  }catch(e){if(mode==='atlas'&&generation===requestGeneration){connection('Atlas nicht verfügbar',true);$('error').textContent=e.message;}}
 }
-$('atlas-open').onclick=openAtlas;$('atlas-select').onchange=()=>{if(atlasCatalogue)openAtlas();};$('atlas-variant').onchange=()=>{if(atlasCatalogue)openAtlas();};
+$('atlas-open').onclick=()=>openAtlas();$('atlas-view').onchange=()=>{if(atlasCatalogue)openAtlas();};$('atlas-select').onchange=()=>{if(atlasCatalogue)openAtlas();};$('atlas-variant').onchange=()=>{if(atlasCatalogue)openAtlas();};
 
 $('demo').onclick=()=>mode==='live'?demo():live();$('empty-demo').onclick=demo;$('live').onclick=live;
 $('preview').onclick=()=>{try{const raw=JSON.parse($('json').value);normalize(raw);mode='preview';historyBusy=false;historyControls();generation++;clearTimeout(timer);render(raw);connection('Lokale Vorschau');$('demo').textContent='Live';$('error').textContent='';}catch(e){$('error').textContent=e.message;}};
@@ -160,7 +176,7 @@ $('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exi
 document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(timer);else if(mode==='live')poll();});
 let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(fit,80);}).observe($('viewport'));
 historyControls();
-if(new URLSearchParams(location.search).has('demo'))demo();else poll();
+const query=new URLSearchParams(location.search);if(query.has('atlas'))openAtlas(query.get('atlas'),query.get('view'));else if(query.has('demo'))demo();else poll();
 
 
 
