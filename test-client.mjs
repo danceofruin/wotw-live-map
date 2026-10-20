@@ -39,8 +39,11 @@ const terrainNodes=registry.get('terrain').children.map(n=>JSON.stringify(n.attr
 for(const d of entry.map.doors)if(d.kind==='portcullis')d.state='raised';entry.revision+='-raised';ctx.testing.render(entry);
 assert(gateNodes().every(n=>n.attrs['data-state']==='raised'&&n.children.length===2));
 assert.deepEqual(registry.get('terrain').children.map(n=>JSON.stringify(n.attrs)),terrainNodes);
-assert.equal(fs.readFileSync(new URL('./app-atlas-v7.js',import.meta.url),'utf8'),fs.readFileSync(new URL('./app.js',import.meta.url),'utf8').replace('./model.mjs?v=9','./model-atlas-v7.mjs'));
-assert.equal(fs.readFileSync(new URL('./model-atlas-v7.mjs',import.meta.url),'utf8'),fs.readFileSync(new URL('./model.mjs',import.meta.url),'utf8'));
+const brokenProp=structuredClone(entry);brokenProp.map.markers[0].state='broken';brokenProp.revision+='-broken';ctx.testing.render(brokenProp);
+assert(registry.get('props-layer').children.some(n=>n.attrs?.class?.includes('prop-broken')),'broken prop is visibly distinct');
+ctx.testing.render(entry);
+assert.equal(fs.readFileSync(new URL('./app-atlas-v8.js',import.meta.url),'utf8'),fs.readFileSync(new URL('./app.js',import.meta.url),'utf8').replace('./model.mjs?v=9','./model-atlas-v8.mjs'));
+assert.equal(fs.readFileSync(new URL('./model-atlas-v8.mjs',import.meta.url),'utf8'),fs.readFileSync(new URL('./model.mjs',import.meta.url),'utf8'));
 for(const name of fs.readdirSync(new URL('./atlas/prepared-v5/',import.meta.url)))model.normalize(JSON.parse(fs.readFileSync(new URL('./atlas/prepared-v5/'+name,import.meta.url))));
 if(process.env.MAP_RENDER_SVG){
  for(const d of entry.map.doors)if(d.kind==='portcullis')d.state='lowered';entry.revision+='-lowered';ctx.testing.render(entry);

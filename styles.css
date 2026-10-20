@@ -9,3 +9,5 @@
 .map-fixture image{filter:drop-shadow(0 2px 3px #0009)}.map-fixture:hover{opacity:.86}.arrow-slit{pointer-events:visibleStroke}.arrow-slit:hover{filter:drop-shadow(0 0 3px #d5ba8f)}
 
 .lighting-cell{pointer-events:none}.light-fixture{cursor:help}.light-fixture:hover{filter:drop-shadow(0 0 4px #edb36c)}
+
+.prop-broken image{opacity:.33;filter:grayscale(1)}
