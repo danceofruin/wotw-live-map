@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "bryr-traya-rest-27apr",
   "title": "Caer Bryr - Rastplatz",
-  "revision": "bryr-traya-r0-01",
-  "generated_at": "2026-10-22T14:49:00Z",
+  "revision": "bryr-traya-r0-surprise-end",
+  "generated_at": "2026-10-22T14:51:00Z",
   "grid": {
     "cols": 28,
     "rows": 18,
@@ -83,6 +83,13 @@
         "w": 2,
         "h": 1
       }
+    ],
+    "labels": [
+      {
+        "x": 18.5,
+        "y": 9.5,
+        "text": "Stinking Cloud (20 ft)"
+      }
     ]
   },
   "tokens": [
@@ -90,13 +97,14 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "H11",
+      "square": "R10",
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "stealth"
+        "delay poison",
+        "ashen path"
       ],
-      "hp": "48/48"
+      "hp": "39/48"
     },
     {
       "id": "vesper",
@@ -105,7 +113,10 @@
       "square": "G8",
       "icon": "vesper",
       "faction": "party",
-      "statuses": [],
+      "statuses": [
+        "delay poison",
+        "ashen path"
+      ],
       "hp": "38/38"
     },
     {
@@ -115,7 +126,11 @@
       "square": "G14",
       "icon": "valeria",
       "faction": "party",
-      "statuses": [],
+      "statuses": [
+        "delay poison",
+        "ashen path",
+        "fiendish boon: keen"
+      ],
       "hp": "46/46"
     },
     {
@@ -126,17 +141,22 @@
       "icon": "mage",
       "faction": "hostile",
       "statuses": [
-        "unaware"
+        "down",
+        "stinking cloud"
       ]
     },
     {
       "id": "hassan",
       "name": "Hassan J'raaq",
       "label": "H",
-      "square": "Q8",
+      "square": "R9",
       "icon": "soldier",
       "faction": "hostile",
-      "statuses": []
+      "statuses": [
+        "rage",
+        "nauseated",
+        "stinking cloud"
+      ]
     },
     {
       "id": "posca",
@@ -146,14 +166,14 @@
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
-        "unaware"
+        "stinking cloud"
       ]
     },
     {
       "id": "tasker",
       "name": "Tasker Twelve-Knives",
       "label": "TK",
-      "square": "V6",
+      "square": "P6",
       "icon": "soldier",
       "faction": "hostile",
       "statuses": []
