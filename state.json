@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "bryr-traya-rest-27apr",
   "title": "Caer Bryr - Rastplatz",
-  "revision": "bryr-traya-r1-before-vesper",
-  "generated_at": "2026-10-22T15:18:00Z",
+  "revision": "bryr-traya-r1-vesper",
+  "generated_at": "2026-10-22T15:21:00Z",
   "grid": {
     "cols": 28,
     "rows": 18,
@@ -102,7 +102,8 @@
       "faction": "party",
       "statuses": [
         "delay poison",
-        "ashen path"
+        "ashen path",
+        "deflective armor +3 NA"
       ],
       "hp": "48/48 +13 temp"
     },
@@ -110,7 +111,7 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "G8",
+      "square": "J8",
       "icon": "vesper",
       "faction": "party",
       "statuses": [
@@ -166,7 +167,8 @@
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
-        "stinking cloud"
+        "stinking cloud",
+        "5 torment brands"
       ]
     },
     {
