@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "bryr-traya-rest-27apr",
   "title": "Caer Bryr - Rastplatz",
-  "revision": "bryr-traya-r1-vesper",
-  "generated_at": "2026-10-22T15:21:00Z",
+  "revision": "bryr-traya-r1-end",
+  "generated_at": "2026-10-22T15:24:00Z",
   "grid": {
     "cols": 28,
     "rows": 18,
@@ -132,7 +132,7 @@
         "ashen path",
         "fiendish boon: keen"
       ],
-      "hp": "46/46"
+      "hp": "39/46"
     },
     {
       "id": "traya",
@@ -168,14 +168,18 @@
       "faction": "hostile",
       "statuses": [
         "stinking cloud",
-        "5 torment brands"
-      ]
+        "5 torment brands",
+        "down",
+        "dying",
+        "nauseated 3r"
+      ],
+      "hp": "-1/38"
     },
     {
       "id": "tasker",
       "name": "Tasker Twelve-Knives",
       "label": "TK",
-      "square": "P6",
+      "square": "O12",
       "icon": "soldier",
       "faction": "hostile",
       "statuses": []
