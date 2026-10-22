@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "bryr-traya-rest-27apr",
   "title": "Caer Bryr - Rastplatz",
-  "revision": "bryr-traya-r1-end",
-  "generated_at": "2026-10-22T15:24:00Z",
+  "revision": "bryr-traya-r2-styke",
+  "generated_at": "2026-10-22T15:27:00Z",
   "grid": {
     "cols": 28,
     "rows": 18,
@@ -97,7 +97,7 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "R13",
+      "square": "W9",
       "icon": "styke",
       "faction": "party",
       "statuses": [
@@ -105,7 +105,7 @@
         "ashen path",
         "deflective armor +3 NA"
       ],
-      "hp": "48/48 +13 temp"
+      "hp": "48/48 +10 temp"
     },
     {
       "id": "vesper",
@@ -157,7 +157,7 @@
         "rage",
         "nauseated 3r"
       ],
-      "hp": "55/80"
+      "hp": "11/80"
     },
     {
       "id": "posca",
@@ -182,7 +182,10 @@
       "square": "O12",
       "icon": "soldier",
       "faction": "hostile",
-      "statuses": []
+      "statuses": [
+        "down"
+      ],
+      "hp": "-12/38"
     }
   ]
 }
