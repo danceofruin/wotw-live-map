@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "bryr-traya-rest-27apr",
   "title": "Caer Bryr - Rastplatz",
-  "revision": "bryr-traya-r0-surprise-end",
-  "generated_at": "2026-10-22T14:51:00Z",
+  "revision": "bryr-traya-r1-before-vesper",
+  "generated_at": "2026-10-22T15:18:00Z",
   "grid": {
     "cols": 28,
     "rows": 18,
@@ -97,14 +97,14 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "R10",
+      "square": "R13",
       "icon": "styke",
       "faction": "party",
       "statuses": [
         "delay poison",
         "ashen path"
       ],
-      "hp": "39/48"
+      "hp": "48/48 +13 temp"
     },
     {
       "id": "vesper",
@@ -123,7 +123,7 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "G14",
+      "square": "O13",
       "icon": "valeria",
       "faction": "party",
       "statuses": [
@@ -149,14 +149,14 @@
       "id": "hassan",
       "name": "Hassan J'raaq",
       "label": "H",
-      "square": "R9",
+      "square": "X9",
       "icon": "soldier",
       "faction": "hostile",
       "statuses": [
         "rage",
-        "nauseated",
-        "stinking cloud"
-      ]
+        "nauseated 3r"
+      ],
+      "hp": "55/80"
     },
     {
       "id": "posca",
