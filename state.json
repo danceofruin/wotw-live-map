@@ -1,10 +1,162 @@
 {
   "schema_version": 2,
-  "active": false,
-  "scene_id": null,
-  "title": "WotW Live Map",
-  "revision": "horn-left-eye-7apr-end",
-  "generated_at": "2026-10-20T11:11:00Z",
-  "map": null,
-  "tokens": []
+  "active": true,
+  "scene_id": "bryr-traya-rest-27apr",
+  "title": "Caer Bryr - Rastplatz",
+  "revision": "bryr-traya-r0-01",
+  "generated_at": "2026-10-22T14:49:00Z",
+  "grid": {
+    "cols": 28,
+    "rows": 18,
+    "feet": 5
+  },
+  "map": {
+    "terrain": [
+      {
+        "type": "forest",
+        "x": 0,
+        "y": 0,
+        "w": 28,
+        "h": 18
+      },
+      {
+        "type": "grass",
+        "x": 14,
+        "y": 4,
+        "w": 10,
+        "h": 11
+      },
+      {
+        "type": "water",
+        "x": 25,
+        "y": 0,
+        "w": 1.5,
+        "h": 18
+      }
+    ],
+    "walls": [],
+    "markers": [
+      {
+        "type": "tree",
+        "x": 7,
+        "y": 8
+      },
+      {
+        "type": "tree",
+        "x": 5,
+        "y": 12
+      },
+      {
+        "type": "tree",
+        "x": 9,
+        "y": 14
+      },
+      {
+        "type": "tree",
+        "x": 13,
+        "y": 4
+      },
+      {
+        "type": "tree",
+        "x": 15,
+        "y": 14
+      },
+      {
+        "type": "tree",
+        "x": 22,
+        "y": 10
+      },
+      {
+        "type": "tree",
+        "x": 20,
+        "y": 14
+      },
+      {
+        "type": "tree",
+        "x": 18,
+        "y": 9
+      },
+      {
+        "type": "rock",
+        "x": 17,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      }
+    ]
+  },
+  "tokens": [
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "H11",
+      "icon": "styke",
+      "faction": "party",
+      "statuses": [
+        "stealth"
+      ],
+      "hp": "48/48"
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "label": "V",
+      "square": "G8",
+      "icon": "vesper",
+      "faction": "party",
+      "statuses": [],
+      "hp": "38/38"
+    },
+    {
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "G14",
+      "icon": "valeria",
+      "faction": "party",
+      "statuses": [],
+      "hp": "46/46"
+    },
+    {
+      "id": "traya",
+      "name": "Traya DeMarco",
+      "label": "T",
+      "square": "S10",
+      "icon": "mage",
+      "faction": "hostile",
+      "statuses": [
+        "unaware"
+      ]
+    },
+    {
+      "id": "hassan",
+      "name": "Hassan J'raaq",
+      "label": "H",
+      "square": "Q8",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": []
+    },
+    {
+      "id": "posca",
+      "name": "Posca",
+      "label": "P",
+      "square": "R12",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "unaware"
+      ]
+    },
+    {
+      "id": "tasker",
+      "name": "Tasker Twelve-Knives",
+      "label": "TK",
+      "square": "V6",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": []
+    }
+  ]
 }
