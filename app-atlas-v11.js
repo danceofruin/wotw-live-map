@@ -1,6 +1,7 @@
 import {normalize,letters,COLORS} from './model-atlas-v11.mjs';
 import {MapHistory,snapshotAsset} from './history.mjs';
-const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';\nconst STATE_API='https://api.github.com/repos/danceofruin/wotw-live-map/contents/state.json?ref=main';
+const RAW='https://raw.githubusercontent.com/danceofruin/wotw-live-map/main/';
+const STATE_API='https://api.github.com/repos/danceofruin/wotw-live-map/contents/state.json?ref=main';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const svg=(tag,attrs={})=>{const el=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el;};
 let current=null,mode='live',zoom=1,showGrid=true,showCoords=true,showProps=true,showNames=true,showLighting=true,timer,busy=false,layoutKey='',sceneId='',selected='',generation=0;
@@ -92,7 +93,7 @@ const rawStamp=raw=>Date.parse(raw?.generated_at||'')||0;
 async function apiState(){
  const response=await fetch(STATE_API+'&t='+Date.now(),{cache:'no-store',headers:{Accept:'application/vnd.github+json'}});
  if(!response.ok)throw Error('GitHub API '+response.status);
- const envelope=await response.json(),binary=atob(String(envelope.content||'').replace(/\\s/g,''));
+ const envelope=await response.json(),binary=atob(String(envelope.content||'').replace(/\s/g,''));
  const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
  return JSON.parse(new TextDecoder().decode(bytes));
 }
@@ -105,7 +106,7 @@ async function poll(){
  clearTimeout(timer);if(mode!=='live'||document.hidden||busy)return;
  busy=true;const requestGeneration=generation;
  try{
-  const raw=current?await rawState():await apiState();
+  const raw=current?await rawState():await apiState().catch(()=>rawState());
   if(mode!=='live'||requestGeneration!==generation)return;
   const stale=current&&rawStamp(raw)&&rawStamp(current)&&rawStamp(raw)<rawStamp(current);
   if(!stale&&(!current||String(raw.revision)!==current.revision||raw.active!==current.active||raw.scene_id!==current.scene_id))render(raw);
