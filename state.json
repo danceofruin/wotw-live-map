@@ -1,10 +1,1663 @@
 {
   "schema_version": 2,
-  "active": false,
-  "scene_id": null,
-  "title": "WotW Live Map",
-  "revision": "bryr-traya-27apr-end",
-  "generated_at": "2026-10-22T15:31:30Z",
-  "map": null,
-  "tokens": []
+  "active": true,
+  "scene_id": "horn-3-9-alarm-21may",
+  "title": "Horn · 3-9 Alarm · Runde 1",
+  "revision": "horn-3-9-r1-live-001",
+  "generated_at": "2026-10-24T21:25:00Z",
+  "atlas": {
+    "id": "horn-level-3",
+    "revision": "2026-10-14.2",
+    "variant": "current",
+    "origin": [
+      0,
+      0
+    ],
+    "structural_revision": "horn-construction-2026-10-20.1"
+  },
+  "grid": {
+    "cols": 58,
+    "rows": 28,
+    "feet": 5,
+    "offset_x": 0,
+    "offset_y": 0
+  },
+  "map": {
+    "terrain": [
+      {
+        "type": "floor",
+        "points": [
+          [
+            8,
+            8
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            12,
+            8
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            2,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            12,
+            10
+          ],
+          [
+            18,
+            10
+          ],
+          [
+            18,
+            18
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            12,
+            8
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            4,
+            18
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            24
+          ],
+          [
+            4,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            12,
+            18
+          ],
+          [
+            18,
+            18
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            12,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            18,
+            10
+          ],
+          [
+            24,
+            10
+          ],
+          [
+            24,
+            26
+          ],
+          [
+            18,
+            26
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            24,
+            10
+          ],
+          [
+            28,
+            10
+          ],
+          [
+            28,
+            16
+          ],
+          [
+            24,
+            16
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            24,
+            16
+          ],
+          [
+            28,
+            16
+          ],
+          [
+            28,
+            24
+          ],
+          [
+            24,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            28,
+            24
+          ],
+          [
+            28,
+            18
+          ],
+          [
+            42,
+            18
+          ],
+          [
+            42,
+            22
+          ],
+          [
+            40,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            12,
+            0
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            28,
+            10
+          ],
+          [
+            12,
+            10
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            28,
+            8
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            40,
+            0
+          ],
+          [
+            42,
+            2
+          ],
+          [
+            42,
+            8
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            28,
+            8
+          ],
+          [
+            38,
+            8
+          ],
+          [
+            38,
+            18
+          ],
+          [
+            28,
+            18
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            38,
+            8
+          ],
+          [
+            42,
+            8
+          ],
+          [
+            42,
+            18
+          ],
+          [
+            38,
+            18
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            10.100000000000001
+          ],
+          [
+            2,
+            10.100000000000001
+          ],
+          [
+            2,
+            12.3
+          ],
+          [
+            0,
+            12.3
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            12.3
+          ],
+          [
+            2,
+            12.3
+          ],
+          [
+            2,
+            14.5
+          ],
+          [
+            0,
+            14.5
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            14.5
+          ],
+          [
+            2,
+            14.5
+          ],
+          [
+            2,
+            16.7
+          ],
+          [
+            0,
+            16.7
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            16.7
+          ],
+          [
+            2,
+            16.7
+          ],
+          [
+            2,
+            18.9
+          ],
+          [
+            0,
+            18.9
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            18.9
+          ],
+          [
+            2,
+            18.9
+          ],
+          [
+            2,
+            21.1
+          ],
+          [
+            0,
+            21.1
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            21.1
+          ],
+          [
+            2,
+            21.1
+          ],
+          [
+            2,
+            23.299999999999997
+          ],
+          [
+            1.2999999999999972,
+            23.299999999999997
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "x": 46,
+        "y": 1,
+        "w": 11,
+        "h": 10
+      },
+      {
+        "type": "floor",
+        "x": 46,
+        "y": 13,
+        "w": 11,
+        "h": 14
+      }
+    ],
+    "walls": [
+      {
+        "from": [
+          0,
+          2
+        ],
+        "to": [
+          0,
+          22
+        ]
+      },
+      {
+        "from": [
+          0,
+          22
+        ],
+        "to": [
+          2,
+          24
+        ]
+      },
+      {
+        "from": [
+          2,
+          24
+        ],
+        "to": [
+          18,
+          24
+        ]
+      },
+      {
+        "from": [
+          24,
+          24
+        ],
+        "to": [
+          40,
+          24
+        ]
+      },
+      {
+        "from": [
+          40,
+          24
+        ],
+        "to": [
+          42,
+          22
+        ]
+      },
+      {
+        "from": [
+          42,
+          22
+        ],
+        "to": [
+          42,
+          2
+        ]
+      },
+      {
+        "from": [
+          42,
+          2
+        ],
+        "to": [
+          40,
+          0
+        ]
+      },
+      {
+        "from": [
+          40,
+          0
+        ],
+        "to": [
+          2,
+          0
+        ]
+      },
+      {
+        "from": [
+          2,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ]
+      },
+      {
+        "from": [
+          0,
+          8
+        ],
+        "to": [
+          2.1,
+          8
+        ]
+      },
+      {
+        "from": [
+          3.1,
+          8
+        ],
+        "to": [
+          4,
+          8
+        ]
+      },
+      {
+        "from": [
+          4,
+          8
+        ],
+        "to": [
+          4,
+          21.1
+        ]
+      },
+      {
+        "from": [
+          4,
+          22.1
+        ],
+        "to": [
+          4,
+          24
+        ]
+      },
+      {
+        "from": [
+          4,
+          10
+        ],
+        "to": [
+          8,
+          10
+        ]
+      },
+      {
+        "from": [
+          8,
+          10
+        ],
+        "to": [
+          8,
+          8
+        ]
+      },
+      {
+        "from": [
+          12,
+          0
+        ],
+        "to": [
+          12,
+          10
+        ]
+      },
+      {
+        "from": [
+          12,
+          10
+        ],
+        "to": [
+          21.3,
+          10
+        ]
+      },
+      {
+        "from": [
+          22.3,
+          10
+        ],
+        "to": [
+          24,
+          10
+        ]
+      },
+      {
+        "from": [
+          4,
+          18
+        ],
+        "to": [
+          10.5,
+          18
+        ]
+      },
+      {
+        "from": [
+          11.5,
+          18
+        ],
+        "to": [
+          18,
+          18
+        ]
+      },
+      {
+        "from": [
+          12,
+          18
+        ],
+        "to": [
+          12,
+          20.5
+        ]
+      },
+      {
+        "from": [
+          12,
+          21.5
+        ],
+        "to": [
+          12,
+          24
+        ]
+      },
+      {
+        "from": [
+          18,
+          10
+        ],
+        "to": [
+          18,
+          13.5
+        ]
+      },
+      {
+        "from": [
+          18,
+          14.5
+        ],
+        "to": [
+          18,
+          20.5
+        ]
+      },
+      {
+        "from": [
+          18,
+          21.5
+        ],
+        "to": [
+          18,
+          24
+        ]
+      },
+      {
+        "from": [
+          24,
+          10
+        ],
+        "to": [
+          24,
+          12.5
+        ]
+      },
+      {
+        "from": [
+          24,
+          13.5
+        ],
+        "to": [
+          24,
+          20.5
+        ]
+      },
+      {
+        "from": [
+          24,
+          21.5
+        ],
+        "to": [
+          24,
+          24
+        ]
+      },
+      {
+        "from": [
+          24,
+          16
+        ],
+        "to": [
+          28,
+          16
+        ]
+      },
+      {
+        "from": [
+          28,
+          10
+        ],
+        "to": [
+          28,
+          20.5
+        ]
+      },
+      {
+        "from": [
+          28,
+          21.5
+        ],
+        "to": [
+          28,
+          24
+        ]
+      },
+      {
+        "from": [
+          28,
+          0
+        ],
+        "to": [
+          28,
+          4.5
+        ]
+      },
+      {
+        "from": [
+          28,
+          5.5
+        ],
+        "to": [
+          28,
+          8
+        ]
+      },
+      {
+        "from": [
+          28,
+          8
+        ],
+        "to": [
+          42,
+          8
+        ]
+      },
+      {
+        "from": [
+          28,
+          18
+        ],
+        "to": [
+          42,
+          18
+        ]
+      },
+      {
+        "from": [
+          38,
+          8
+        ],
+        "to": [
+          38,
+          12.5
+        ]
+      },
+      {
+        "from": [
+          38,
+          13.5
+        ],
+        "to": [
+          38,
+          18
+        ]
+      },
+      {
+        "from": [
+          2,
+          10.100000000000001
+        ],
+        "to": [
+          2,
+          10.700000000000001
+        ]
+      },
+      {
+        "from": [
+          2,
+          11.700000000000001
+        ],
+        "to": [
+          2,
+          12.9
+        ]
+      },
+      {
+        "from": [
+          2,
+          13.9
+        ],
+        "to": [
+          2,
+          15.1
+        ]
+      },
+      {
+        "from": [
+          2,
+          16.1
+        ],
+        "to": [
+          2,
+          17.300000000000004
+        ]
+      },
+      {
+        "from": [
+          2,
+          18.300000000000004
+        ],
+        "to": [
+          2,
+          19.5
+        ]
+      },
+      {
+        "from": [
+          2,
+          20.5
+        ],
+        "to": [
+          2,
+          21.700000000000003
+        ]
+      },
+      {
+        "from": [
+          2,
+          22.700000000000003
+        ],
+        "to": [
+          2,
+          23.3
+        ]
+      },
+      {
+        "from": [
+          0,
+          10.100000000000001
+        ],
+        "to": [
+          2,
+          10.100000000000001
+        ]
+      },
+      {
+        "from": [
+          0,
+          12.3
+        ],
+        "to": [
+          2,
+          12.3
+        ]
+      },
+      {
+        "from": [
+          0,
+          14.5
+        ],
+        "to": [
+          2,
+          14.5
+        ]
+      },
+      {
+        "from": [
+          0,
+          16.7
+        ],
+        "to": [
+          2,
+          16.7
+        ]
+      },
+      {
+        "from": [
+          0,
+          18.9
+        ],
+        "to": [
+          2,
+          18.9
+        ]
+      },
+      {
+        "from": [
+          0,
+          21.1
+        ],
+        "to": [
+          2,
+          21.1
+        ]
+      },
+      {
+        "from": [
+          1.2999999999999972,
+          23.299999999999997
+        ],
+        "to": [
+          2,
+          23.299999999999997
+        ]
+      },
+      {
+        "from": [
+          8,
+          11
+        ],
+        "to": [
+          14,
+          11
+        ]
+      },
+      {
+        "from": [
+          14,
+          11
+        ],
+        "to": [
+          14,
+          13.5
+        ]
+      },
+      {
+        "from": [
+          14,
+          14.5
+        ],
+        "to": [
+          14,
+          17
+        ]
+      },
+      {
+        "from": [
+          14,
+          17
+        ],
+        "to": [
+          8,
+          17
+        ]
+      },
+      {
+        "from": [
+          8,
+          17
+        ],
+        "to": [
+          8,
+          11
+        ]
+      }
+    ],
+    "markers": [
+      {
+        "type": "stairs",
+        "x": 32,
+        "y": 12,
+        "w": 2,
+        "h": 2,
+        "rotation": 0,
+        "open": false
+      },
+      {
+        "type": "stairs",
+        "x": 39,
+        "y": 13.6,
+        "w": 1.3999999999999986,
+        "h": 1.4000000000000004,
+        "rotation": 0,
+        "open": false
+      },
+      {
+        "type": "door",
+        "x": 14,
+        "y": 13.5,
+        "w": 0.2,
+        "h": 1,
+        "rotation": 0,
+        "open": false
+      },
+      {
+        "type": "stairs",
+        "x": 10,
+        "y": 13,
+        "w": 2,
+        "h": 2,
+        "rotation": 0,
+        "open": true
+      }
+    ],
+    "doors": [
+      {
+        "from": [
+          2.1,
+          8
+        ],
+        "to": [
+          3.1,
+          8
+        ],
+        "id": "cells-north",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          4,
+          21.1
+        ],
+        "to": [
+          4,
+          22.1
+        ],
+        "id": "cells-east",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          10.5,
+          18
+        ],
+        "to": [
+          11.5,
+          18
+        ],
+        "id": "meditation-blitz",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          12,
+          20.5
+        ],
+        "to": [
+          12,
+          21.5
+        ],
+        "id": "blitz-vorraum",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          18,
+          20.5
+        ],
+        "to": [
+          18,
+          21.5
+        ],
+        "id": "vorraum-flur",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          18,
+          13.5
+        ],
+        "to": [
+          18,
+          14.5
+        ],
+        "id": "meditation-flur",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          21.3,
+          10
+        ],
+        "to": [
+          22.3,
+          10
+        ],
+        "id": "temple-flur",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          24,
+          12.5
+        ],
+        "to": [
+          24,
+          13.5
+        ],
+        "id": "guard-flur",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          24,
+          20.5
+        ],
+        "to": [
+          24,
+          21.5
+        ],
+        "id": "library-flur",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          28,
+          20.5
+        ],
+        "to": [
+          28,
+          21.5
+        ],
+        "id": "library-secret",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          38,
+          12.5
+        ],
+        "to": [
+          38,
+          13.5
+        ],
+        "id": "daemon-hidden-stair",
+        "material": "wood",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          21.700000000000003
+        ],
+        "to": [
+          2,
+          22.700000000000003
+        ],
+        "id": "cell-A",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          19.5
+        ],
+        "to": [
+          2,
+          20.5
+        ],
+        "id": "cell-B",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          17.300000000000004
+        ],
+        "to": [
+          2,
+          18.300000000000004
+        ],
+        "id": "cell-C",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          15.1
+        ],
+        "to": [
+          2,
+          16.1
+        ],
+        "id": "cell-D",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          12.9
+        ],
+        "to": [
+          2,
+          13.9
+        ],
+        "id": "cell-E",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          2,
+          10.700000000000001
+        ],
+        "to": [
+          2,
+          11.700000000000001
+        ],
+        "id": "cell-F",
+        "material": "steel",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "from": [
+          28,
+          4.5
+        ],
+        "to": [
+          28,
+          5.5
+        ],
+        "id": "vault-portal",
+        "material": "stone",
+        "kind": "portal",
+        "state": "closed",
+        "open": false
+      },
+      {
+        "id": "arrival-3-9-iron-front",
+        "from": [
+          14,
+          13.5
+        ],
+        "to": [
+          14,
+          14.5
+        ],
+        "material": "iron",
+        "kind": "door",
+        "state": "closed",
+        "open": false
+      }
+    ],
+    "lines": [],
+    "labels": [
+      {
+        "x": 6,
+        "y": 5,
+        "w": 12,
+        "text": "Ehemalige Freudenhalle"
+      },
+      {
+        "x": 11,
+        "y": 13,
+        "w": 14,
+        "text": "Meditationshalle"
+      },
+      {
+        "x": 8,
+        "y": 21,
+        "w": 8,
+        "text": "Blitzraum"
+      },
+      {
+        "x": 15,
+        "y": 21,
+        "w": 6,
+        "text": "Vorraum"
+      },
+      {
+        "x": 21,
+        "y": 18,
+        "w": 6,
+        "text": "Center Eye / Flur"
+      },
+      {
+        "x": 26,
+        "y": 13,
+        "w": 4,
+        "text": "Wachraum"
+      },
+      {
+        "x": 26,
+        "y": 20,
+        "w": 4,
+        "text": "Bibliotheksprojekt / alter Raum"
+      },
+      {
+        "x": 35,
+        "y": 21,
+        "w": 14,
+        "text": "Verbrannte Bibliothek"
+      },
+      {
+        "x": 20,
+        "y": 5,
+        "w": 16,
+        "text": "Tempel der vier Altäre"
+      },
+      {
+        "x": 35,
+        "y": 4,
+        "w": 14,
+        "text": "Schatzkammer / Sonderzugang"
+      },
+      {
+        "x": 33,
+        "y": 13,
+        "w": 10,
+        "text": "Daemonenwache / Sanctum-Spiral"
+      },
+      {
+        "x": 40,
+        "y": 13,
+        "w": 4,
+        "text": "Geheime Treppe aus Höhlen"
+      },
+      {
+        "x": 1,
+        "y": 11.200000000000001,
+        "w": 2,
+        "text": "F"
+      },
+      {
+        "x": 1,
+        "y": 13.4,
+        "w": 2,
+        "text": "E"
+      },
+      {
+        "x": 1,
+        "y": 15.6,
+        "w": 2,
+        "text": "D"
+      },
+      {
+        "x": 1,
+        "y": 17.799999999999997,
+        "w": 2,
+        "text": "C"
+      },
+      {
+        "x": 1,
+        "y": 20,
+        "w": 2,
+        "text": "B"
+      },
+      {
+        "x": 1.25,
+        "y": 22.2,
+        "w": 1.5,
+        "text": "A"
+      },
+      {
+        "x": 51.5,
+        "y": 1.5,
+        "w": 11,
+        "text": "LOST THRONE · NOCH NICHT TELEPORTIERT"
+      },
+      {
+        "x": 51.5,
+        "y": 13.5,
+        "w": 11,
+        "text": "HORN · OFF-MAP / POSITION NICHT FESTGELEGT"
+      },
+      {
+        "x": 11,
+        "y": 12.2,
+        "w": 6,
+        "text": "3-9 ANKUNFTSSICHERUNG"
+      }
+    ],
+    "lights": [],
+    "lighting": {
+      "ambient": "dark",
+      "profile": "workday",
+      "occlusion": "walls-and-closed-opaque-doors",
+      "approximate": true
+    }
+  },
+  "tokens": [
+    {
+      "id": "thomas",
+      "name": "Eindringling 1",
+      "label": "1",
+      "square": "K14",
+      "icon": "unknown",
+      "faction": "hostile",
+      "statuses": [
+        "angekommen"
+      ]
+    },
+    {
+      "id": "harkon",
+      "name": "Eindringling 2",
+      "label": "2",
+      "square": "AU3",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "off-map",
+        "Lost Throne"
+      ]
+    },
+    {
+      "id": "vyte",
+      "name": "Eindringling 3",
+      "label": "3",
+      "square": "AW3",
+      "icon": "mage",
+      "faction": "hostile",
+      "statuses": [
+        "off-map",
+        "Lost Throne"
+      ]
+    },
+    {
+      "id": "vet1",
+      "name": "Eindringling 4",
+      "label": "4",
+      "square": "AY3",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "off-map",
+        "Lost Throne"
+      ]
+    },
+    {
+      "id": "vet2",
+      "name": "Eindringling 5",
+      "label": "5",
+      "square": "AU6",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "off-map",
+        "Lost Throne"
+      ]
+    },
+    {
+      "id": "vet3",
+      "name": "Eindringling 6",
+      "label": "6",
+      "square": "AW6",
+      "icon": "soldier",
+      "faction": "hostile",
+      "statuses": [
+        "off-map",
+        "Lost Throne"
+      ]
+    },
+    {
+      "id": "tamsin",
+      "name": "Tamsin",
+      "label": "T",
+      "square": "O15",
+      "icon": "soldier",
+      "faction": "ally",
+      "statuses": [
+        "außerhalb Eisenfront"
+      ]
+    },
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "AU16",
+      "icon": "styke",
+      "faction": "party",
+      "statuses": [
+        "off-map",
+        "1-22 Schmiede"
+      ]
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "label": "V",
+      "square": "AW16",
+      "icon": "vesper",
+      "faction": "party",
+      "statuses": [
+        "off-map",
+        "Position nicht festgelegt"
+      ]
+    },
+    {
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "AY16",
+      "icon": "valeria",
+      "faction": "party",
+      "statuses": [
+        "off-map",
+        "Position nicht festgelegt"
+      ]
+    },
+    {
+      "id": "hexor",
+      "name": "Hexor",
+      "label": "HX",
+      "square": "AU20",
+      "icon": "beast",
+      "faction": "ally",
+      "size": 2,
+      "statuses": [
+        "off-map",
+        "Ebene 2"
+      ]
+    },
+    {
+      "id": "vexor",
+      "name": "Vexor",
+      "label": "VX",
+      "square": "AX20",
+      "icon": "beast",
+      "faction": "ally",
+      "size": 2,
+      "statuses": [
+        "off-map",
+        "Ebene 3 · exakter Standort nicht festgelegt"
+      ]
+    }
+  ]
 }
