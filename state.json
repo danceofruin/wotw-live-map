@@ -2,9 +2,9 @@
   "schema_version": 2,
   "active": true,
   "scene_id": "horn-3-9-alarm-21may",
-  "title": "Horn · Ebene 3 · Eindringlinge vorgerückt",
-  "revision": "horn-3-9-redo02-combat-ready-001-marker-fix",
-  "generated_at": "2026-10-24T21:45:04.775Z",
+  "title": "Horn · 3-9 · Vorstoß durch Nen",
+  "revision": "horn-3-9-redo02-nen-entry-002",
+  "generated_at": "2026-10-24T21:48:00Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -1528,50 +1528,39 @@
       ]
     },
     {
-      "id": "tamsin",
-      "name": "Tamsin",
-      "label": "T",
-      "square": "S17",
-      "icon": "soldier",
-      "faction": "ally",
-      "statuses": [
-        "Abstand zur Gruppe"
-      ]
-    },
-    {
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "AV16",
+      "square": "K14",
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "Ebene 2",
-        "am Thron"
+        "Nen-Ankunft",
+        "Buffs aktiv"
       ]
     },
     {
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "AW19",
+      "square": "L14",
       "icon": "vesper",
       "faction": "party",
       "statuses": [
-        "Ebene 2",
-        "am Thron"
+        "Nen-Ankunft",
+        "Buffs aktiv"
       ]
     },
     {
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "AY19",
+      "square": "K15",
       "icon": "valeria",
       "faction": "party",
       "statuses": [
-        "Ebene 2",
-        "am Thron"
+        "Nen-Ankunft",
+        "Buffs aktiv"
       ]
     },
     {
@@ -1583,8 +1572,8 @@
       "faction": "ally",
       "size": 2,
       "statuses": [
-        "Ebene 2",
-        "bereit"
+        "bereit",
+        "am Thron Ebene 2"
       ]
     },
     {
@@ -1596,8 +1585,8 @@
       "faction": "ally",
       "size": 2,
       "statuses": [
-        "Ebene 2",
-        "bereit"
+        "bereit",
+        "am Thron Ebene 2"
       ]
     }
   ]
