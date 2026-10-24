@@ -113,3 +113,7 @@ The player prioritizes speed. Dice are verified through the actual Python execut
 Before publishing a complete candidate snapshot, run `node validate-state.mjs candidate-state.json model-atlas-v12.mjs`. Use the model actually imported by the deployed app when client versions change. The helper runs the browser's own `normalize`, not a duplicate schema. A failed check blocks publication; keep the last valid live state. The marker catalogue is exported as `MARKERS` by that model; the bell uses `alarm`, not `bell`.
 
 The v12 client distinguishes invalid map data from a failed network request, identifies unsupported marker types and preserves the currently displayed valid map on rejected updates. Run `node test-live-validation.mjs` for startup/update/recovery regression checks. The current deployed pair is `app-atlas-v12.js` / `model-atlas-v12.mjs`.
+
+## Cloud effect overlays (client v13)
+
+`map.effects` supports `{id,kind,label,cells:["D3","E3"]}`; kinds `stinking_cloud` and `fog_cloud`. The client draws exactly these approved public cells as translucent overlays, validates bounds and rejects duplicate IDs/cells. There is no `cloud` marker type. The private MCP cloud pilot owns computed coverage and current effect state; the browser is a display. Publish only reviewed/clipped public_projection.effects, never the full private response. The deployed pair is app-atlas-v13.js / model-atlas-v13.mjs; executable preflight defaults to that same model. Existing live state is not changed by this client upgrade.
