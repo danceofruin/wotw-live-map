@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-3-9-alarm-21may",
   "title": "Horn · Ebene 3 · Eindringlinge vorgerückt",
-  "revision": "horn-3-9-redo02-combat-ready-001",
-  "generated_at": "2026-10-24T21:43:00Z",
+  "revision": "horn-3-9-redo02-combat-ready-001-marker-fix",
+  "generated_at": "2026-10-24T21:45:04.775Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -884,7 +884,7 @@
         "open": true
       },
       {
-        "type": "bell",
+        "type": "alarm",
         "x": 14.3,
         "y": 12,
         "w": 0.65,
