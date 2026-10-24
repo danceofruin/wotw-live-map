@@ -107,3 +107,9 @@ The v8 map client visually distinguishes `broken` fixtures, with their stable ID
 ## Dice log disabled (client v10)
 
 The player prioritizes speed. Dice are verified through the actual Python execution trace and a temporary private project-local log. Do not project dice into public state, fetch private receipts, or publish log-only map changes. The client has no dice panel and ignores legacy roll_log fields in archived snapshots. Historical private receipts and immutable old client files remain untouched. Normal accepted geometry/token/status updates and map history continue unchanged. Deployment uses app-atlas-v10.js / model-atlas-v10.mjs without the roll-log module.
+
+## Executable publication validation
+
+Before publishing a complete candidate snapshot, run `node validate-state.mjs candidate-state.json model-atlas-v12.mjs`. Use the model actually imported by the deployed app when client versions change. The helper runs the browser's own `normalize`, not a duplicate schema. A failed check blocks publication; keep the last valid live state. The marker catalogue is exported as `MARKERS` by that model; the bell uses `alarm`, not `bell`.
+
+The v12 client distinguishes invalid map data from a failed network request, identifies unsupported marker types and preserves the currently displayed valid map on rejected updates. Run `node test-live-validation.mjs` for startup/update/recovery regression checks. The current deployed pair is `app-atlas-v12.js` / `model-atlas-v12.mjs`.
