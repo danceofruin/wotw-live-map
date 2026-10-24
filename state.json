@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-3-9-alarm-21may",
   "title": "Horn · 3-9 · Runde 1 · Stinking Cloud",
-  "revision": "horn-3-9-redo02-r1-vesper-cloud-003",
-  "generated_at": "2026-10-24T21:54:00Z",
+  "revision": "horn-3-9-redo02-r1-vesper-cloud-003-valid-label",
+  "generated_at": "2026-10-24T21:54:51.417Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -1034,15 +1034,6 @@
         "w": 0.2,
         "h": 1,
         "open": true
-      },
-      {
-        "type": "cloud",
-        "x": 12,
-        "y": 10,
-        "w": 9,
-        "h": 9,
-        "open": true,
-        "label": "Stinking Cloud · Q15 · Radius 20 ft"
       }
     ],
     "doors": [
@@ -1459,6 +1450,12 @@
         "y": 12.2,
         "w": 6,
         "text": "3-9 ANKUNFTSSICHERUNG"
+      },
+      {
+        "x": 16.5,
+        "y": 14.5,
+        "w": 9,
+        "text": "Stinking Cloud · Q15 · Radius 20 ft · schematisch"
       }
     ],
     "lights": [],
