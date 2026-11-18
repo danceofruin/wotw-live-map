@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-entrance-0825-a",
   "title": "Horn · Haupteingang 1-1",
-  "revision": "horn-entrance-0825-a-1795011772037",
-  "generated_at": "2026-11-18T14:22:52.037Z",
+  "revision": "horn-entrance-0825-a-1795012137589",
+  "generated_at": "2026-11-18T14:28:57.589Z",
   "grid": {
     "cols": 9,
     "rows": 13,
@@ -412,6 +412,11 @@
         "x": 6,
         "y": 5,
         "text": "Irrlicht auf O24 gefallen"
+      },
+      {
+        "x": 6,
+        "y": 7,
+        "text": "Irrlicht auf O26 gefallen"
       }
     ]
   },
@@ -457,18 +462,6 @@
       "icon": "beast",
       "faction": "ally",
       "statuses": []
-    },
-    {
-      "id": "revealed-2",
-      "name": "Irrlicht bei Styke",
-      "label": "2",
-      "square": "D7",
-      "icon": "unknown",
-      "faction": "unknown",
-      "statuses": [
-        "Glitterdust",
-        "Sickened (1 Runde)"
-      ]
     }
   ]
 }
