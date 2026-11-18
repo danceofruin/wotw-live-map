@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-entrance-0825-a",
   "title": "Horn · Haupteingang 1-1",
-  "revision": "horn-entrance-0825-a-1795010497535",
-  "generated_at": "2026-11-18T14:01:37.535Z",
+  "revision": "horn-entrance-0825-a-1795010642319",
+  "generated_at": "2026-11-18T14:04:02.319Z",
   "grid": {
     "cols": 9,
     "rows": 13,
@@ -401,12 +401,12 @@
       {
         "x": 6,
         "y": 4,
-        "text": "Zwei Unsichtbare am inneren Gitter"
+        "text": "Ein weiterer Unsichtbarer am inneren Gitter"
       },
       {
         "x": 6,
         "y": 8,
-        "text": "Zwei Unsichtbare am äußeren Gitter"
+        "text": "Ein weiterer Unsichtbarer am äußeren Gitter"
       },
       {
         "x": 5,
@@ -455,6 +455,30 @@
       "icon": "beast",
       "faction": "ally",
       "statuses": []
+    },
+    {
+      "id": "revealed-1",
+      "name": "Umriss am inneren Gitter",
+      "label": "1",
+      "square": "D5",
+      "icon": "unknown",
+      "faction": "unknown",
+      "statuses": [
+        "Glitterdust"
+      ],
+      "elevation_ft": 5
+    },
+    {
+      "id": "revealed-2",
+      "name": "Umriss am äußeren Gitter",
+      "label": "2",
+      "square": "D8",
+      "icon": "unknown",
+      "faction": "unknown",
+      "statuses": [
+        "Glitterdust"
+      ],
+      "elevation_ft": 5
     }
   ]
 }
