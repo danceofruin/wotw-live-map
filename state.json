@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-entrance-0825-a",
   "title": "Horn · Haupteingang 1-1",
-  "revision": "horn-entrance-0825-a-1795010642319",
-  "generated_at": "2026-11-18T14:04:02.319Z",
+  "revision": "horn-entrance-0825-a-1795011448178",
+  "generated_at": "2026-11-18T14:17:28.178Z",
   "grid": {
     "cols": 9,
     "rows": 13,
@@ -420,11 +420,13 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "D3",
+      "square": "E6",
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "15 temporäre TP"
+        "15 temporäre TP",
+        "Heroism",
+        "Elektrizitätsresistenz 10"
       ]
     },
     {
@@ -458,25 +460,27 @@
     },
     {
       "id": "revealed-1",
-      "name": "Umriss am inneren Gitter",
+      "name": "Irrlicht am inneren Gitter",
       "label": "1",
       "square": "D5",
       "icon": "unknown",
       "faction": "unknown",
       "statuses": [
-        "Glitterdust"
+        "Glitterdust",
+        "Sickened (1 Runde)"
       ],
       "elevation_ft": 5
     },
     {
       "id": "revealed-2",
-      "name": "Umriss am äußeren Gitter",
+      "name": "Irrlicht am äußeren Gitter",
       "label": "2",
       "square": "D8",
       "icon": "unknown",
       "faction": "unknown",
       "statuses": [
-        "Glitterdust"
+        "Glitterdust",
+        "Sickened (1 Runde)"
       ],
       "elevation_ft": 5
     }
