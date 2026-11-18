@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-entrance-0825-a",
   "title": "Horn · Haupteingang 1-1",
-  "revision": "horn-entrance-0825-a-1795011448178",
-  "generated_at": "2026-11-18T14:17:28.178Z",
+  "revision": "horn-entrance-0825-a-1795011772037",
+  "generated_at": "2026-11-18T14:22:52.037Z",
   "grid": {
     "cols": 9,
     "rows": 13,
@@ -399,19 +399,19 @@
         "text": "Hornseite"
       },
       {
-        "x": 6,
-        "y": 4,
-        "text": "Ein weiterer Unsichtbarer am inneren Gitter"
-      },
-      {
-        "x": 6,
-        "y": 8,
-        "text": "Ein weiterer Unsichtbarer am äußeren Gitter"
-      },
-      {
         "x": 5,
         "y": 11,
         "text": "Draußen: Vexor und Calliaste"
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "text": "Zwei unsichtbare Irrlichter bei Styke"
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "text": "Irrlicht auf O24 gefallen"
       }
     ]
   },
@@ -424,7 +424,7 @@
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "15 temporäre TP",
+        "8 temporäre TP",
         "Heroism",
         "Elektrizitätsresistenz 10"
       ]
@@ -442,7 +442,7 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "F3",
+      "square": "D3",
       "icon": "valeria",
       "faction": "party",
       "statuses": [
@@ -459,30 +459,16 @@
       "statuses": []
     },
     {
-      "id": "revealed-1",
-      "name": "Irrlicht am inneren Gitter",
-      "label": "1",
-      "square": "D5",
-      "icon": "unknown",
-      "faction": "unknown",
-      "statuses": [
-        "Glitterdust",
-        "Sickened (1 Runde)"
-      ],
-      "elevation_ft": 5
-    },
-    {
       "id": "revealed-2",
-      "name": "Irrlicht am äußeren Gitter",
+      "name": "Irrlicht bei Styke",
       "label": "2",
-      "square": "D8",
+      "square": "D7",
       "icon": "unknown",
       "faction": "unknown",
       "statuses": [
         "Glitterdust",
         "Sickened (1 Runde)"
-      ],
-      "elevation_ft": 5
+      ]
     }
   ]
 }
