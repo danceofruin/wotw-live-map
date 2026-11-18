@@ -1,1 +1,460 @@
-{"schema_version":2,"active":false,"scene_id":"horn-clearing-0710-a","title":"WotW Live Map","revision":"horn-clearing-0710-a-end-001-idle","generated_at":"2026-10-29T17:20:19.270Z","map":null,"tokens":[]}
+{
+  "schema_version": 2,
+  "active": true,
+  "scene_id": "horn-entrance-0825-a",
+  "title": "Horn · Haupteingang 1-1",
+  "revision": "horn-entrance-0825-a-1795010497535",
+  "generated_at": "2026-11-18T14:01:37.535Z",
+  "grid": {
+    "cols": 9,
+    "rows": 13,
+    "feet": 5,
+    "offset_x": 11,
+    "offset_y": 19
+  },
+  "map": {
+    "terrain": [
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            0,
+            9
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            5,
+            3
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            5,
+            9
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            9,
+            0
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            7,
+            1
+          ]
+        ]
+      }
+    ],
+    "walls": [
+      {
+        "from": [
+          0,
+          9
+        ],
+        "to": [
+          3,
+          9
+        ]
+      },
+      {
+        "from": [
+          5,
+          9
+        ],
+        "to": [
+          9,
+          9
+        ]
+      },
+      {
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          3,
+          11
+        ]
+      },
+      {
+        "from": [
+          5,
+          3
+        ],
+        "to": [
+          5,
+          11
+        ]
+      },
+      {
+        "from": [
+          5,
+          3
+        ],
+        "to": [
+          7,
+          1
+        ]
+      },
+      {
+        "from": [
+          7,
+          1
+        ],
+        "to": [
+          9,
+          1
+        ]
+      }
+    ],
+    "doors": [
+      {
+        "from": [
+          3,
+          9
+        ],
+        "to": [
+          5,
+          9
+        ],
+        "id": "left-eye-portcullis-outer",
+        "material": "iron",
+        "kind": "portcullis",
+        "state": "lowered",
+        "open": false
+      },
+      {
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          5,
+          3
+        ],
+        "id": "left-eye-portcullis-inner",
+        "material": "iron",
+        "kind": "portcullis",
+        "state": "lowered",
+        "open": false
+      }
+    ],
+    "lines": [
+      {
+        "from": [
+          3,
+          3.1799999999999997
+        ],
+        "to": [
+          3,
+          3.4800000000000004
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          3.1799999999999997
+        ],
+        "to": [
+          5,
+          3.4800000000000004
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          4.129999999999999
+        ],
+        "to": [
+          3,
+          4.43
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          4.129999999999999
+        ],
+        "to": [
+          5,
+          4.43
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          5.079999999999998
+        ],
+        "to": [
+          3,
+          5.379999999999999
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          5.079999999999998
+        ],
+        "to": [
+          5,
+          5.379999999999999
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          6.030000000000001
+        ],
+        "to": [
+          3,
+          6.330000000000002
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          6.030000000000001
+        ],
+        "to": [
+          5,
+          6.330000000000002
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          6.98
+        ],
+        "to": [
+          3,
+          7.280000000000001
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          6.98
+        ],
+        "to": [
+          5,
+          7.280000000000001
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          7.93
+        ],
+        "to": [
+          3,
+          8.23
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          5,
+          7.93
+        ],
+        "to": [
+          5,
+          8.23
+        ],
+        "kind": "arrow_slit"
+      },
+      {
+        "from": [
+          3,
+          3.379999999999999
+        ],
+        "to": [
+          5,
+          3.379999999999999
+        ],
+        "kind": "low_wall"
+      }
+    ],
+    "markers": [
+      {
+        "id": "h1-existing-stairs-1400-2800-6",
+        "state": "present",
+        "type": "stairs",
+        "x": 3,
+        "y": 9,
+        "w": 2,
+        "h": 2,
+        "rotation": 0,
+        "open": false,
+        "label": "",
+        "tactical": "fixed",
+        "cover_candidate": "none"
+      }
+    ],
+    "lights": [
+      {
+        "id": "h1-light-11-1",
+        "x": 4.449999999999999,
+        "y": 7.699999999999999,
+        "kind": "torch",
+        "state": "lit",
+        "bright_ft": 20,
+        "dim_ft": 20,
+        "label": "Außenwache"
+      },
+      {
+        "id": "h1-light-11-2",
+        "x": 4.449999999999999,
+        "y": 1.8999999999999986,
+        "kind": "torch",
+        "state": "lit",
+        "bright_ft": 20,
+        "dim_ft": 20,
+        "label": "Inneres Wachlicht"
+      }
+    ],
+    "lighting": {
+      "ambient": "dark",
+      "profile": "workday",
+      "occlusion": "walls-and-closed-opaque-doors",
+      "approximate": true,
+      "rows": [
+        "222222220",
+        "222222222",
+        "222222222",
+        "222222222",
+        "111222222",
+        "111222222",
+        "111222111",
+        "111222111",
+        "000222111",
+        "000220000",
+        "000220000",
+        "000220000",
+        "001110000"
+      ]
+    },
+    "labels": [
+      {
+        "x": 1,
+        "y": 1,
+        "text": "Hornseite"
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "text": "Zwei Unsichtbare am inneren Gitter"
+      },
+      {
+        "x": 6,
+        "y": 8,
+        "text": "Zwei Unsichtbare am äußeren Gitter"
+      },
+      {
+        "x": 5,
+        "y": 11,
+        "text": "Draußen: Vexor und Calliaste"
+      }
+    ]
+  },
+  "tokens": [
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "D3",
+      "icon": "styke",
+      "faction": "party",
+      "statuses": [
+        "15 temporäre TP"
+      ]
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "label": "V",
+      "square": "E3",
+      "icon": "vesper",
+      "faction": "party",
+      "statuses": []
+    },
+    {
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "F3",
+      "icon": "valeria",
+      "faction": "party",
+      "statuses": [
+        "Angriff bereit"
+      ]
+    },
+    {
+      "id": "glut",
+      "name": "Glut",
+      "label": "G",
+      "square": "D2",
+      "icon": "beast",
+      "faction": "ally",
+      "statuses": []
+    }
+  ]
+}
