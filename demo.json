@@ -3,7 +3,7 @@
   "active": true,
   "scene_id": "demo-training-room",
   "title": "Demokarte · Übungsraum",
-  "revision": "demo-1",
+  "revision": "demo-initiative-1",
   "generated_at": null,
   "grid": {
     "cols": 18,
@@ -126,6 +126,28 @@
       }
     ]
   },
+  "initiative": [
+    {
+      "id": "styke",
+      "score": 24
+    },
+    {
+      "id": "vesper",
+      "score": 22
+    },
+    {
+      "id": "guard-1",
+      "score": 21
+    },
+    {
+      "id": "valeria",
+      "score": 21
+    },
+    {
+      "id": "ogre-1",
+      "score": 18
+    }
+  ],
   "tokens": [
     {
       "id": "styke",
@@ -133,7 +155,8 @@
       "label": "S",
       "square": "D7",
       "icon": "styke",
-      "faction": "party"
+      "faction": "party",
+      "hp": "50/50"
     },
     {
       "id": "vesper",
@@ -144,7 +167,8 @@
       "faction": "party",
       "statuses": [
         "hidden"
-      ]
+      ],
+      "hp": "45/48"
     },
     {
       "id": "valeria",
@@ -160,7 +184,10 @@
       "label": "1",
       "square": "M5",
       "icon": "soldier",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "Nauseated · 3 Runden"
+      ]
     },
     {
       "id": "guard-2",

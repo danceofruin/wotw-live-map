@@ -41,6 +41,8 @@ Minimal example:
 ```
 
 - Token fields: stable unique `id`, `name`, short `label`, `square` (A1 etc.), `icon`, `faction`, optional `size` (default 1), `statuses` (array), optional player-known `hp` string and `elevation_ft`.
+- For active encounters, publish optional top-level `initiative` as an array of `{"id":"styke","score":24}` entries in the resolved turn order. Use each visible token ID at most once; omit actors whose participation is GM-only. The client uses the array order directly, including ties and delayed turns. Tokens without an initiative entry remain listed below the ordered combatants. Older snapshots omit the field.
+- Use `hp` for player-known current/max HP and include known remaining durations in the matching public `statuses` string (e.g. `"Nauseated · 3 Runden"`). Publish initiative, HP and duration-only changes in the same batched snapshot as other accepted visible changes. Include the current values at activation and clear expired statuses when the runner resolves expiry.
 - For `size:2`, the square anchors the upper-left of a 2×2 footprint. Entire footprint must fit on the grid.
 - Icons: `styke`, `vesper`, `valeria`, `ogre`, `soldier`, `boggard`, `undead`, `mage`, `beast`, `unknown`. These are permanent symbolic graphics, not character portraits. Replace the relevant SVG asset later for a permanent visual upgrade.
 - Factions: `party`, `ally`, `hostile`, `neutral`, `unknown`.

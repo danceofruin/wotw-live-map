@@ -13,3 +13,26 @@
 .prop-broken image{opacity:.33;filter:grayscale(1)}
 
 
+
+#initiative-title { margin: 0 0 6px; font-size: 14px; }
+#initiative-pending { margin: 0 0 8px; }
+#roster { list-style: none; padding: 0; margin: 0; }
+#roster li + li { margin-top: 5px; }
+#initiative .roster-token {
+ width: 100%;
+ display: grid;
+ grid-template-columns: 3ch 20px minmax(0, 1fr) auto;
+ align-items: center;
+ gap: 4px 7px;
+ padding: 6px;
+ text-align: left;
+ font-size: 12px;
+}
+#initiative .roster-token img { width: 20px; height: 20px; border-radius: 50%; background: #343942; }
+.initiative-score { color: #e1c891; text-align: right; font-variant-numeric: tabular-nums; }
+.roster-name { overflow-wrap: anywhere; font-weight: 600; }
+.roster-hp { color: #b5dfca; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.roster-statuses { grid-column: 3 / -1; color: #bec7d4; font-size: 11px; line-height: 1.45; overflow-wrap: anywhere; }
+@media (max-width: 850px) {
+ #initiative { max-height: 40vh; overflow: auto; }
+}
