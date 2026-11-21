@@ -2,9 +2,9 @@
   "schema_version": 2,
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
-  "title": "Horn von Abaddon - Ebene 3 - 3-3 / 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-3-r8-valeria-flatfooted-zeal-correction",
-  "generated_at": "2026-11-21T17:11:00.000Z",
+  "title": "Horn von Abaddon - Ebene 3 - Nach dem Kampf",
+  "revision": "horn-final-assault-4712-10-10-a-idle-return-003",
+  "generated_at": "2026-11-21T17:20:00.000Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -333,14 +333,14 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "I12",
+      "square": "J12",
       "icon": "valeria",
       "faction": "party",
       "size": 1,
       "statuses": [
         "Ashen Path",
         "Darkvision",
-        "Zeal +1"
+        "Fiendish Boon unbenutzt"
       ],
       "hp": "58/58"
     },
@@ -369,8 +369,8 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Nauseated: 4 Runden",
-        "Verwundet"
+        "Kampfunfaehig",
+        "Schwer verwundet"
       ]
     },
     {
@@ -382,8 +382,8 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Nauseated: 4 Runden",
-        "Verwundet"
+        "Tot",
+        "Liegend"
       ]
     },
     {
@@ -415,38 +415,5 @@
       ]
     }
   ],
-  "initiative": [
-    {
-      "id": "vesper",
-      "score": 21
-    },
-    {
-      "id": "styke",
-      "score": 21
-    },
-    {
-      "id": "grumblejack",
-      "score": 20
-    },
-    {
-      "id": "valeria",
-      "score": 19
-    },
-    {
-      "id": "attacker-3",
-      "score": 19
-    },
-    {
-      "id": "attacker-2",
-      "score": 8
-    },
-    {
-      "id": "attacker-4",
-      "score": 7
-    },
-    {
-      "id": "attacker-1",
-      "score": 5
-    }
-  ]
+  "initiative": []
 }
