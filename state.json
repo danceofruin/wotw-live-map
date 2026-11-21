@@ -1,9 +1,772 @@
 {
   "schema_version": 2,
-  "active": false,
-  "scene_id": "horn-entrance-0825-a",
-  "title": "WotW Live Map",
-  "revision": "horn-entrance-0825-a-idle-1795012405778",
-  "generated_at": "2026-11-18T14:33:25.778Z",
-  "tokens": []
+  "active": true,
+  "scene_id": "horn-sanctum-4712-10-07-a",
+  "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
+  "revision": "horn-sanctum-4712-10-07-a-entry-354",
+  "generated_at": "2026-11-21T12:14:38Z",
+  "grid": {
+    "cols": 22,
+    "rows": 22,
+    "feet": 5,
+    "offset_x": 0,
+    "offset_y": 0
+  },
+  "map": {
+    "terrain": [
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            0,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            18,
+            4
+          ],
+          [
+            18,
+            6
+          ],
+          [
+            19,
+            6
+          ],
+          [
+            19,
+            12
+          ],
+          [
+            18,
+            12
+          ],
+          [
+            18,
+            16
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            12,
+            20
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            10,
+            18
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            8,
+            20
+          ],
+          [
+            8,
+            18
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            0,
+            14
+          ]
+        ]
+      }
+    ],
+    "walls": [
+      {
+        "from": [
+          0,
+          6
+        ],
+        "to": [
+          2,
+          6
+        ]
+      },
+      {
+        "from": [
+          2,
+          6
+        ],
+        "to": [
+          2,
+          2
+        ]
+      },
+      {
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          4,
+          2
+        ]
+      },
+      {
+        "from": [
+          4,
+          2
+        ],
+        "to": [
+          4,
+          0
+        ]
+      },
+      {
+        "from": [
+          4,
+          0
+        ],
+        "to": [
+          6,
+          0
+        ]
+      },
+      {
+        "from": [
+          6,
+          0
+        ],
+        "to": [
+          6,
+          2
+        ]
+      },
+      {
+        "from": [
+          6,
+          2
+        ],
+        "to": [
+          8,
+          2
+        ]
+      },
+      {
+        "from": [
+          8,
+          2
+        ],
+        "to": [
+          8,
+          0
+        ]
+      },
+      {
+        "from": [
+          8,
+          0
+        ],
+        "to": [
+          10,
+          0
+        ]
+      },
+      {
+        "from": [
+          10,
+          0
+        ],
+        "to": [
+          10,
+          2
+        ]
+      },
+      {
+        "from": [
+          10,
+          2
+        ],
+        "to": [
+          12,
+          2
+        ]
+      },
+      {
+        "from": [
+          12,
+          2
+        ],
+        "to": [
+          12,
+          0
+        ]
+      },
+      {
+        "from": [
+          12,
+          0
+        ],
+        "to": [
+          14,
+          0
+        ]
+      },
+      {
+        "from": [
+          14,
+          0
+        ],
+        "to": [
+          14,
+          2
+        ]
+      },
+      {
+        "from": [
+          14,
+          2
+        ],
+        "to": [
+          16,
+          2
+        ]
+      },
+      {
+        "from": [
+          16,
+          2
+        ],
+        "to": [
+          18,
+          4
+        ]
+      },
+      {
+        "from": [
+          18,
+          4
+        ],
+        "to": [
+          18,
+          6
+        ]
+      },
+      {
+        "from": [
+          18,
+          6
+        ],
+        "to": [
+          19,
+          6
+        ]
+      },
+      {
+        "from": [
+          19,
+          6
+        ],
+        "to": [
+          19,
+          12
+        ]
+      },
+      {
+        "from": [
+          19,
+          12
+        ],
+        "to": [
+          18,
+          12
+        ]
+      },
+      {
+        "from": [
+          18,
+          12
+        ],
+        "to": [
+          18,
+          16
+        ]
+      },
+      {
+        "from": [
+          18,
+          16
+        ],
+        "to": [
+          16,
+          18
+        ]
+      },
+      {
+        "from": [
+          16,
+          18
+        ],
+        "to": [
+          14,
+          18
+        ]
+      },
+      {
+        "from": [
+          14,
+          18
+        ],
+        "to": [
+          14,
+          20
+        ]
+      },
+      {
+        "from": [
+          14,
+          20
+        ],
+        "to": [
+          12,
+          20
+        ]
+      },
+      {
+        "from": [
+          12,
+          20
+        ],
+        "to": [
+          12,
+          18
+        ]
+      },
+      {
+        "from": [
+          12,
+          18
+        ],
+        "to": [
+          10,
+          18
+        ]
+      },
+      {
+        "from": [
+          10,
+          18
+        ],
+        "to": [
+          10,
+          20
+        ]
+      },
+      {
+        "from": [
+          10,
+          20
+        ],
+        "to": [
+          8,
+          20
+        ]
+      },
+      {
+        "from": [
+          8,
+          20
+        ],
+        "to": [
+          8,
+          18
+        ]
+      },
+      {
+        "from": [
+          8,
+          18
+        ],
+        "to": [
+          6,
+          18
+        ]
+      },
+      {
+        "from": [
+          6,
+          18
+        ],
+        "to": [
+          6,
+          20
+        ]
+      },
+      {
+        "from": [
+          6,
+          20
+        ],
+        "to": [
+          4,
+          20
+        ]
+      },
+      {
+        "from": [
+          4,
+          20
+        ],
+        "to": [
+          4,
+          18
+        ]
+      },
+      {
+        "from": [
+          4,
+          18
+        ],
+        "to": [
+          2,
+          18
+        ]
+      },
+      {
+        "from": [
+          2,
+          18
+        ],
+        "to": [
+          2,
+          14
+        ]
+      },
+      {
+        "from": [
+          2,
+          14
+        ],
+        "to": [
+          0,
+          14
+        ]
+      },
+      {
+        "from": [
+          0,
+          14
+        ],
+        "to": [
+          0,
+          6
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "from": [
+          3,
+          4
+        ],
+        "to": [
+          5,
+          6
+        ],
+        "kind": "low_wall"
+      },
+      {
+        "from": [
+          5,
+          6
+        ],
+        "to": [
+          15,
+          6
+        ],
+        "kind": "low_wall"
+      },
+      {
+        "from": [
+          15,
+          6
+        ],
+        "to": [
+          15,
+          4
+        ],
+        "kind": "low_wall"
+      },
+      {
+        "from": [
+          3,
+          16
+        ],
+        "to": [
+          5,
+          14
+        ],
+        "kind": "low_wall"
+      },
+      {
+        "from": [
+          5,
+          14
+        ],
+        "to": [
+          15,
+          14
+        ],
+        "kind": "low_wall"
+      },
+      {
+        "from": [
+          15,
+          14
+        ],
+        "to": [
+          15,
+          16
+        ],
+        "kind": "low_wall"
+      }
+    ],
+    "markers": [
+      {
+        "type": "stairs",
+        "x": 7.6,
+        "y": 8.4,
+        "w": 2.4,
+        "h": 2.4,
+        "label": "Sanctum-Spirale"
+      }
+    ],
+    "labels": [
+      {
+        "x": 10.65,
+        "y": 10.15,
+        "w": 3.1,
+        "text": "Altar / Siegel"
+      },
+      {
+        "x": 0.25,
+        "y": 10,
+        "w": 2.5,
+        "text": "S-2 (versiegelt)"
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "w": 4,
+        "text": "Sanctum S-1"
+      }
+    ]
+  },
+  "tokens": [
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "L13",
+      "icon": "styke",
+      "faction": "party"
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "label": "V",
+      "square": "M13",
+      "icon": "vesper",
+      "faction": "party"
+    },
+    {
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "N11",
+      "icon": "valeria",
+      "faction": "party"
+    },
+    {
+      "id": "grumblejack",
+      "name": "Grumblejack",
+      "label": "G",
+      "square": "H9",
+      "size": 2,
+      "icon": "ogre",
+      "faction": "ally"
+    },
+    {
+      "id": "ritual-ceustodaemon",
+      "name": "Ritualwächter",
+      "label": "C",
+      "square": "J12",
+      "size": 2,
+      "icon": "unknown",
+      "faction": "ally",
+      "statuses": [
+        "betet"
+      ]
+    },
+    {
+      "id": "hound-1",
+      "name": "Hund von Tindalos 1",
+      "label": "1",
+      "square": "E4",
+      "icon": "beast",
+      "faction": "hostile"
+    },
+    {
+      "id": "hound-2",
+      "name": "Hund von Tindalos 2",
+      "label": "2",
+      "square": "J4",
+      "icon": "beast",
+      "faction": "hostile"
+    },
+    {
+      "id": "hound-3",
+      "name": "Hund von Tindalos 3",
+      "label": "3",
+      "square": "O4",
+      "icon": "beast",
+      "faction": "hostile"
+    },
+    {
+      "id": "hound-4",
+      "name": "Hund von Tindalos 4",
+      "label": "4",
+      "square": "R8",
+      "icon": "beast",
+      "faction": "hostile"
+    },
+    {
+      "id": "hound-5",
+      "name": "Hund von Tindalos 5",
+      "label": "5",
+      "square": "R16",
+      "icon": "beast",
+      "faction": "hostile"
+    },
+    {
+      "id": "hound-6",
+      "name": "Hund von Tindalos 6",
+      "label": "6",
+      "square": "F18",
+      "icon": "beast",
+      "faction": "hostile"
+    }
+  ]
 }
