@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r3-start-398",
-  "generated_at": "2026-11-21T13:35:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r3-vesper-entry-402",
+  "generated_at": "2026-11-21T13:41:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -683,9 +683,10 @@
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "Illusionary State (6)"
+        "Illusionary State (6)",
+        "Gaze immun: 1, 2, 3, 6"
       ],
-      "hp": "59/60"
+      "hp": "50/60"
     },
     {
       "id": "vesper",
@@ -748,7 +749,9 @@
       "square": "F14",
       "icon": "beast",
       "faction": "hostile",
-      "statuses": []
+      "statuses": [
+        "verwundet"
+      ]
     },
     {
       "id": "hound-2",
@@ -793,7 +796,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "verwundet"
+        "schwer verwundet"
       ]
     },
     {
