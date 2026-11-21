@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r4-styke-bilious-original-431",
-  "generated_at": "2026-11-21T14:09:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r5-styke-entry-442",
+  "generated_at": "2026-11-21T14:16:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -707,12 +707,12 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "P14",
+      "square": "M11",
       "icon": "valeria",
       "faction": "party",
       "statuses": [
         "Illusionary State (2)",
-        "Charge: -2 RK bis nächster Zug"
+        "Charge: -2 RK bis naechster Zug"
       ],
       "hp": "58/58"
     },
@@ -725,9 +725,11 @@
       "icon": "ogre",
       "faction": "ally",
       "statuses": [
-        "Illusionary State (7)"
+        "Wind Speed (8 Runden)",
+        "Illusionary State (7)",
+        "Blickimmun Hund 3"
       ],
-      "hp": "17/59"
+      "hp": "28/59"
     },
     {
       "id": "ritual-ceustodaemon",
@@ -738,7 +740,7 @@
       "icon": "unknown",
       "faction": "ally",
       "statuses": [
-        "Gebet 654: 3/10",
+        "Gebet 654: 4/10",
         "Dimensional Anchor",
         "Illusionary State (2)"
       ],
@@ -779,7 +781,9 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "Drowning Curse"
+        "Drowning Curse",
+        "nauseated",
+        "schwer verwundet"
       ]
     },
     {
