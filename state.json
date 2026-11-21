@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-13-r2-witness-bilious",
-  "generated_at": "2026-11-21T16:05:41.008Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-13-r3-library-entry",
+  "generated_at": "2026-11-21T16:31:00.000Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -17,7 +17,7 @@
   },
   "grid": {
     "cols": 16,
-    "rows": 14,
+    "rows": 20,
     "feet": 5,
     "offset_x": 27,
     "offset_y": 6
@@ -65,6 +65,31 @@
             12
           ]
         ]
+      },
+      {
+        "type": "floor",
+        "points": [
+          [
+            1,
+            12
+          ],
+          [
+            15,
+            12
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            1,
+            18
+          ]
+        ]
       }
     ],
     "walls": [
@@ -81,50 +106,70 @@
       {
         "from": [
           1,
-          12
+          2
+        ],
+        "to": [
+          1,
+          18
+        ]
+      },
+      {
+        "from": [
+          15,
+          2
         ],
         "to": [
           15,
+          16
+        ]
+      },
+      {
+        "from": [
+          15,
+          16
+        ],
+        "to": [
+          13,
+          18
+        ]
+      },
+      {
+        "from": [
+          13,
+          18
+        ],
+        "to": [
+          1,
+          18
+        ]
+      },
+      {
+        "from": [
+          11,
+          2
+        ],
+        "to": [
+          11,
           12
         ]
       },
       {
         "from": [
           1,
-          2
+          12
         ],
         "to": [
-          1,
+          8,
           12
         ]
       },
       {
         "from": [
-          15,
-          2
-        ],
-        "to": [
-          15,
+          10,
           12
-        ]
-      },
-      {
-        "from": [
-          11,
-          2
         ],
         "to": [
-          11,
-          6.5
-        ]
-      },
-      {
-        "from": [
-          11,
-          7.5
-        ],
-        "to": [
-          11,
+          15,
           12
         ]
       },
@@ -201,17 +246,17 @@
     ],
     "doors": [
       {
-        "id": "daemon-hidden-stair",
+        "id": "library-daemon-door",
         "from": [
-          11,
-          6.5
+          8,
+          12
         ],
         "to": [
-          11,
-          7.5
+          10,
+          12
         ],
         "kind": "door",
-        "material": "wood",
+        "material": "iron",
         "state": "open",
         "open": true
       }
@@ -223,15 +268,7 @@
         "y": 6,
         "w": 2,
         "h": 2,
-        "label": "Sanctum-Spirale"
-      },
-      {
-        "type": "stairs",
-        "x": 12,
-        "y": 7.6,
-        "w": 1.4,
-        "h": 1.4,
-        "label": "Geheime Treppe"
+        "label": "Aufgang zum Sanctum"
       }
     ],
     "labels": [
@@ -245,7 +282,13 @@
         "x": 12.7,
         "y": 4.1,
         "w": 2.5,
-        "text": "3-12"
+        "text": "3-12 (versiegelt)"
+      },
+      {
+        "x": 7.5,
+        "y": 15,
+        "w": 4,
+        "text": "3-3"
       }
     ],
     "lighting": {
@@ -259,12 +302,11 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "F5",
+      "square": "H9",
       "icon": "vesper",
       "faction": "party",
       "size": 1,
       "statuses": [
-        "Stealth",
         "Ashen Path",
         "Witness eingesetzt; Swift verbraucht"
       ],
@@ -279,7 +321,6 @@
       "faction": "ally",
       "size": 2,
       "statuses": [
-        "Stealth",
         "Ashen Path"
       ],
       "hp": "59/59"
@@ -288,12 +329,11 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "D10",
+      "square": "D7",
       "icon": "valeria",
       "faction": "party",
       "size": 1,
       "statuses": [
-        "Stealth",
         "Ashen Path",
         "Darkvision"
       ],
@@ -303,7 +343,7 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "J6",
+      "square": "I10",
       "icon": "styke",
       "faction": "party",
       "size": 1,
@@ -318,12 +358,11 @@
       "id": "attacker-1",
       "name": "Schwer geruesteter Fremder",
       "label": "1",
-      "square": "I8",
+      "square": "I11",
       "icon": "soldier",
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Überrascht",
         "Nauseated: 5 Runden"
       ]
     },
@@ -331,14 +370,33 @@
       "id": "attacker-2",
       "name": "Fremder mit Zweihandklinge",
       "label": "2",
-      "square": "K8",
+      "square": "J11",
       "icon": "soldier",
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Überrascht",
         "Nauseated: 5 Runden"
       ]
+    },
+    {
+      "id": "attacker-3",
+      "name": "Fremder mit Schild",
+      "label": "3",
+      "square": "I13",
+      "icon": "soldier",
+      "faction": "hostile",
+      "size": 1,
+      "statuses": []
+    },
+    {
+      "id": "attacker-4",
+      "name": "Fremder mit Stab",
+      "label": "4",
+      "square": "J13",
+      "icon": "mage",
+      "faction": "hostile",
+      "size": 1,
+      "statuses": []
     }
   ],
   "initiative": [
