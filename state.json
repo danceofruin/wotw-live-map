@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r1-styke-357",
-  "generated_at": "2026-11-21T12:28:55Z",
+  "revision": "horn-sanctum-4712-10-07-a-r1-corrected-363",
+  "generated_at": "2026-11-21T12:40:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -684,7 +684,8 @@
       "faction": "party",
       "statuses": [
         "Witness to Glory",
-        "Zeal +1"
+        "Zeal +1",
+        "Illusionary State (7)"
       ],
       "hp": "60/60 +15 temporär"
     },
@@ -694,15 +695,25 @@
       "label": "V",
       "square": "M13",
       "icon": "vesper",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Illusionary State (7)",
+        "Verse: Illusionary State (7)"
+      ],
+      "hp": "48/48"
     },
     {
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "N11",
+      "square": "Q9",
       "icon": "valeria",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Illusionary State (5)",
+        "Charge: -2 RK"
+      ],
+      "hp": "58/58"
     },
     {
       "id": "grumblejack",
@@ -711,7 +722,10 @@
       "square": "H9",
       "size": 2,
       "icon": "ogre",
-      "faction": "ally"
+      "faction": "ally",
+      "statuses": [
+        "Illusionary State (7)"
+      ]
     },
     {
       "id": "ritual-ceustodaemon",
@@ -722,14 +736,15 @@
       "icon": "unknown",
       "faction": "ally",
       "statuses": [
-        "betet"
+        "betet",
+        "Illusionary State (7)"
       ]
     },
     {
       "id": "hound-1",
       "name": "Hund von Tindalos 1",
       "label": "1",
-      "square": "E4",
+      "square": "O14",
       "icon": "beast",
       "faction": "hostile"
     },
@@ -757,7 +772,8 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "stunned"
+        "stunned",
+        "verwundet"
       ]
     },
     {
