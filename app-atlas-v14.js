@@ -177,7 +177,7 @@ async function poll(){
  }catch(e){if(mode==='live'&&requestGeneration===generation){connection('Verbindung unterbrochen',true);$('error').textContent=e.message;}}
  finally{busy=false;if(mode==='live'&&!document.hidden)timer=setTimeout(poll,2000);}
 }
-async function demo(){mode='demo';historyBusy=false;historyControls();const requestGeneration=++generation;clearTimeout(timer);try{const r=await fetch('demo.json');if(!r.ok)throw Error('Demo konnte nicht geladen werden.');const raw=await r.json();if(mode!=='demo'||generation!==requestGeneration)return;render(raw);connection('Demo · lokal');$('demo').textContent='Live';}catch(e){if(mode==='demo'&&generation===requestGeneration)$('error').textContent=e.message;}}
+async function demo(){mode='demo';historyBusy=false;historyControls();const requestGeneration=++generation;clearTimeout(timer);try{const r=await fetch('demo.json?v=initiative-v1');if(!r.ok)throw Error('Demo konnte nicht geladen werden.');const raw=await r.json();if(mode!=='demo'||generation!==requestGeneration)return;render(raw);connection('Demo · lokal');$('demo').textContent='Live';}catch(e){if(mode==='demo'&&generation===requestGeneration)$('error').textContent=e.message;}}
 function live(){mode='live';historyBusy=false;historyControls();generation++;current=null;clearTimeout(timer);$('demo').textContent='Demo';connection('Verbinden …');poll();}
 function historyControls(){
  if(mode!=='history'){$('history-select').value='';$('history-status').textContent='Älter öffnet den letzten gespeicherten Kampfstand.';}
