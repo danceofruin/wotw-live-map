@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-3-r5-sealed-stair",
-  "generated_at": "2026-11-21T16:37:30.000Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-3-r6-vesper-decree-miss",
+  "generated_at": "2026-11-21T16:39:27.574Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -310,7 +310,9 @@
       "size": 1,
       "statuses": [
         "Ashen Path",
-        "Witness eingesetzt; Swift verbraucht"
+        "Radiant Dawn Style",
+        "Witness eingesetzt",
+        "Decree of Torment verbraucht"
       ],
       "hp": "48/48"
     },
@@ -407,11 +409,11 @@
   ],
   "initiative": [
     {
-      "id": "styke",
-      "score": 22
+      "id": "vesper",
+      "score": 21
     },
     {
-      "id": "vesper",
+      "id": "styke",
       "score": 21
     },
     {
