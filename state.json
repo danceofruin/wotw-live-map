@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-13-r1-surprise",
-  "generated_at": "2026-11-21T15:57:54.215Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-13-r2-witness-bilious",
+  "generated_at": "2026-11-21T16:05:41.008Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -265,7 +265,8 @@
       "size": 1,
       "statuses": [
         "Stealth",
-        "Ashen Path"
+        "Ashen Path",
+        "Witness eingesetzt; Swift verbraucht"
       ],
       "hp": "48/48"
     },
@@ -307,11 +308,11 @@
       "faction": "party",
       "size": 1,
       "statuses": [
-        "Stealth",
         "Ashen Path",
-        "Stance of the Inner Eye"
+        "Stance of the Inner Eye",
+        "Witness to Glory: 15 temp HP, 11 Min."
       ],
-      "hp": "60/60"
+      "hp": "60/60 (+15 temp)"
     },
     {
       "id": "attacker-1",
@@ -322,7 +323,8 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Überrascht"
+        "Überrascht",
+        "Nauseated: 5 Runden"
       ]
     },
     {
@@ -334,11 +336,16 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Überrascht"
+        "Überrascht",
+        "Nauseated: 5 Runden"
       ]
     }
   ],
   "initiative": [
+    {
+      "id": "styke",
+      "score": 22
+    },
     {
       "id": "vesper",
       "score": 21
@@ -350,10 +357,6 @@
     {
       "id": "valeria",
       "score": 19
-    },
-    {
-      "id": "styke",
-      "score": 13
     }
   ]
 }
