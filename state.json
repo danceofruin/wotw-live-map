@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "active": true,
+  "active": false,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r5-vesper-entry-443",
-  "generated_at": "2026-11-21T14:20:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r5-combat-ended-451",
+  "generated_at": "2026-11-21T14:24:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -684,8 +684,7 @@
       "faction": "party",
       "statuses": [
         "Illusionary State (6)",
-        "Gaze immun: 1, 2, 3, 5, 6",
-        "Flanke mit Grumblejack gegen Hund 3"
+        "Gaze immun: 1, 2, 3, 5, 6"
       ],
       "hp": "60/60"
     },
@@ -708,12 +707,11 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "M11",
+      "square": "L11",
       "icon": "valeria",
       "faction": "party",
       "statuses": [
-        "Illusionary State (2)",
-        "Charge: -2 RK bis naechster Zug"
+        "Illusionary State (2)"
       ],
       "hp": "58/58"
     },
@@ -726,13 +724,11 @@
       "icon": "ogre",
       "faction": "ally",
       "statuses": [
-        "Wind Speed",
+        "Wind Speed (7 Runden)",
         "Illusionary State (7)",
-        "Blickimmun Hund 3",
-        "Aid +4 gegen Hund 3 (naechster Angriff)",
-        "Flanke Hund 3 +2"
+        "Blickimmun Hund 3"
       ],
-      "hp": "28/59"
+      "hp": "38/59"
     },
     {
       "id": "ritual-ceustodaemon",
@@ -757,11 +753,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "bewusstlos",
-        "sterbend",
-        "Drowning Curse",
-        "Angled Entry unterdrückt",
-        "Ripping Gaze unterdrückt"
+        "dead"
       ]
     },
     {
@@ -772,8 +764,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "nauseated",
-        "schwer verwundet"
+        "dead"
       ]
     },
     {
@@ -784,9 +775,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "Drowning Curse",
-        "nauseated",
-        "schwer verwundet"
+        "dead"
       ]
     },
     {
