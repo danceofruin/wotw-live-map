@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r4-vesper-entry-430",
-  "generated_at": "2026-11-21T14:06:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r4-styke-bilious-original-431",
+  "generated_at": "2026-11-21T14:09:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -686,7 +686,7 @@
         "Illusionary State (6)",
         "Gaze immun: 1, 2, 3, 5, 6"
       ],
-      "hp": "50/60"
+      "hp": "60/60"
     },
     {
       "id": "vesper",
@@ -752,10 +752,11 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
+        "bewusstlos",
+        "sterbend",
         "Drowning Curse",
         "Angled Entry unterdrückt",
-        "Ripping Gaze unterdrückt",
-        "verwundet"
+        "Ripping Gaze unterdrückt"
       ]
     },
     {
@@ -800,7 +801,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "kritisch verwundet"
+        "dead"
       ]
     },
     {
