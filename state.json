@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon - Ebene 3 - 3-3 / 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-3-r7-end-r1",
-  "generated_at": "2026-11-21T16:57:08Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-3-r8-valeria-flatfooted-zeal-correction",
+  "generated_at": "2026-11-21T17:11:00.000Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -333,14 +333,14 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "E10",
+      "square": "I12",
       "icon": "valeria",
       "faction": "party",
       "size": 1,
       "statuses": [
         "Ashen Path",
         "Darkvision",
-        "Fiendish Boon: Keen, Flaming"
+        "Zeal +1"
       ],
       "hp": "58/58"
     },
@@ -356,7 +356,7 @@
         "Ashen Path",
         "Stance of the Inner Eye",
         "Witness to Glory: 15 temp HP, 11 Min.",
-        "Zeal aktiv"
+        "Zeal aktiv (+1 Angriff)"
       ],
       "hp": "60/60 (+15 temp)"
     },
@@ -395,7 +395,9 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Verwundet"
+        "Bewusstlos",
+        "Sterbend",
+        "Liegend"
       ]
     },
     {
@@ -407,9 +409,9 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Liegend",
-        "Verwundet",
-        "Wieder bei Bewusstsein"
+        "Bewusstlos",
+        "Sterbend",
+        "Liegend"
       ]
     }
   ],
