@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r1-corrected-363",
-  "generated_at": "2026-11-21T12:40:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r2-entry-375",
+  "generated_at": "2026-11-21T13:15:39Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -684,7 +684,6 @@
       "faction": "party",
       "statuses": [
         "Witness to Glory",
-        "Zeal +1",
         "Illusionary State (7)"
       ],
       "hp": "60/60 +15 temporär"
@@ -697,7 +696,7 @@
       "icon": "vesper",
       "faction": "party",
       "statuses": [
-        "Illusionary State (7)",
+        "Illusionary State (6)",
         "Verse: Illusionary State (7)"
       ],
       "hp": "48/48"
@@ -725,7 +724,8 @@
       "faction": "ally",
       "statuses": [
         "Illusionary State (7)"
-      ]
+      ],
+      "hp": "35/59"
     },
     {
       "id": "ritual-ceustodaemon",
@@ -736,9 +736,11 @@
       "icon": "unknown",
       "faction": "ally",
       "statuses": [
-        "betet",
-        "Illusionary State (7)"
-      ]
+        "Gebet 654: 1/10",
+        "Dimensional Anchor",
+        "Illusionary State (6)"
+      ],
+      "hp": "38/68"
     },
     {
       "id": "hound-1",
@@ -752,7 +754,7 @@
       "id": "hound-2",
       "name": "Hund von Tindalos 2",
       "label": "2",
-      "square": "J4",
+      "square": "L10",
       "icon": "beast",
       "faction": "hostile"
     },
@@ -760,7 +762,7 @@
       "id": "hound-3",
       "name": "Hund von Tindalos 3",
       "label": "3",
-      "square": "O4",
+      "square": "M10",
       "icon": "beast",
       "faction": "hostile"
     },
@@ -772,7 +774,6 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "stunned",
         "verwundet"
       ]
     },
@@ -784,16 +785,19 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "stunned"
+        "verwundet"
       ]
     },
     {
       "id": "hound-6",
       "name": "Hund von Tindalos 6",
       "label": "6",
-      "square": "F18",
+      "square": "K10",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "verwundet"
+      ]
     }
   ]
 }
