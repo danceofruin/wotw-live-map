@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r2-vesper-entry-385",
-  "generated_at": "2026-11-21T13:21:45Z",
+  "revision": "horn-sanctum-4712-10-07-a-r3-start-398",
+  "generated_at": "2026-11-21T13:35:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -683,8 +683,7 @@
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "Illusionary State (7)",
-        "Zeal +1"
+        "Illusionary State (6)"
       ],
       "hp": "59/60"
     },
@@ -692,11 +691,12 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "M13",
+      "square": "G13",
       "icon": "vesper",
       "faction": "party",
       "statuses": [
-        "Illusionary State (6)",
+        "Spoils of War",
+        "Illusionary State (4)",
         "Verse: Illusionary State (7)"
       ],
       "hp": "27/48"
@@ -717,7 +717,7 @@
       "id": "grumblejack",
       "name": "Grumblejack",
       "label": "G",
-      "square": "H9",
+      "square": "I9",
       "size": 2,
       "icon": "ogre",
       "faction": "ally",
@@ -735,19 +735,20 @@
       "icon": "unknown",
       "faction": "ally",
       "statuses": [
-        "Gebet 654: 1/10",
+        "Gebet 654: 2/10",
         "Dimensional Anchor",
         "Illusionary State (6)"
       ],
-      "hp": "38/68"
+      "hp": "25/68"
     },
     {
       "id": "hound-1",
       "name": "Hund von Tindalos 1",
       "label": "1",
-      "square": "O14",
+      "square": "F14",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": []
     },
     {
       "id": "hound-2",
@@ -757,7 +758,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "nauseated (5 Runden)",
+        "nauseated",
         "schwer verwundet"
       ]
     },
@@ -765,9 +766,13 @@
       "id": "hound-3",
       "name": "Hund von Tindalos 3",
       "label": "3",
-      "square": "M10",
+      "square": "M11",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "Drowning Curse",
+        "nauseated"
+      ]
     },
     {
       "id": "hound-4",
@@ -777,14 +782,14 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "verwundet"
+        "dead"
       ]
     },
     {
       "id": "hound-5",
       "name": "Hund von Tindalos 5",
       "label": "5",
-      "square": "R16",
+      "square": "O15",
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
@@ -799,7 +804,8 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "down"
+        "down",
+        "stabil"
       ]
     }
   ]
