@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r4-start-424",
-  "generated_at": "2026-11-21T13:54:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r4-retcon-425",
+  "generated_at": "2026-11-21T13:59:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -720,7 +720,7 @@
       "id": "grumblejack",
       "name": "Grumblejack",
       "label": "G",
-      "square": "I10",
+      "square": "M13",
       "size": 2,
       "icon": "ogre",
       "faction": "ally",
@@ -800,7 +800,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "schwer verwundet"
+        "kritisch verwundet"
       ]
     },
     {
