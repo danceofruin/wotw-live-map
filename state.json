@@ -2,9 +2,9 @@
   "schema_version": 2,
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
-  "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-3-r6-vesper-decree-miss",
-  "generated_at": "2026-11-21T16:39:27.574Z",
+  "title": "Horn von Abaddon - Ebene 3 - 3-3 / 3-13",
+  "revision": "horn-final-assault-4712-10-10-a-3-3-r7-end-r1",
+  "generated_at": "2026-11-21T16:57:08Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -333,13 +333,14 @@
       "id": "valeria",
       "name": "Valeria",
       "label": "VA",
-      "square": "D7",
+      "square": "E10",
       "icon": "valeria",
       "faction": "party",
       "size": 1,
       "statuses": [
         "Ashen Path",
-        "Darkvision"
+        "Darkvision",
+        "Fiendish Boon: Keen, Flaming"
       ],
       "hp": "58/58"
     },
@@ -347,14 +348,15 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "J6",
+      "square": "J13",
       "icon": "styke",
       "faction": "party",
       "size": 1,
       "statuses": [
         "Ashen Path",
         "Stance of the Inner Eye",
-        "Witness to Glory: 15 temp HP, 11 Min."
+        "Witness to Glory: 15 temp HP, 11 Min.",
+        "Zeal aktiv"
       ],
       "hp": "60/60 (+15 temp)"
     },
@@ -367,7 +369,8 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Nauseated: 5 Runden"
+        "Nauseated: 4 Runden",
+        "Verwundet"
       ]
     },
     {
@@ -379,7 +382,8 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Nauseated: 5 Runden"
+        "Nauseated: 4 Runden",
+        "Verwundet"
       ]
     },
     {
@@ -391,7 +395,7 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Position ungefähr"
+        "Verwundet"
       ]
     },
     {
@@ -403,7 +407,9 @@
       "faction": "hostile",
       "size": 1,
       "statuses": [
-        "Position ungefähr"
+        "Liegend",
+        "Verwundet",
+        "Wieder bei Bewusstsein"
       ]
     }
   ],
@@ -423,6 +429,22 @@
     {
       "id": "valeria",
       "score": 19
+    },
+    {
+      "id": "attacker-3",
+      "score": 19
+    },
+    {
+      "id": "attacker-2",
+      "score": 8
+    },
+    {
+      "id": "attacker-4",
+      "score": 7
+    },
+    {
+      "id": "attacker-1",
+      "score": 5
     }
   ]
 }
