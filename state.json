@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-entry-354",
-  "generated_at": "2026-11-21T12:14:38Z",
+  "revision": "horn-sanctum-4712-10-07-a-r1-styke-357",
+  "generated_at": "2026-11-21T12:28:55Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -679,9 +679,14 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "L13",
+      "square": "M12",
       "icon": "styke",
-      "faction": "party"
+      "faction": "party",
+      "statuses": [
+        "Witness to Glory",
+        "Zeal +1"
+      ],
+      "hp": "60/60 +15 temporär"
     },
     {
       "id": "vesper",
@@ -750,7 +755,10 @@
       "label": "4",
       "square": "R8",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "stunned"
+      ]
     },
     {
       "id": "hound-5",
@@ -758,7 +766,10 @@
       "label": "5",
       "square": "R16",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "stunned"
+      ]
     },
     {
       "id": "hound-6",
