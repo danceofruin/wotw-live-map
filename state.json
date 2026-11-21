@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r5-styke-entry-442",
-  "generated_at": "2026-11-21T14:16:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r5-vesper-entry-443",
+  "generated_at": "2026-11-21T14:20:00Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -679,12 +679,13 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "M12",
+      "square": "J11",
       "icon": "styke",
       "faction": "party",
       "statuses": [
         "Illusionary State (6)",
-        "Gaze immun: 1, 2, 3, 5, 6"
+        "Gaze immun: 1, 2, 3, 5, 6",
+        "Flanke mit Grumblejack gegen Hund 3"
       ],
       "hp": "60/60"
     },
@@ -725,9 +726,11 @@
       "icon": "ogre",
       "faction": "ally",
       "statuses": [
-        "Wind Speed (8 Runden)",
+        "Wind Speed",
         "Illusionary State (7)",
-        "Blickimmun Hund 3"
+        "Blickimmun Hund 3",
+        "Aid +4 gegen Hund 3 (naechster Angriff)",
+        "Flanke Hund 3 +2"
       ],
       "hp": "28/59"
     },
