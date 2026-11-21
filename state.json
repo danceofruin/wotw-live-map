@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r2-entry-375",
-  "generated_at": "2026-11-21T13:15:39Z",
+  "revision": "horn-sanctum-4712-10-07-a-r2-vesper-entry-385",
+  "generated_at": "2026-11-21T13:21:45Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -679,14 +679,14 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "M12",
+      "square": "L11",
       "icon": "styke",
       "faction": "party",
       "statuses": [
-        "Witness to Glory",
-        "Illusionary State (7)"
+        "Illusionary State (7)",
+        "Zeal +1"
       ],
-      "hp": "60/60 +15 temporär"
+      "hp": "59/60"
     },
     {
       "id": "vesper",
@@ -699,7 +699,7 @@
         "Illusionary State (6)",
         "Verse: Illusionary State (7)"
       ],
-      "hp": "48/48"
+      "hp": "27/48"
     },
     {
       "id": "valeria",
@@ -709,8 +709,7 @@
       "icon": "valeria",
       "faction": "party",
       "statuses": [
-        "Illusionary State (5)",
-        "Charge: -2 RK"
+        "Illusionary State (2)"
       ],
       "hp": "58/58"
     },
@@ -756,7 +755,11 @@
       "label": "2",
       "square": "L10",
       "icon": "beast",
-      "faction": "hostile"
+      "faction": "hostile",
+      "statuses": [
+        "nauseated (5 Runden)",
+        "schwer verwundet"
+      ]
     },
     {
       "id": "hound-3",
@@ -796,7 +799,7 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "verwundet"
+        "down"
       ]
     }
   ]
