@@ -3,7 +3,7 @@
   "active": false,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r5-combat-ended-451",
+  "revision": "horn-sanctum-4712-10-07-a-r5-combat-ended-healing-451",
   "generated_at": "2026-11-21T14:24:00Z",
   "grid": {
     "cols": 22,
@@ -701,7 +701,7 @@
         "Illusionary State (3)",
         "Verse: Illusionary State (7)"
       ],
-      "hp": "29/48"
+      "hp": "40/48"
     },
     {
       "id": "valeria",
@@ -728,7 +728,7 @@
         "Illusionary State (7)",
         "Blickimmun Hund 3"
       ],
-      "hp": "38/59"
+      "hp": "49/59"
     },
     {
       "id": "ritual-ceustodaemon",
