@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-sanctum-4712-10-07-a",
   "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r3-vesper-entry-402",
-  "generated_at": "2026-11-21T13:41:00Z",
+  "revision": "horn-sanctum-4712-10-07-a-r3-vesper-406",
+  "generated_at": "2026-11-21T13:44:48Z",
   "grid": {
     "cols": 22,
     "rows": 22,
@@ -692,15 +692,16 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "G13",
+      "square": "H12",
       "icon": "vesper",
       "faction": "party",
       "statuses": [
         "Spoils of War",
+        "Radiant Dawn Style",
         "Illusionary State (4)",
         "Verse: Illusionary State (7)"
       ],
-      "hp": "27/48"
+      "hp": "19/48"
     },
     {
       "id": "valeria",
@@ -750,7 +751,9 @@
       "icon": "beast",
       "faction": "hostile",
       "statuses": [
-        "verwundet"
+        "verwundet",
+        "Drowning Curse",
+        "Angled Entry unterdrückt"
       ]
     },
     {
