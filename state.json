@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-13-r3-library-entry",
-  "generated_at": "2026-11-21T16:31:00.000Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-3-r4-accepted-squares",
+  "generated_at": "2026-11-21T16:23:00.000Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -302,7 +302,7 @@
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "H9",
+      "square": "I6",
       "icon": "vesper",
       "faction": "party",
       "size": 1,
@@ -343,7 +343,7 @@
       "id": "styke",
       "name": "Styke",
       "label": "S",
-      "square": "I10",
+      "square": "J6",
       "icon": "styke",
       "faction": "party",
       "size": 1,
@@ -358,7 +358,7 @@
       "id": "attacker-1",
       "name": "Schwer geruesteter Fremder",
       "label": "1",
-      "square": "I11",
+      "square": "I8",
       "icon": "soldier",
       "faction": "hostile",
       "size": 1,
@@ -370,7 +370,7 @@
       "id": "attacker-2",
       "name": "Fremder mit Zweihandklinge",
       "label": "2",
-      "square": "J11",
+      "square": "K8",
       "icon": "soldier",
       "faction": "hostile",
       "size": 1,
@@ -382,21 +382,25 @@
       "id": "attacker-3",
       "name": "Fremder mit Schild",
       "label": "3",
-      "square": "I13",
+      "square": "I11",
       "icon": "soldier",
       "faction": "hostile",
       "size": 1,
-      "statuses": []
+      "statuses": [
+        "Position ungefähr"
+      ]
     },
     {
       "id": "attacker-4",
       "name": "Fremder mit Stab",
       "label": "4",
-      "square": "J13",
+      "square": "I13",
       "icon": "mage",
       "faction": "hostile",
       "size": 1,
-      "statuses": []
+      "statuses": [
+        "Position ungefähr"
+      ]
     }
   ],
   "initiative": [
