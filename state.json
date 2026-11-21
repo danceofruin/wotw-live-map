@@ -1,16 +1,26 @@
 {
   "schema_version": 2,
-  "active": false,
-  "scene_id": "horn-sanctum-4712-10-07-a",
-  "title": "Horn von Abaddon · Sanctum · 7. Oktober 4712",
-  "revision": "horn-sanctum-4712-10-07-a-r5-combat-ended-healing-451",
-  "generated_at": "2026-11-21T14:24:00Z",
+  "active": true,
+  "scene_id": "horn-final-assault-4712-10-10-a",
+  "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
+  "revision": "horn-final-assault-4712-10-10-a-3-13-r1-surprise",
+  "generated_at": "2026-11-21T15:57:54.215Z",
+  "atlas": {
+    "id": "horn-level-3",
+    "revision": "2026-10-24.1",
+    "variant": "current",
+    "origin": [
+      27,
+      6
+    ],
+    "structural_revision": "horn-construction-2026-10-24.1"
+  },
   "grid": {
-    "cols": 22,
-    "rows": 22,
+    "cols": 16,
+    "rows": 14,
     "feet": 5,
-    "offset_x": 0,
-    "offset_y": 0
+    "offset_x": 27,
+    "offset_y": 6
   },
   "map": {
     "terrain": [
@@ -18,20 +28,20 @@
         "type": "floor",
         "points": [
           [
-            0,
-            6
+            1,
+            2
           ],
           [
-            3,
-            6
+            11,
+            2
           ],
           [
-            3,
-            14
+            11,
+            12
           ],
           [
-            0,
-            14
+            1,
+            12
           ]
         ]
       },
@@ -39,156 +49,20 @@
         "type": "floor",
         "points": [
           [
-            0,
-            6
-          ],
-          [
-            2,
-            6
-          ],
-          [
-            2,
+            11,
             2
           ],
           [
-            4,
+            15,
             2
           ],
           [
-            4,
-            0
-          ],
-          [
-            6,
-            0
-          ],
-          [
-            6,
-            2
-          ],
-          [
-            8,
-            2
-          ],
-          [
-            8,
-            0
-          ],
-          [
-            10,
-            0
-          ],
-          [
-            10,
-            2
-          ],
-          [
-            12,
-            2
-          ],
-          [
-            12,
-            0
-          ],
-          [
-            14,
-            0
-          ],
-          [
-            14,
-            2
-          ],
-          [
-            16,
-            2
-          ],
-          [
-            18,
-            4
-          ],
-          [
-            18,
-            6
-          ],
-          [
-            19,
-            6
-          ],
-          [
-            19,
+            15,
             12
           ],
           [
-            18,
+            11,
             12
-          ],
-          [
-            18,
-            16
-          ],
-          [
-            16,
-            18
-          ],
-          [
-            14,
-            18
-          ],
-          [
-            14,
-            20
-          ],
-          [
-            12,
-            20
-          ],
-          [
-            12,
-            18
-          ],
-          [
-            10,
-            18
-          ],
-          [
-            10,
-            20
-          ],
-          [
-            8,
-            20
-          ],
-          [
-            8,
-            18
-          ],
-          [
-            6,
-            18
-          ],
-          [
-            6,
-            20
-          ],
-          [
-            4,
-            20
-          ],
-          [
-            4,
-            18
-          ],
-          [
-            2,
-            18
-          ],
-          [
-            2,
-            14
-          ],
-          [
-            0,
-            14
           ]
         ]
       }
@@ -196,621 +70,290 @@
     "walls": [
       {
         "from": [
-          0,
-          6
+          1,
+          2
         ],
         "to": [
-          2,
-          6
-        ]
-      },
-      {
-        "from": [
-          2,
-          6
-        ],
-        "to": [
-          2,
+          15,
           2
         ]
       },
       {
         "from": [
-          2,
-          2
+          1,
+          12
         ],
         "to": [
-          4,
-          2
-        ]
-      },
-      {
-        "from": [
-          4,
-          2
-        ],
-        "to": [
-          4,
-          0
-        ]
-      },
-      {
-        "from": [
-          4,
-          0
-        ],
-        "to": [
-          6,
-          0
-        ]
-      },
-      {
-        "from": [
-          6,
-          0
-        ],
-        "to": [
-          6,
-          2
-        ]
-      },
-      {
-        "from": [
-          6,
-          2
-        ],
-        "to": [
-          8,
-          2
-        ]
-      },
-      {
-        "from": [
-          8,
-          2
-        ],
-        "to": [
-          8,
-          0
-        ]
-      },
-      {
-        "from": [
-          8,
-          0
-        ],
-        "to": [
-          10,
-          0
-        ]
-      },
-      {
-        "from": [
-          10,
-          0
-        ],
-        "to": [
-          10,
-          2
-        ]
-      },
-      {
-        "from": [
-          10,
-          2
-        ],
-        "to": [
-          12,
-          2
-        ]
-      },
-      {
-        "from": [
-          12,
-          2
-        ],
-        "to": [
-          12,
-          0
-        ]
-      },
-      {
-        "from": [
-          12,
-          0
-        ],
-        "to": [
-          14,
-          0
-        ]
-      },
-      {
-        "from": [
-          14,
-          0
-        ],
-        "to": [
-          14,
-          2
-        ]
-      },
-      {
-        "from": [
-          14,
-          2
-        ],
-        "to": [
-          16,
-          2
-        ]
-      },
-      {
-        "from": [
-          16,
-          2
-        ],
-        "to": [
-          18,
-          4
-        ]
-      },
-      {
-        "from": [
-          18,
-          4
-        ],
-        "to": [
-          18,
-          6
-        ]
-      },
-      {
-        "from": [
-          18,
-          6
-        ],
-        "to": [
-          19,
-          6
-        ]
-      },
-      {
-        "from": [
-          19,
-          6
-        ],
-        "to": [
-          19,
+          15,
           12
         ]
       },
       {
         "from": [
-          19,
+          1,
+          2
+        ],
+        "to": [
+          1,
           12
+        ]
+      },
+      {
+        "from": [
+          15,
+          2
         ],
         "to": [
-          18,
+          15,
           12
         ]
       },
       {
         "from": [
-          18,
+          11,
+          2
+        ],
+        "to": [
+          11,
+          6.5
+        ]
+      },
+      {
+        "from": [
+          11,
+          7.5
+        ],
+        "to": [
+          11,
           12
-        ],
-        "to": [
-          18,
-          16
-        ]
-      },
-      {
-        "from": [
-          18,
-          16
-        ],
-        "to": [
-          16,
-          18
-        ]
-      },
-      {
-        "from": [
-          16,
-          18
-        ],
-        "to": [
-          14,
-          18
-        ]
-      },
-      {
-        "from": [
-          14,
-          18
-        ],
-        "to": [
-          14,
-          20
-        ]
-      },
-      {
-        "from": [
-          14,
-          20
-        ],
-        "to": [
-          12,
-          20
-        ]
-      },
-      {
-        "from": [
-          12,
-          20
-        ],
-        "to": [
-          12,
-          18
-        ]
-      },
-      {
-        "from": [
-          12,
-          18
-        ],
-        "to": [
-          10,
-          18
-        ]
-      },
-      {
-        "from": [
-          10,
-          18
-        ],
-        "to": [
-          10,
-          20
-        ]
-      },
-      {
-        "from": [
-          10,
-          20
-        ],
-        "to": [
-          8,
-          20
-        ]
-      },
-      {
-        "from": [
-          8,
-          20
-        ],
-        "to": [
-          8,
-          18
-        ]
-      },
-      {
-        "from": [
-          8,
-          18
-        ],
-        "to": [
-          6,
-          18
-        ]
-      },
-      {
-        "from": [
-          6,
-          18
-        ],
-        "to": [
-          6,
-          20
-        ]
-      },
-      {
-        "from": [
-          6,
-          20
-        ],
-        "to": [
-          4,
-          20
         ]
       },
       {
         "from": [
           4,
-          20
+          4.2
         ],
         "to": [
           4,
-          18
+          5.7
         ]
       },
       {
         "from": [
           4,
-          18
+          5.7
         ],
         "to": [
-          2,
-          18
+          4.8,
+          5.9
         ]
       },
       {
         "from": [
-          2,
-          18
+          4.8,
+          5.9
         ],
         "to": [
-          2,
-          14
+          5.5,
+          6.5
         ]
       },
       {
         "from": [
-          2,
-          14
+          5.5,
+          6.5
         ],
         "to": [
-          0,
-          14
+          5.6,
+          7.3
         ]
       },
       {
         "from": [
-          0,
-          14
+          5.6,
+          7.3
         ],
         "to": [
-          0,
-          6
+          5.3,
+          8.1
+        ]
+      },
+      {
+        "from": [
+          5.3,
+          8.1
+        ],
+        "to": [
+          4.6,
+          8.5
+        ]
+      },
+      {
+        "from": [
+          4.6,
+          8.5
+        ],
+        "to": [
+          4,
+          8.5
         ]
       }
     ],
-    "lines": [
+    "doors": [
       {
+        "id": "daemon-hidden-stair",
         "from": [
-          3,
-          4
+          11,
+          6.5
         ],
         "to": [
-          5,
-          6
+          11,
+          7.5
         ],
-        "kind": "low_wall"
-      },
-      {
-        "from": [
-          5,
-          6
-        ],
-        "to": [
-          15,
-          6
-        ],
-        "kind": "low_wall"
-      },
-      {
-        "from": [
-          15,
-          6
-        ],
-        "to": [
-          15,
-          4
-        ],
-        "kind": "low_wall"
-      },
-      {
-        "from": [
-          3,
-          16
-        ],
-        "to": [
-          5,
-          14
-        ],
-        "kind": "low_wall"
-      },
-      {
-        "from": [
-          5,
-          14
-        ],
-        "to": [
-          15,
-          14
-        ],
-        "kind": "low_wall"
-      },
-      {
-        "from": [
-          15,
-          14
-        ],
-        "to": [
-          15,
-          16
-        ],
-        "kind": "low_wall"
+        "kind": "door",
+        "material": "wood",
+        "state": "open",
+        "open": true
       }
     ],
     "markers": [
       {
         "type": "stairs",
-        "x": 7.6,
-        "y": 8.4,
-        "w": 2.4,
-        "h": 2.4,
+        "x": 5,
+        "y": 6,
+        "w": 2,
+        "h": 2,
         "label": "Sanctum-Spirale"
+      },
+      {
+        "type": "stairs",
+        "x": 12,
+        "y": 7.6,
+        "w": 1.4,
+        "h": 1.4,
+        "label": "Geheime Treppe"
       }
     ],
     "labels": [
       {
-        "x": 10.65,
-        "y": 10.15,
-        "w": 3.1,
-        "text": "Altar / Siegel"
-      },
-      {
-        "x": 0.25,
-        "y": 10,
-        "w": 2.5,
-        "text": "S-2 (versiegelt)"
-      },
-      {
-        "x": 9,
-        "y": 4,
+        "x": 6.6,
+        "y": 3.5,
         "w": 4,
-        "text": "Sanctum S-1"
+        "text": "3-13"
+      },
+      {
+        "x": 12.7,
+        "y": 4.1,
+        "w": 2.5,
+        "text": "3-12"
       }
-    ]
+    ],
+    "lighting": {
+      "ambient": "dark",
+      "profile": "dungeon",
+      "approximate": true
+    }
   },
   "tokens": [
-    {
-      "id": "styke",
-      "name": "Styke",
-      "label": "S",
-      "square": "J11",
-      "icon": "styke",
-      "faction": "party",
-      "statuses": [
-        "Illusionary State (6)",
-        "Gaze immun: 1, 2, 3, 5, 6"
-      ],
-      "hp": "60/60"
-    },
     {
       "id": "vesper",
       "name": "Vesper",
       "label": "V",
-      "square": "H12",
+      "square": "F5",
       "icon": "vesper",
       "faction": "party",
+      "size": 1,
       "statuses": [
-        "Spoils of War",
-        "Radiant Dawn Style",
-        "Illusionary State (3)",
-        "Verse: Illusionary State (7)"
+        "Stealth",
+        "Ashen Path"
       ],
-      "hp": "40/48"
-    },
-    {
-      "id": "valeria",
-      "name": "Valeria",
-      "label": "VA",
-      "square": "L11",
-      "icon": "valeria",
-      "faction": "party",
-      "statuses": [
-        "Illusionary State (2)"
-      ],
-      "hp": "58/58"
+      "hp": "48/48"
     },
     {
       "id": "grumblejack",
       "name": "Grumblejack",
       "label": "G",
-      "square": "M13",
-      "size": 2,
+      "square": "G10",
       "icon": "ogre",
       "faction": "ally",
-      "statuses": [
-        "Wind Speed (7 Runden)",
-        "Illusionary State (7)",
-        "Blickimmun Hund 3"
-      ],
-      "hp": "49/59"
-    },
-    {
-      "id": "ritual-ceustodaemon",
-      "name": "Ritualwächter",
-      "label": "C",
-      "square": "J12",
       "size": 2,
-      "icon": "unknown",
-      "faction": "ally",
       "statuses": [
-        "Gebet 654: 4/10",
-        "Dimensional Anchor",
-        "Illusionary State (2)"
+        "Stealth",
+        "Ashen Path"
       ],
-      "hp": "24/68"
+      "hp": "59/59"
     },
     {
-      "id": "hound-1",
-      "name": "Hund von Tindalos 1",
+      "id": "valeria",
+      "name": "Valeria",
+      "label": "VA",
+      "square": "D10",
+      "icon": "valeria",
+      "faction": "party",
+      "size": 1,
+      "statuses": [
+        "Stealth",
+        "Ashen Path",
+        "Darkvision"
+      ],
+      "hp": "58/58"
+    },
+    {
+      "id": "styke",
+      "name": "Styke",
+      "label": "S",
+      "square": "J6",
+      "icon": "styke",
+      "faction": "party",
+      "size": 1,
+      "statuses": [
+        "Stealth",
+        "Ashen Path",
+        "Stance of the Inner Eye"
+      ],
+      "hp": "60/60"
+    },
+    {
+      "id": "attacker-1",
+      "name": "Schwer geruesteter Fremder",
       "label": "1",
-      "square": "G13",
-      "icon": "beast",
+      "square": "I8",
+      "icon": "soldier",
       "faction": "hostile",
+      "size": 1,
       "statuses": [
-        "dead"
+        "Überrascht"
       ]
     },
     {
-      "id": "hound-2",
-      "name": "Hund von Tindalos 2",
+      "id": "attacker-2",
+      "name": "Fremder mit Zweihandklinge",
       "label": "2",
-      "square": "K11",
-      "icon": "beast",
+      "square": "K8",
+      "icon": "soldier",
       "faction": "hostile",
+      "size": 1,
       "statuses": [
-        "dead"
+        "Überrascht"
       ]
+    }
+  ],
+  "initiative": [
+    {
+      "id": "vesper",
+      "score": 21
     },
     {
-      "id": "hound-3",
-      "name": "Hund von Tindalos 3",
-      "label": "3",
-      "square": "L12",
-      "icon": "beast",
-      "faction": "hostile",
-      "statuses": [
-        "dead"
-      ]
+      "id": "grumblejack",
+      "score": 20
     },
     {
-      "id": "hound-4",
-      "name": "Hund von Tindalos 4",
-      "label": "4",
-      "square": "R8",
-      "icon": "beast",
-      "faction": "hostile",
-      "statuses": [
-        "dead"
-      ]
+      "id": "valeria",
+      "score": 19
     },
     {
-      "id": "hound-5",
-      "name": "Hund von Tindalos 5",
-      "label": "5",
-      "square": "L13",
-      "icon": "beast",
-      "faction": "hostile",
-      "statuses": [
-        "dead"
-      ]
-    },
-    {
-      "id": "hound-6",
-      "name": "Hund von Tindalos 6",
-      "label": "6",
-      "square": "K10",
-      "icon": "beast",
-      "faction": "hostile",
-      "statuses": [
-        "down",
-        "stabil"
-      ]
+      "id": "styke",
+      "score": 13
     }
   ]
 }
