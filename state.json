@@ -3,8 +3,8 @@
   "active": true,
   "scene_id": "horn-final-assault-4712-10-10-a",
   "title": "Horn von Abaddon · Ebene 3 · Hinterhalt 3-13",
-  "revision": "horn-final-assault-4712-10-10-a-3-3-r4-accepted-squares",
-  "generated_at": "2026-11-21T16:23:00.000Z",
+  "revision": "horn-final-assault-4712-10-10-a-3-3-r5-sealed-stair",
+  "generated_at": "2026-11-21T16:37:30.000Z",
   "atlas": {
     "id": "horn-level-3",
     "revision": "2026-10-24.1",
@@ -263,12 +263,14 @@
     ],
     "markers": [
       {
-        "type": "stairs",
+        "id": "walled-spiral",
+        "type": "rock",
         "x": 5,
         "y": 6,
         "w": 2,
         "h": 2,
-        "label": "Aufgang zum Sanctum"
+        "label": "Zugemauert",
+        "tactical": "fixed"
       }
     ],
     "labels": [
