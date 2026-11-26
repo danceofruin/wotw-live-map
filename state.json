@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "active": true,
-  "scene_id": "gp-arena-amphi-28oct",
-  "title": "Golden Palace - Arena - Amphisbaena",
-  "revision": "gp-arena-amphi-28oct-r1-start",
-  "generated_at": "2026-11-26T19:21:20.000Z",
+  "scene_id": "gp-arena-owlbear-28oct",
+  "title": "Golden Palace - Arena - Owlbear",
+  "revision": "gp-arena-owlbear-28oct-r0-start",
+  "generated_at": "2026-11-26T19:45:00.000Z",
   "grid": {"cols": 9, "rows": 9, "feet": 5},
   "map": {
     "terrain": [{"type": "floor", "x": 0, "y": 0, "w": 9, "h": 9}],
@@ -17,11 +17,8 @@
     "markers": []
   },
   "tokens": [
-    {"id": "valeria", "name": "Valeria", "label": "VA", "square": "B5", "icon": "valeria", "faction": "party", "size": 1, "statuses": [], "hp": "64/64"},
-    {"id": "amphisbaena", "name": "Amphisbaena", "label": "A", "square": "G4", "icon": "beast", "faction": "hostile", "size": 2, "statuses": []}
+    {"id": "styke", "name": "Styke", "label": "ST", "square": "B5", "icon": "styke", "faction": "party", "size": 1, "statuses": [], "hp": "66/66"},
+    {"id": "owlbear", "name": "Owlbear", "label": "OW", "square": "G4", "icon": "beast", "faction": "hostile", "size": 2, "statuses": []}
   ],
-  "initiative": [
-    {"id": "valeria", "score": 15},
-    {"id": "amphisbaena", "score": 14}
-  ]
+  "initiative": []
 }
